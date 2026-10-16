@@ -1,0 +1,6 @@
+# Initial dependencies
+# Exact versions will be pinned after environment validation.
+numpy
+matplotlib
+pyyaml
+pytest

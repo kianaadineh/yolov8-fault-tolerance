@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets
+.env
+*.key
+
+# Model weights and large artifacts
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Experiment outputs
+artifacts/
+datasets/
+results/
+runs/
+wandb/
+
+# OS files
+.DS_Store

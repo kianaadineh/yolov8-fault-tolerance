@@ -1,0 +1,13 @@
+{
+  "model": "YOLOv8s",
+  "weights": "yolov8s.pt",
+  "ultralytics_version": "8.4.189",
+  "torch_version": "2.11.0+cu130",
+  "python_version": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "gpu": "Tesla T4",
+  "image_source": "https://ultralytics.com/images/bus.jpg",
+  "image_size": 640,
+  "confidence_threshold": 0.25,
+  "detected_objects": 5,
+  "wall_time_seconds": 13.6625
+}

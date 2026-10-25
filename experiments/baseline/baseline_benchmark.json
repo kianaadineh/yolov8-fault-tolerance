@@ -1,0 +1,18 @@
+{
+  "model": "YOLOv8s",
+  "weights": "yolov8s.pt",
+  "ultralytics_version": "8.4.189",
+  "torch_version": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "image": "/content/bus.jpg",
+  "image_size": 640,
+  "confidence_threshold": 0.25,
+  "warmup_runs": 3,
+  "benchmark_runs": 20,
+  "detected_objects": 5,
+  "inference_mean_ms": 16.19616190001807,
+  "inference_std_ms": 5.426214603223282,
+  "inference_median_ms": 13.601545500023349,
+  "wall_time_mean_ms": 23.822071749998486,
+  "wall_time_std_ms": 5.850176429352975
+}

@@ -1,6 +1,6 @@
 {
   "experiment": "yolov8s_coco2017_baseline",
-  "timestamp_utc": "2026-10-28T09:55:24.042876+00:00",
+  "timestamp_utc": "2026-10-28T10:48:42.612788+00:00",
   "model": "yolov8s.pt",
   "dataset": "COCO 2017 val",
   "num_images": 5000,

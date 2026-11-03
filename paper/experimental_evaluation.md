@@ -27,6 +27,36 @@ PyTorch 2.11.0+cu130, and Ultralytics 8.4.189.
 These measurements establish an initial fault-free reference
 for subsequent fault-injection experiments.
 
-**Limitation:** These values were obtained using Ultralytics
-validation with YOLO-format labels, not official COCOeval.
-Official COCO evaluation remains necessary.
+**Evaluation distinction:** The table above reports Ultralytics
+validation results using YOLO-format labels. A separate official
+COCOeval baseline has also been completed, as reported below.
+
+## 4.3 Official COCOeval Baseline
+
+The verified YOLOv8s weights were evaluated using pycocotools
+COCOeval on all 5,000 COCO 2017 validation images.
+
+| Metric | Value (%) |
+|---|---:|
+| AP@0.50:0.95 | 44.2048 |
+| AP@0.50 | 60.4912 |
+| AP@0.75 | 47.8362 |
+| AP small | 25.3802 |
+| AP medium | 49.0224 |
+| AP large | 60.2695 |
+
+The official evaluation used an input size of 640, batch size 1,
+confidence threshold 0.001, and NMS IoU threshold 0.7.
+COCOeval used maximum detections [1, 10, 100].
+
+The Ultralytics validation used batch size 16.
+These are separate evaluation pipelines and their results
+must not be treated as identical measurements.
+
+## 4.4 Evidence and Limitations
+
+- Ultralytics metrics: `results/baseline_validation/baseline_coco2017_metrics.json`
+- Official metrics: `results/official_cocoeval/yolov8s_official_cocoeval_metrics.json`
+- Both evaluations are fault-free baselines.
+- Neither evaluation measures accuracy under injected faults.
+- Dataset-wide fault-tolerance claims require separate experiments.

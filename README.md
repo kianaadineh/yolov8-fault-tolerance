@@ -41,6 +41,12 @@ Single-image NMS matching is not equivalent to COCO mAP.
 - [Research file index](docs/research_reports/Notebook_04_Closure_File_Index_v1.csv)
 - [Fault-injection results](results/fault_injection/)
 
+### Research documentation and integrity records
+
+- [Notebook 04 integrity audit](docs/research_reports/Notebook_04_Integrity_Audit_v1.json)
+- [COCOeval artifact integrity manifest](docs/research_reports/COCOeval_Artifact_Integrity_Manifest_v1.json)
+- [Research reproducibility guide](docs/research_reports/Reproducibility_Guide_v1.md)
+
 ## Repository organization
 
 - `notebooks/`: research notebooks 00–04.

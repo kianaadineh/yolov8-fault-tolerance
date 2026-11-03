@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "model": "YOLOv8s",
+  "total_parameters": 11166560,
+  "all_conv2d_layers": 64,
+  "all_conv2d_weights": 11146096,
+  "eligible_conv2d_layers": 63,
+  "eligible_conv2d_weights": 11146080,
+  "excluded_layer": {
+    "name": "model.22.dfl.conv",
+    "weight_shape": [
+      1,
+      16,
+      1,
+      1
+    ],
+    "weight_count": 16,
+    "reason": "Fixed DFL projection coefficients excluded by the experimental weight-fault scope"
+  },
+  "scope_note": "Eligible weights define the population of candidate weight-fault locations, not the number of locations actually sampled in an experiment.",
+  "limitations": [
+    "Activation faults are outside this weight-only scope",
+    "Exclusion does not imply physical immunity to faults",
+    "Conv2d biases and non-Conv2d parameters are not included"
+  ]
+}

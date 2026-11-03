@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "artifact": "INT4 extended combined layer analysis",
+  "artifact_version": "v1",
+  "model": {
+    "name": "YOLOv8s",
+    "total_parameters": 11166560,
+    "weights_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+  },
+  "experiment": {
+    "scenario_count": 96,
+    "selected_layers": 12,
+    "input_image": "ultralytics_bus.jpg",
+    "quantization": "symmetric per-tensor logical INT4",
+    "fault_type": "single weight-bit flip",
+    "nms_confidence_threshold": 0.25,
+    "nms_iou_threshold": 0.45,
+    "matching_iou_threshold": 0.5
+  },
+  "source_files": {
+    "combined_table": {
+      "relative_path": "code/results/fault_injection/int4_extended_combined_layer_analysis_v1.csv",
+      "sha256": "5dbb9f4934240113451fd2d63b446e6807f725a217e07775ff9bab5d8b9375d5"
+    },
+    "quantization_baselines": {
+      "relative_path": "code/results/fault_injection/int4_extended_fp32_vs_int4_baselines_v1.csv",
+      "sha256": "1f272b604ceec122060f640b1469d1a52e0384e1056ee9d964646f865f09587d"
+    },
+    "fault_sensitivity_summary": {
+      "relative_path": "code/results/fault_injection/int4_extended_sensitivity_summary_v1.json",
+      "sha256": "6e4425471ba22d82962c2504f033d8671724117ffd176231325e99b8a68c49b3"
+    },
+    "scenario_plan": {
+      "relative_path": "code/results/fault_injection/int4_extended_layer_sensitivity_plan_v2.json",
+      "sha256": "308b8940a4da3a867983cd0a28eee9cf0da6b72d6771b28a2363b4205cd0e1c3"
+    },
+    "model_profile": {
+      "relative_path": "code/results/model_profile_yolov8s_v1.json",
+      "sha256": "2716be18cbe50b7c4bb30c7ef3e20f9b15b2deaf9e163dcf4000598d06ef47d9"
+    }
+  },
+  "interpretation": {
+    "quantization_mae": "FP32 versus clean layerwise INT4",
+    "fault_mae": "Clean layerwise INT4 versus faulty layerwise INT4",
+    "caution": "The two MAE values use different baselines and must not be treated as interchangeable."
+  },
+  "limitations": [
+    "Single-image exploratory evaluation",
+    "Selected layers and balanced weight-category sampling",
+    "No ground-truth mAP in these scenarios",
+    "Logical INT4 rather than packed hardware INT4",
+    "No latency or energy measurement in this artifact"
+  ]
+}

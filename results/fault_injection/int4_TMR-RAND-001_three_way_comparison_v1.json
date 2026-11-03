@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "experiment": "three_way_clean_faulty_tmr_comparison",
+  "scenario": {
+    "scenario_id": "TMR-RAND-001",
+    "layer": "0.conv",
+    "weight_index": [
+      3,
+      1,
+      0,
+      1
+    ],
+    "bit": 2,
+    "q_clean": 0,
+    "q_faulty": 4,
+    "scale": 0.0695452019572258,
+    "fault_model": "single_bit_flip_in_one_TMR_replica"
+  },
+  "plan_file": "int4_selective_tmr_random_plan_v1.json",
+  "plan_sha256": "e24a5b98fe21737691bf5b62070d2b68f26145a804e30fcfe00bd7aefcd3e9da",
+  "baseline": {
+    "model": "YOLOv8s",
+    "quantization": "target_layer_only_logical_signed_INT4",
+    "target_layer": "0.conv",
+    "other_layers": "FP32",
+    "image": "ultralytics_bus.jpg",
+    "input_size": [
+      640,
+      640
+    ],
+    "nms_confidence_threshold": 0.25,
+    "nms_iou_threshold": 0.45
+  },
+  "protection": {
+    "method": "weight_level_TMR",
+    "replicas": 3,
+    "faulty_replicas": 1,
+    "voting": "bitwise_majority",
+    "corrected_q": 0,
+    "timing": "before_model_forward"
+  },
+  "results": {
+    "clean_detection_count": 5,
+    "faulty_detection_count": 5,
+    "protected_detection_count": 5,
+    "faulty_raw_mae": 0.2637537717819214,
+    "faulty_raw_max_error": 213.12245178222656,
+    "protected_raw_mae": 0.0,
+    "protected_raw_max_error": 0.0,
+    "matched_count": 5,
+    "unmatched_clean": 0,
+    "unmatched_faulty": 0,
+    "mean_matched_iou": 0.978072599366244,
+    "max_abs_confidence_change": 0.17483270168304443,
+    "max_coordinate_change_px": 2.9048614501953125,
+    "protected_exact_raw_recovery": true,
+    "protected_exact_nms_recovery": true
+  },
+  "matches": [
+    {
+      "clean_index": 1,
+      "faulty_index": 1,
+      "class_id": 0,
+      "iou": 0.9919891585529138,
+      "confidence_change": 0.0030006766319274902,
+      "max_coordinate_change_px": 0.531829833984375
+    },
+    {
+      "clean_index": 0,
+      "faulty_index": 0,
+      "class_id": 5,
+      "iou": 0.9849701562184412,
+      "confidence_change": -0.014110922813415527,
+      "max_coordinate_change_px": 2.9048614501953125
+    },
+    {
+      "clean_index": 4,
+      "faulty_index": 4,
+      "class_id": 0,
+      "iou": 0.9745023765715425,
+      "confidence_change": -0.17483270168304443,
+      "max_coordinate_change_px": 1.37530517578125
+    },
+    {
+      "clean_index": 2,
+      "faulty_index": 2,
+      "class_id": 0,
+      "iou": 0.9721953600102342,
+      "confidence_change": -0.001790761947631836,
+      "max_coordinate_change_px": 2.0751953125
+    },
+    {
+      "clean_index": 3,
+      "faulty_index": 3,
+      "class_id": 0,
+      "iou": 0.9667059454780881,
+      "confidence_change": 0.007593512535095215,
+      "max_coordinate_change_px": 1.681304931640625
+    }
+  ],
+  "limitations": [
+    "Single image and single unprotected fault scenario.",
+    "TMR correction is applied before model inference.",
+    "No ground-truth accuracy or COCO mAP measurement.",
+    "No measured runtime or hardware memory overhead.",
+    "The 12-scenario TMR test does not include 12 independent unprotected model inferences."
+  ]
+}

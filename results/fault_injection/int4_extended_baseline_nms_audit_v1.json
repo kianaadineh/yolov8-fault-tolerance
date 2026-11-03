@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "source_summary": "int4_extended_sensitivity_summary_v1.json",
+  "source_summary_sha256": "6e4425471ba22d82962c2504f033d8671724117ffd176231325e99b8a68c49b3",
+  "layer_count": 12,
+  "reference_count": 5,
+  "reference_definition": "Modal clean NMS count across selected layer baselines; not an independently verified FP32 reference",
+  "baseline_count_distribution": {
+    "1": 1,
+    "5": 11
+  },
+  "flagged_layers": [
+    {
+      "layer": "9.cv2.conv",
+      "clean_nms_count": 1,
+      "reference_count": 5,
+      "difference": -4
+    }
+  ],
+  "interpretation": "Different clean detection counts indicate that layer-specific quantized baselines may not be directly comparable. Equal counts do not prove equal boxes, classes, or confidence scores."
+}

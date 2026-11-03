@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "experiment": "FP32_vs_layerwise_INT4_baseline",
+  "layer": "9.cv2.conv",
+  "source_plan": "int4_extended_layer_sensitivity_plan_v2.json",
+  "source_plan_sha256": "308b8940a4da3a867983cd0a28eee9cf0da6b72d6771b28a2363b4205cd0e1c3",
+  "input": "ultralytics_bus.jpg",
+  "quantization": {
+    "method": "symmetric_per_tensor_logical_INT4",
+    "target_layer_only": true,
+    "scale": 0.0260009765625,
+    "clean_range": [
+      -7,
+      7
+    ]
+  },
+  "raw_prediction": {
+    "mae": 0.5812436938285828,
+    "max_absolute_difference": 322.35577392578125
+  },
+  "nms_comparison": {
+    "fp32_count": 5,
+    "int4_count": 1,
+    "matched_count": 1,
+    "unmatched_fp32": 4,
+    "unmatched_int4": 0,
+    "mean_matched_iou": 0.8751627802848816,
+    "matches": [
+      {
+        "fp32_index": 2,
+        "int4_index": 0,
+        "class_id": 0,
+        "iou": 0.8751627802848816,
+        "fp32_confidence": 0.8846928477287292,
+        "int4_confidence": 0.6496131420135498
+      }
+    ]
+  },
+  "limitations": [
+    "Single image, no ground-truth evaluation",
+    "Matching is not COCO mAP",
+    "Logical INT4, not packed hardware INT4",
+    "No fault injected in this experiment"
+  ]
+}

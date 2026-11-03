@@ -20,6 +20,9 @@ venv/
 artifacts/
 datasets/
 results/
+!results/
+results/*
+!results/fault_injection/
 runs/
 wandb/
 

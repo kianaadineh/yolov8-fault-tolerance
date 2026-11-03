@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "experiment": "extended_balanced_INT4_sensitivity",
+  "scenario": {
+    "scenario_id": "EXT2-039",
+    "layer": "9.cv1.conv",
+    "weight_index": [
+      226,
+      467,
+      0,
+      0
+    ],
+    "bit": 3,
+    "weight_category": "zero",
+    "q_clean": 0,
+    "q_faulty": -8,
+    "scale": 0.030133928571428572,
+    "delta_dequant": -0.24107142857142858
+  },
+  "source_plan": "int4_extended_layer_sensitivity_plan_v2.json",
+  "source_plan_sha256": "308b8940a4da3a867983cd0a28eee9cf0da6b72d6771b28a2363b4205cd0e1c3",
+  "input": "ultralytics_bus.jpg",
+  "baseline": "Only target Conv2d quantized to logical INT4",
+  "fault": "One weight-bit flip; all other weights unchanged",
+  "nms_settings": {
+    "confidence_threshold": 0.25,
+    "iou_threshold": 0.45,
+    "num_classes": 80,
+    "max_detections": 300
+  },
+  "raw_prediction": {
+    "shape": [
+      1,
+      84,
+      8400
+    ],
+    "mae": 0.0025399320293217897,
+    "max_absolute_difference": 2.445037841796875
+  },
+  "detection_comparison": {
+    "clean_count": 5,
+    "faulty_count": 5,
+    "matched_count": 5,
+    "unmatched_clean_count": 0,
+    "unmatched_faulty_count": 0,
+    "mean_matched_iou": 0.9999040603637696,
+    "matches": [
+      {
+        "clean_index": 2,
+        "faulty_index": 2,
+        "class_id": 0,
+        "iou": 0.999964714050293,
+        "clean_confidence": 0.8750353455543518,
+        "faulty_confidence": 0.8751951456069946,
+        "max_coordinate_difference_px": 0.004638671875
+      },
+      {
+        "clean_index": 4,
+        "faulty_index": 4,
+        "class_id": 0,
+        "iou": 0.9999480247497559,
+        "clean_confidence": 0.5776681303977966,
+        "faulty_confidence": 0.5780026316642761,
+        "max_coordinate_difference_px": 0.00201416015625
+      },
+      {
+        "clean_index": 1,
+        "faulty_index": 1,
+        "class_id": 0,
+        "iou": 0.9999135136604309,
+        "clean_confidence": 0.908684492111206,
+        "faulty_confidence": 0.9087210893630981,
+        "max_coordinate_difference_px": 0.0067138671875
+      },
+      {
+        "clean_index": 0,
+        "faulty_index": 0,
+        "class_id": 5,
+        "iou": 0.9998990893363953,
+        "clean_confidence": 0.9170441031455994,
+        "faulty_confidence": 0.917233943939209,
+        "max_coordinate_difference_px": 0.012786865234375
+      },
+      {
+        "clean_index": 3,
+        "faulty_index": 3,
+        "class_id": 0,
+        "iou": 0.9997949600219727,
+        "clean_confidence": 0.8398486375808716,
+        "faulty_confidence": 0.8399390578269958,
+        "max_coordinate_difference_px": 0.01446533203125
+      }
+    ]
+  },
+  "limitations": [
+    "Single image, no ground-truth evaluation",
+    "Matching is not COCO mAP",
+    "Logical INT4, not packed hardware INT4",
+    "Single injected weight fault"
+  ]
+}

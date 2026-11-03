@@ -1,0 +1,198 @@
+{
+  "experiment": "independent_selective_tmr_validation",
+  "model": "YOLOv8s",
+  "representation": "logical_signed_INT4",
+  "seed": 20261103,
+  "scenario_count": 12,
+  "protected_layer": "0.conv",
+  "selection": "uniform_without_replacement_over_weight_bit_pairs",
+  "fault_assumption": "one_faulty_replica_per_scenario",
+  "scenarios": [
+    {
+      "scenario_id": "TMR-RAND-001",
+      "layer": "0.conv",
+      "weight_index": [
+        3,
+        1,
+        0,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-002",
+      "layer": "0.conv",
+      "weight_index": [
+        5,
+        1,
+        1,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-003",
+      "layer": "0.conv",
+      "weight_index": [
+        6,
+        0,
+        1,
+        1
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-004",
+      "layer": "0.conv",
+      "weight_index": [
+        6,
+        0,
+        1,
+        1
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-005",
+      "layer": "0.conv",
+      "weight_index": [
+        7,
+        1,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-006",
+      "layer": "0.conv",
+      "weight_index": [
+        23,
+        1,
+        1,
+        1
+      ],
+      "bit": 2,
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-007",
+      "layer": "0.conv",
+      "weight_index": [
+        23,
+        1,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 2,
+      "q_faulty": 3,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-008",
+      "layer": "0.conv",
+      "weight_index": [
+        30,
+        2,
+        2,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-009",
+      "layer": "0.conv",
+      "weight_index": [
+        5,
+        0,
+        0,
+        1
+      ],
+      "bit": 3,
+      "q_clean": 2,
+      "q_faulty": -6,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-010",
+      "layer": "0.conv",
+      "weight_index": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-011",
+      "layer": "0.conv",
+      "weight_index": [
+        20,
+        0,
+        0,
+        1
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    },
+    {
+      "scenario_id": "TMR-RAND-012",
+      "layer": "0.conv",
+      "weight_index": [
+        9,
+        1,
+        2,
+        2
+      ],
+      "bit": 0,
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.0695452019572258,
+      "fault_model": "single_bit_flip_in_one_TMR_replica"
+    }
+  ],
+  "limitations": [
+    "Only the first convolutional layer is sampled.",
+    "Only single-bit faults in one TMR replica are considered.",
+    "This plan does not establish a whole-network fault rate.",
+    "Logical INT4 storage is not packed hardware INT4."
+  ]
+}

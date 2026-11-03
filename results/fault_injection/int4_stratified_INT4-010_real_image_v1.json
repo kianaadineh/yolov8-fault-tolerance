@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "scenario": {
+    "scenario_id": "INT4-010",
+    "position": "EARLY",
+    "layer": "0.conv",
+    "category": "negative",
+    "weight_index": [
+      0,
+      0,
+      0,
+      2
+    ],
+    "bit": 1,
+    "q_clean": -2,
+    "q_faulty": -4,
+    "scale": 0.0695452019572258,
+    "delta_dequant": -0.1390904039144516
+  },
+  "model": "YOLOv8s",
+  "model_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "image": {
+    "name": "ultralytics_bus.jpg",
+    "sha256": "c02019c4979c191eb739ddd944445ef408dad5679acab6fd520ef9d434bfbc63",
+    "input_shape": [
+      1,
+      3,
+      640,
+      640
+    ]
+  },
+  "experiment": {
+    "quantization": "symmetric per-tensor simulated INT4",
+    "quantized_scope": "target layer only",
+    "comparison": "same quantized clean baseline vs single-bit faulty",
+    "inference_device": "CPU",
+    "nms_confidence_threshold": 0.25,
+    "nms_iou_threshold": 0.45,
+    "matching": "class-aware greedy one-to-one, IoU >= 0.5",
+    "coordinate_system": "640x640 letterboxed input"
+  },
+  "clean_detections": [
+    [
+      88.19123840332031,
+      135.88890075683594,
+      553.1150512695312,
+      440.07421875,
+      0.9259026646614075,
+      5.0
+    ],
+    [
+      108.31363677978516,
+      236.525390625,
+      224.57382202148438,
+      535.61767578125,
+      0.9075223803520203,
+      0.0
+    ],
+    [
+      475.43426513671875,
+      232.4550323486328,
+      559.7015991210938,
+      517.8026733398438,
+      0.8793034553527832,
+      0.0
+    ],
+    [
+      210.46466064453125,
+      240.48583984375,
+      285.4181823730469,
+      510.22186279296875,
+      0.8377501368522644,
+      0.0
+    ],
+    [
+      80.32696533203125,
+      328.1748046875,
+      125.65074157714844,
+      514.196533203125,
+      0.6654660701751709,
+      0.0
+    ]
+  ],
+  "faulty_detections": [
+    [
+      87.90118408203125,
+      135.8387451171875,
+      553.1470336914062,
+      440.136962890625,
+      0.9254818558692932,
+      5.0
+    ],
+    [
+      108.20590209960938,
+      236.51873779296875,
+      224.59210205078125,
+      535.6539306640625,
+      0.9080411195755005,
+      0.0
+    ],
+    [
+      475.4679260253906,
+      232.5164031982422,
+      559.7086181640625,
+      517.4522094726562,
+      0.8785626888275146,
+      0.0
+    ],
+    [
+      210.56768798828125,
+      240.49253845214844,
+      285.41888427734375,
+      510.1566162109375,
+      0.8373469710350037,
+      0.0
+    ],
+    [
+      80.00250244140625,
+      327.99798583984375,
+      125.67471313476562,
+      514.3429565429688,
+      0.6650304794311523,
+      0.0
+    ]
+  ],
+  "matches": [
+    {
+      "clean_index": 0,
+      "faulty_index": 0,
+      "class_id": 5,
+      "iou": 0.9989369511604309,
+      "confidence_change": -0.0004208087921142578,
+      "max_coordinate_change_px": 0.2900543212890625
+    },
+    {
+      "clean_index": 1,
+      "faulty_index": 1,
+      "class_id": 0,
+      "iou": 0.9987738728523254,
+      "confidence_change": 0.0005187392234802246,
+      "max_coordinate_change_px": 0.10773468017578125
+    },
+    {
+      "clean_index": 3,
+      "faulty_index": 3,
+      "class_id": 0,
+      "iou": 0.9983496069908142,
+      "confidence_change": -0.0004031658172607422,
+      "max_coordinate_change_px": 0.10302734375
+    },
+    {
+      "clean_index": 2,
+      "faulty_index": 2,
+      "class_id": 0,
+      "iou": 0.9980747699737549,
+      "confidence_change": -0.0007407665252685547,
+      "max_coordinate_change_px": 0.3504638671875
+    },
+    {
+      "clean_index": 4,
+      "faulty_index": 4,
+      "class_id": 0,
+      "iou": 0.9906495213508606,
+      "confidence_change": -0.0004355907440185547,
+      "max_coordinate_change_px": 0.324462890625
+    }
+  ],
+  "summary": {
+    "clean_detection_count": 5,
+    "faulty_detection_count": 5,
+    "matched_count": 5,
+    "unmatched_clean": 0,
+    "unmatched_faulty": 0,
+    "mean_matched_iou": 0.9969569444656372,
+    "min_matched_iou": 0.9906495213508606,
+    "max_abs_confidence_change": 0.0007407665252685547,
+    "max_coordinate_change_px": 0.3504638671875,
+    "raw_mean_absolute_difference": 0.017291447147727013,
+    "raw_max_absolute_difference": 47.81158447265625,
+    "raw_elements_difference_gt_0_01": 31427
+  },
+  "limitations": [
+    "Single fault and single real image",
+    "No COCO validation or mAP measurement",
+    "Not native INT4 hardware execution",
+    "IoU compares predictions, not ground truth",
+    "CPU timings are not benchmark results"
+  ]
+}

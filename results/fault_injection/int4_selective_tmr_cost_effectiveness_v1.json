@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "title": "Selective INT4 TMR: theoretical memory cost and experimental evidence",
+  "model": "YOLOv8s",
+  "baseline": {
+    "representation": "logical_signed_INT4",
+    "candidate_convolution_layers": 63,
+    "candidate_weights": 11146080,
+    "baseline_weight_storage_bytes": 5573040.0
+  },
+  "protection": {
+    "method": "triple_modular_redundancy",
+    "replicas": 3,
+    "assumption": "at_most_one_faulty_replica_per_protected_weight",
+    "correction_stage": "before_model_forward"
+  },
+  "memory_policies": {
+    "single_selected_weight": {
+      "protected_weights": 1,
+      "extra_bytes": 1.0,
+      "extra_memory_percent": 1.7943528128274695e-05
+    },
+    "entire_first_convolution": {
+      "protected_weights": 864,
+      "extra_bytes": 864.0,
+      "extra_memory_percent": 0.015503208302829335
+    },
+    "all_candidate_convolutions": {
+      "protected_weights": 11146080,
+      "extra_bytes": 11146080.0,
+      "extra_memory_percent": 200.0
+    }
+  },
+  "experimental_evidence": {
+    "scenario_count": 12,
+    "sampling": "fixed_seed_random_weight_bit_pairs_in_0.conv",
+    "unprotected_mean_raw_mae": 0.12283646035939455,
+    "unprotected_median_raw_mae": 0.0982171781361103,
+    "unprotected_max_raw_mae": 0.303070068359375,
+    "unprotected_scenarios_with_unmatched_detections": 2,
+    "corrected_replica_faults": 12,
+    "combined_protected_forward_exact_recovery": true,
+    "independent_protected_forward_count": 0
+  },
+  "interpretation": "Protecting the complete first convolution requires 864 additional logical INT4 storage bytes, corresponding to approximately 0.0155 percent of the candidate-weight INT4 baseline. This policy covers the locations of all 12 independently sampled first-layer fault scenarios. Correction was verified under the single-faulty-replica assumption; whole-network reliability was not measured.",
+  "limitations": [
+    "The memory analysis assumes ideal packed logical INT4 storage.",
+    "Actual PyTorch, hardware, metadata, and voting overheads are excluded.",
+    "All 12 sampled scenarios target the first convolution.",
+    "Only one real image was used.",
+    "No ground-truth mAP improvement was measured.",
+    "No runtime or energy overhead was measured.",
+    "One combined protected forward was performed, not 12 independent protected forwards.",
+    "The 12 scenarios are insufficient for general reliability estimates."
+  ],
+  "source_file": "int4_tmr_random12_summary_v1.json",
+  "source_sha256": "a6f981629b03f0ed76b9d6253df65b2d0cfcf7a13a828c7095f9601581a49b05"
+}

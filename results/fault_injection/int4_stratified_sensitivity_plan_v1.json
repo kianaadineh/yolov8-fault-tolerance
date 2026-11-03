@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-11-03T10:53:34.102896+00:00",
+  "model": "YOLOv8s",
+  "experiment": "INT4 stratified weight-bit sensitivity",
+  "quantization": {
+    "type": "simulated symmetric per-tensor INT4",
+    "clean_range": [
+      -7,
+      7
+    ],
+    "faulty_range": [
+      -8,
+      7
+    ],
+    "scale_rule": "FP32 tensor max(abs(weight)) / 7",
+    "bit_representation": "4-bit two's complement"
+  },
+  "design": {
+    "layers": 3,
+    "weight_categories": [
+      "zero",
+      "positive",
+      "negative"
+    ],
+    "selected_weight_positions": 9,
+    "bit_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "total_scenarios": 36,
+    "selection": "first available weight in each category",
+    "status": "planned_not_executed"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "INT4-001",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.0695452019572258
+    },
+    {
+      "scenario_id": "INT4-002",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.1390904039144516
+    },
+    {
+      "scenario_id": "INT4-003",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.2781808078289032
+    },
+    {
+      "scenario_id": "INT4-004",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0695452019572258,
+      "delta_dequant": -0.5563616156578064
+    },
+    {
+      "scenario_id": "INT4-005",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0695452019572258,
+      "delta_dequant": -0.0695452019572258
+    },
+    {
+      "scenario_id": "INT4-006",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.1390904039144516
+    },
+    {
+      "scenario_id": "INT4-007",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.2781808078289032
+    },
+    {
+      "scenario_id": "INT4-008",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0695452019572258,
+      "delta_dequant": -0.5563616156578064
+    },
+    {
+      "scenario_id": "INT4-009",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "bit": 0,
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.0695452019572258
+    },
+    {
+      "scenario_id": "INT4-010",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "bit": 1,
+      "q_clean": -2,
+      "q_faulty": -4,
+      "scale": 0.0695452019572258,
+      "delta_dequant": -0.1390904039144516
+    },
+    {
+      "scenario_id": "INT4-011",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "bit": 2,
+      "q_clean": -2,
+      "q_faulty": -6,
+      "scale": 0.0695452019572258,
+      "delta_dequant": -0.2781808078289032
+    },
+    {
+      "scenario_id": "INT4-012",
+      "position": "EARLY",
+      "layer": "0.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "bit": 3,
+      "q_clean": -2,
+      "q_faulty": 6,
+      "scale": 0.0695452019572258,
+      "delta_dequant": 0.5563616156578064
+    },
+    {
+      "scenario_id": "INT4-013",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.0337960384786129
+    },
+    {
+      "scenario_id": "INT4-014",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.0675920769572258
+    },
+    {
+      "scenario_id": "INT4-015",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.1351841539144516
+    },
+    {
+      "scenario_id": "INT4-016",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.2703683078289032
+    },
+    {
+      "scenario_id": "INT4-017",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        18,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.0337960384786129
+    },
+    {
+      "scenario_id": "INT4-018",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        18,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.0675920769572258
+    },
+    {
+      "scenario_id": "INT4-019",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        18,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.1351841539144516
+    },
+    {
+      "scenario_id": "INT4-020",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "positive",
+      "weight_index": [
+        0,
+        18,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.2703683078289032
+    },
+    {
+      "scenario_id": "INT4-021",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        13,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.0337960384786129
+    },
+    {
+      "scenario_id": "INT4-022",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        13,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.0675920769572258
+    },
+    {
+      "scenario_id": "INT4-023",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        13,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0337960384786129,
+      "delta_dequant": -0.1351841539144516
+    },
+    {
+      "scenario_id": "INT4-024",
+      "position": "MIDDLE",
+      "layer": "15.cv1.conv",
+      "category": "negative",
+      "weight_index": [
+        0,
+        13,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0337960384786129,
+      "delta_dequant": 0.2703683078289032
+    },
+    {
+      "scenario_id": "INT4-025",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.0398297980427742
+    },
+    {
+      "scenario_id": "INT4-026",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.0796595960855484
+    },
+    {
+      "scenario_id": "INT4-027",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.1593191921710968
+    },
+    {
+      "scenario_id": "INT4-028",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "zero",
+      "weight_index": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0398297980427742,
+      "delta_dequant": -0.3186383843421936
+    },
+    {
+      "scenario_id": "INT4-029",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "positive",
+      "weight_index": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0398297980427742,
+      "delta_dequant": -0.0398297980427742
+    },
+    {
+      "scenario_id": "INT4-030",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "positive",
+      "weight_index": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.0796595960855484
+    },
+    {
+      "scenario_id": "INT4-031",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "positive",
+      "weight_index": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.1593191921710968
+    },
+    {
+      "scenario_id": "INT4-032",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "positive",
+      "weight_index": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0398297980427742,
+      "delta_dequant": -0.3186383843421936
+    },
+    {
+      "scenario_id": "INT4-033",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "negative",
+      "weight_index": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -3,
+      "q_faulty": -4,
+      "scale": 0.0398297980427742,
+      "delta_dequant": -0.0398297980427742
+    },
+    {
+      "scenario_id": "INT4-034",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "negative",
+      "weight_index": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": -3,
+      "q_faulty": -1,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.0796595960855484
+    },
+    {
+      "scenario_id": "INT4-035",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "negative",
+      "weight_index": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": -3,
+      "q_faulty": -7,
+      "scale": 0.0398297980427742,
+      "delta_dequant": -0.1593191921710968
+    },
+    {
+      "scenario_id": "INT4-036",
+      "position": "LATE",
+      "layer": "22.cv3.2.2",
+      "category": "negative",
+      "weight_index": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -3,
+      "q_faulty": 5,
+      "scale": 0.0398297980427742,
+      "delta_dequant": 0.3186383843421936
+    }
+  ],
+  "limitations": [
+    "Exploratory deterministic selection, not random sampling",
+    "One representative weight per category per layer",
+    "Equal category allocation does not reflect actual weight frequencies",
+    "No inference or fault-propagation results yet",
+    "INT4 weights simulated in FP32, not native INT4 execution"
+  ]
+}

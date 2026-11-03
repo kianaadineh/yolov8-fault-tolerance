@@ -1,0 +1,48 @@
+{
+  "experiment": "independent_int4_tmr_comparison",
+  "scenario_count": 12,
+  "seed": 20261103,
+  "layer": "0.conv",
+  "unprotected": {
+    "mean_raw_mae": 0.12283646035939455,
+    "median_raw_mae": 0.0982171781361103,
+    "max_raw_mae": 0.303070068359375,
+    "scenarios_with_unmatched_detections": 2,
+    "scenario_ids_with_unmatched_detections": [
+      "TMR-RAND-008",
+      "TMR-RAND-009"
+    ],
+    "total_unmatched_clean": 0,
+    "total_unmatched_faulty": 3
+  },
+  "tmr": {
+    "replica_faults_corrected": 12,
+    "replica_faults_tested": 12,
+    "single_combined_protected_forward_exact_recovery": true,
+    "independent_protected_forward_count": 0,
+    "protection_scope": "first_convolution_weights"
+  },
+  "limitations": [
+    "Only one real image was evaluated.",
+    "All sampled faults are in the first convolution.",
+    "TMR correction assumes one faulty replica per weight.",
+    "The protected model was evaluated once after correcting all 12 replica faults.",
+    "No COCO mAP or hardware overhead measurement.",
+    "These 12 scenarios do not estimate whole-network fault tolerance."
+  ],
+  "source_sha256": {
+    "int4_selective_tmr_random_plan_v1.json": "e24a5b98fe21737691bf5b62070d2b68f26145a804e30fcfe00bd7aefcd3e9da",
+    "int4_TMR-RAND-001_three_way_comparison_v1.json": "73f3e1d77f94eec0323b97e23c8c56e8010c219ef0b6fad8fe6bc755cab3fd20",
+    "int4_TMR-RAND-002_unprotected_v1.json": "53c0b18c5dfc11aced091bc1fb988bc06f52a99b5bb883ef5a4fd7adf87cc89d",
+    "int4_TMR-RAND-003_unprotected_v1.json": "c5c53151d316b8eedffd4a9a49666445c5f13bc63094ea25511a3d503b611352",
+    "int4_TMR-RAND-004_unprotected_v1.json": "22db951ca6a4dd69b6e1d7250dc9e8749b288c83dfe2ef2679aacba962265396",
+    "int4_TMR-RAND-005_unprotected_v1.json": "b1db1b8331a341e8833f881af3fdd506fbe69e1276a7d4771d5ab2b8294976d1",
+    "int4_TMR-RAND-006_unprotected_v1.json": "c430973ae688703143a81d4eeb4730701a5781b945d6435529c037969b1d21f5",
+    "int4_TMR-RAND-007_unprotected_v1.json": "0e69c470b3ec0a9e686ae334a3622e0d6fa193b5a6c8706c7f598165cc27ef44",
+    "int4_TMR-RAND-008_unprotected_v1.json": "e8345b91cd8864e40adc9887447b7d7c5d969ad4cc5fa2f829101dd390c252e2",
+    "int4_TMR-RAND-009_unprotected_v1.json": "9881dd7e72b088df9483d896e494c970628e8f4986c66f99aa5bae08fc5aa247",
+    "int4_TMR-RAND-010_unprotected_v1.json": "20bf4c7820dc0243822cd5c42bc095a704a3afabf1e14184436c5f274ec8abeb",
+    "int4_TMR-RAND-011_unprotected_v1.json": "ecca0067be3e669c4326e6ec0da1052d3481e4631977fc57f06b7ce4b72583e7",
+    "int4_TMR-RAND-012_unprotected_v1.json": "c5388970c14e457fbdea8c941fb536b8b4d891d02d63da109dada286c5a2217b"
+  }
+}

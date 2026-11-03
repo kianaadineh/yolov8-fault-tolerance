@@ -1,0 +1,247 @@
+{
+  "title": "YOLOv8s INT4 Targeted Fault Sensitivity",
+  "created_utc": "2026-11-03T11:14:51.511086+00:00",
+  "scenario_count": 36,
+  "layer_count": 3,
+  "image_count": 1,
+  "analysis_type": "targeted_descriptive",
+  "plan": {
+    "filename": "int4_stratified_sensitivity_plan_v1.json",
+    "size_bytes": 13417,
+    "sha256": "e031f1fed76acfc4faa70c6256fa5635cc7fdeef502d89f7dc9b0a7320695d0a"
+  },
+  "summary_csv": {
+    "filename": "int4_stratified_sensitivity_summary_v1.csv",
+    "size_bytes": 6609,
+    "sha256": "a7451bf145dbc5e75e11974bac293a79ed3ca5ce042044397752ebd4f0e7fac6"
+  },
+  "sensitivity_figure": {
+    "filename": "int4_stratified_sensitivity_figure_v1.png",
+    "size_bytes": 245888,
+    "sha256": "12b4c33e1d2da23293fdaa3576040ff6c6b02847e5c0ae3ac13dd4294097dc63"
+  },
+  "scenario_results": [
+    {
+      "filename": "int4_stratified_INT4-001_real_image_v1.json",
+      "size_bytes": 4463,
+      "sha256": "3b80d6e01b52682bb686da64ff92f0a48a0a11e8d6e12569fce5481de3ddc5e1",
+      "scenario_id": "INT4-001"
+    },
+    {
+      "filename": "int4_stratified_INT4-002_real_image_v1.json",
+      "size_bytes": 4468,
+      "sha256": "e97d956485aac22741af31682451e8cc4652f68cabd57bf810f1e04ed9fa82fa",
+      "scenario_id": "INT4-002"
+    },
+    {
+      "filename": "int4_stratified_INT4-003_real_image_v1.json",
+      "size_bytes": 4463,
+      "sha256": "1db955bb0774b6a12e7422ea3ccf56acbb81f23106b71aee9a6c2c42c8eb91de",
+      "scenario_id": "INT4-003"
+    },
+    {
+      "filename": "int4_stratified_INT4-004_real_image_v1.json",
+      "size_bytes": 4462,
+      "sha256": "01b1f54d194602c0692cb77be34526ab3639ffb2d10e518dfba8cdca6dcd53f0",
+      "scenario_id": "INT4-004"
+    },
+    {
+      "filename": "int4_stratified_INT4-005_real_image_v1.json",
+      "size_bytes": 4459,
+      "sha256": "04ff21a12745d18edcc3dada4241eda7a3e73c97810e074346b986bafa446a51",
+      "scenario_id": "INT4-005"
+    },
+    {
+      "filename": "int4_stratified_INT4-006_real_image_v1.json",
+      "size_bytes": 4468,
+      "sha256": "98a5496d1fbdcaa131f7900a4f4b671346ae62b087ac6423c226df53007c556d",
+      "scenario_id": "INT4-006"
+    },
+    {
+      "filename": "int4_stratified_INT4-007_real_image_v1.json",
+      "size_bytes": 4463,
+      "sha256": "cc03cd797483c24bb12d1558a45505cb30f81e5f46671a27c5d112b3a23f1726",
+      "scenario_id": "INT4-007"
+    },
+    {
+      "filename": "int4_stratified_INT4-008_real_image_v1.json",
+      "size_bytes": 4467,
+      "sha256": "e04d5e523e063f9cb1be65d2ae12f3f12505ce9be991924169f87638910e5606",
+      "scenario_id": "INT4-008"
+    },
+    {
+      "filename": "int4_stratified_INT4-009_real_image_v1.json",
+      "size_bytes": 4472,
+      "sha256": "c7557ea088bfc3d409193ed8672ba33abe458b36c57844cd5dbea69c763858e8",
+      "scenario_id": "INT4-009"
+    },
+    {
+      "filename": "int4_stratified_INT4-010_real_image_v1.json",
+      "size_bytes": 4478,
+      "sha256": "743aabc36299d90208be00f0e6cca698502ad676c3db0eb4d242f7e1a6535b35",
+      "scenario_id": "INT4-010"
+    },
+    {
+      "filename": "int4_stratified_INT4-011_real_image_v1.json",
+      "size_bytes": 4472,
+      "sha256": "fa6d7962066c881c3926bd587e7c9e145f5d91ff5484c1b941ddc740a61e9554",
+      "scenario_id": "INT4-011"
+    },
+    {
+      "filename": "int4_stratified_INT4-012_real_image_v1.json",
+      "size_bytes": 4620,
+      "sha256": "369102d355efa4593daf0f0888d50862af3c013cc5a6c3f6e6319f9101ad5faf",
+      "scenario_id": "INT4-012"
+    },
+    {
+      "filename": "int4_stratified_INT4-013_real_image_v1.json",
+      "size_bytes": 4487,
+      "sha256": "d88fb75126812a0fdb8defce2473d6df2152f0f30071cd8aeafbbc46171e5bb3",
+      "scenario_id": "INT4-013"
+    },
+    {
+      "filename": "int4_stratified_INT4-014_real_image_v1.json",
+      "size_bytes": 4478,
+      "sha256": "254b2017d053679ed8b411bd202226d8757da2063ec003d0e76cc737a9fad855",
+      "scenario_id": "INT4-014"
+    },
+    {
+      "filename": "int4_stratified_INT4-015_real_image_v1.json",
+      "size_bytes": 4458,
+      "sha256": "5c894457f0083fc0d72a3aa87126532a7d4860b66ecf5f28e2a60c41800bf5f0",
+      "scenario_id": "INT4-015"
+    },
+    {
+      "filename": "int4_stratified_INT4-016_real_image_v1.json",
+      "size_bytes": 4483,
+      "sha256": "919e4529bdad325c214d4363d3f5897174695d5e8ae57d8b4b30b978665cf866",
+      "scenario_id": "INT4-016"
+    },
+    {
+      "filename": "int4_stratified_INT4-017_real_image_v1.json",
+      "size_bytes": 4488,
+      "sha256": "56cb00ae4ae5f9bf12e1bb9ee318a849986f94eba73a608bd0d67120c07d6997",
+      "scenario_id": "INT4-017"
+    },
+    {
+      "filename": "int4_stratified_INT4-018_real_image_v1.json",
+      "size_bytes": 4480,
+      "sha256": "8786dc6b66054dbb75d2d9a8e99bb88f16586942059e0e0235399ea134a01726",
+      "scenario_id": "INT4-018"
+    },
+    {
+      "filename": "int4_stratified_INT4-019_real_image_v1.json",
+      "size_bytes": 4494,
+      "sha256": "11d0547fa986e77f71ae9426c6d49e5842a2ec3043e7d00b0c0dbb6dafea8900",
+      "scenario_id": "INT4-019"
+    },
+    {
+      "filename": "int4_stratified_INT4-020_real_image_v1.json",
+      "size_bytes": 4488,
+      "sha256": "f2affc13dcc20435a75b302092e0d0e59ec2dc5f37cd1d88ed0096e28175059e",
+      "scenario_id": "INT4-020"
+    },
+    {
+      "filename": "int4_stratified_INT4-021_real_image_v1.json",
+      "size_bytes": 4504,
+      "sha256": "a5ba1a99d8d3825988b1c92ac8b67f434914f5da8fd9cee89d707fa9abd9feda",
+      "scenario_id": "INT4-021"
+    },
+    {
+      "filename": "int4_stratified_INT4-022_real_image_v1.json",
+      "size_bytes": 4506,
+      "sha256": "f02c5b8b3e408bd01d9adfb225941f0cabeaacdbcf4134616db65f5b014ca13d",
+      "scenario_id": "INT4-022"
+    },
+    {
+      "filename": "int4_stratified_INT4-023_real_image_v1.json",
+      "size_bytes": 4484,
+      "sha256": "443a53118eaa349fb29fa887153513eb4cacfe05117250339dc53244cd81c1c4",
+      "scenario_id": "INT4-023"
+    },
+    {
+      "filename": "int4_stratified_INT4-024_real_image_v1.json",
+      "size_bytes": 4488,
+      "sha256": "1d43e43607f7c42d24ffc40c1b4f01b24fa2e94b0c2b772e2f4e2b6401ee052c",
+      "scenario_id": "INT4-024"
+    },
+    {
+      "filename": "int4_stratified_INT4-025_real_image_v1.json",
+      "size_bytes": 4248,
+      "sha256": "7c125cad9b18cda54b7f4d556b86c66d1c46e810de83350bb4b4c82fff9a45d4",
+      "scenario_id": "INT4-025"
+    },
+    {
+      "filename": "int4_stratified_INT4-026_real_image_v1.json",
+      "size_bytes": 4247,
+      "sha256": "aa9757f4b205a1a8fa78b4f4053d537ed356993c8ed97fa7e3bc5403de9669b3",
+      "scenario_id": "INT4-026"
+    },
+    {
+      "filename": "int4_stratified_INT4-027_real_image_v1.json",
+      "size_bytes": 4346,
+      "sha256": "b6a657588d692a9b641012848c641df9127f9dd1f1d4da0c087e60ea7da03ce6",
+      "scenario_id": "INT4-027"
+    },
+    {
+      "filename": "int4_stratified_INT4-028_real_image_v1.json",
+      "size_bytes": 4313,
+      "sha256": "31938566dee4ae36b64e214dbbe510513f6d8f820bfa166cff0277de3cf7f499",
+      "scenario_id": "INT4-028"
+    },
+    {
+      "filename": "int4_stratified_INT4-029_real_image_v1.json",
+      "size_bytes": 4252,
+      "sha256": "275359f28c38679c6360eb279b9385155d2157b3426fe533e2a952f4d71da721",
+      "scenario_id": "INT4-029"
+    },
+    {
+      "filename": "int4_stratified_INT4-030_real_image_v1.json",
+      "size_bytes": 4339,
+      "sha256": "9e7a37dcbfe1d1de00f5c833759a3ecbae4bd9c9934eca3567fd87097affed28",
+      "scenario_id": "INT4-030"
+    },
+    {
+      "filename": "int4_stratified_INT4-031_real_image_v1.json",
+      "size_bytes": 4337,
+      "sha256": "0ed93330f3d17e66c2eafbd7168b7344673936463914293498ad450d781b13be",
+      "scenario_id": "INT4-031"
+    },
+    {
+      "filename": "int4_stratified_INT4-032_real_image_v1.json",
+      "size_bytes": 4383,
+      "sha256": "e0a6e0cd6af2a585630c8e758ac521aa404f6867f006fe0efb5a60f479e9476a",
+      "scenario_id": "INT4-032"
+    },
+    {
+      "filename": "int4_stratified_INT4-033_real_image_v1.json",
+      "size_bytes": 4257,
+      "sha256": "c7489472cb8f74df959aa698900b060f4a8efaabfe5677cbd6f34e528d6e2d82",
+      "scenario_id": "INT4-033"
+    },
+    {
+      "filename": "int4_stratified_INT4-034_real_image_v1.json",
+      "size_bytes": 4264,
+      "sha256": "b19b7a59df8d1f6e171751f29c88023f7760a138f7f76f8d8b8ff66e20f12832",
+      "scenario_id": "INT4-034"
+    },
+    {
+      "filename": "int4_stratified_INT4-035_real_image_v1.json",
+      "size_bytes": 4261,
+      "sha256": "4d2c47e1c09a788d42e1d60109a3980a7e9a57634b3b7fcfeb5e535b33cdc2f0",
+      "scenario_id": "INT4-035"
+    },
+    {
+      "filename": "int4_stratified_INT4-036_real_image_v1.json",
+      "size_bytes": 4261,
+      "sha256": "e62b8f5dd5257b2b5da5bf1b3d7969f785421fa1539d613e8c6500b054742a8f",
+      "scenario_id": "INT4-036"
+    }
+  ],
+  "limitations": [
+    "Targeted weight selection, not representative random sampling.",
+    "One real image, not COCO dataset evaluation.",
+    "Raw output error and prediction matching are not mAP.",
+    "Logical signed INT4 representation, not packed hardware INT4."
+  ]
+}

@@ -1,0 +1,13 @@
+layer,scenarios,fault_mean_raw_mae,fault_max_raw_mae,quantization_raw_mae,fault_scenarios_with_unmatched_detections,baseline_quality_flag,eligible_for_provisional_ranking,ranking_note,provisional_rank
+15.cv2.conv,8,0.016917794273467734,0.06318719685077667,0.19713979959487915,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,1
+1.conv,8,0.014869822982291225,0.03917546197772026,0.40787336230278015,1,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,2
+4.cv1.conv,8,0.01194778895296622,0.02774396352469921,0.19754844903945923,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,3
+4.m.1.cv2.conv,8,0.006395405580406077,0.014798004180192947,0.07218402624130249,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,4
+6.m.1.cv1.conv,8,0.0042197861075692344,0.018067730590701103,0.08296278864145279,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,5
+9.cv1.conv,8,0.0021881917455175426,0.005033631809055805,0.10944604873657227,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,6
+18.m.0.cv2.conv,8,0.0018601986303110607,0.004395477008074522,0.09599120169878006,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,7
+22.cv2.2.0.conv,8,0.0002685017709609383,0.0008885644492693245,0.03768109157681465,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,8
+21.cv2.conv,8,0.00021055000797787216,0.00048595687258057296,0.025094080716371536,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,9
+22.cv3.2.1.conv,8,3.079043914278046e-08,1.167722132322524e-07,8.15620478533674e-06,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,10
+22.cv3.0.2,8,1.1002273455143485e-08,5.166448602267337e-08,2.37321296481241e-06,0,NMS_COUNT_PRESERVED,True,Exploratory ranking only; single image,11
+9.cv2.conv,8,0.003988606476923451,0.010737626813352108,0.5812436938285828,0,REVIEW_QUANTIZATION_BASELINE,False,Quantization changes NMS detection count,

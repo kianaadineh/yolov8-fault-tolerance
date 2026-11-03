@@ -1,0 +1,45 @@
+{
+  "experiment": "oracle_assisted_weight_recovery",
+  "scenario_id": "INT4-012",
+  "source_result_file": "int4_stratified_INT4-012_real_image_v1.json",
+  "source_result_sha256": "369102d355efa4593daf0f0888d50862af3c013cc5a6c3f6e6319f9101ad5faf",
+  "layer": "0.conv",
+  "weight_index": [
+    0,
+    0,
+    0,
+    2
+  ],
+  "quantization": "logical_signed_INT4",
+  "fault": {
+    "type": "sign_bit_flip",
+    "q_clean": -2,
+    "q_faulty": 6,
+    "clean_weight": -0.1390904039144516,
+    "faulty_weight": 0.4172712117433548
+  },
+  "recovery": {
+    "method": "oracle_assisted_exact_weight_restoration",
+    "restored_q": -2,
+    "parameters_identical_to_clean": true,
+    "buffers_identical_to_clean": true
+  },
+  "results": {
+    "clean_detections": 5,
+    "faulty_detections": 6,
+    "recovered_detections": 5,
+    "faulty_raw_mae": 0.10022104531526566,
+    "recovered_raw_mae": 0.0,
+    "recovered_raw_max_error": 0.0,
+    "recovered_max_detection_difference": 0.0,
+    "exact_prediction_recovery": true,
+    "exact_detection_recovery": true
+  },
+  "limitations": [
+    "Oracle knows the faulty weight location and correct value.",
+    "One real image and one fault scenario.",
+    "No independent fault detection mechanism.",
+    "No COCO mAP evaluation.",
+    "No runtime or memory overhead assessment."
+  ]
+}

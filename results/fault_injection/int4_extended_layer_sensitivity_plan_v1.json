@@ -1,0 +1,1480 @@
+{
+  "schema_version": "1.0",
+  "experiment": "extended_exploratory_layer_sensitivity",
+  "model": "YOLOv8s",
+  "seed": 20261104,
+  "representation": "logical_signed_INT4",
+  "selection": "One randomly selected Conv2d per ordered-layer stratum; eight uniformly sampled unique weight-bit pairs per layer",
+  "selected_layers": [
+    "1.conv",
+    "4.cv1.conv",
+    "4.m.1.cv2.conv",
+    "6.m.1.cv1.conv",
+    "9.cv1.conv",
+    "9.cv2.conv",
+    "15.cv2.conv",
+    "18.m.0.cv2.conv",
+    "21.cv2.conv",
+    "22.cv2.2.0.conv",
+    "22.cv3.0.2",
+    "22.cv3.2.1.conv"
+  ],
+  "layer_count": 12,
+  "scenarios_per_layer": 8,
+  "scenario_count": 96,
+  "bit_distribution": {
+    "0": 29,
+    "1": 18,
+    "2": 18,
+    "3": 31
+  },
+  "scenarios": [
+    {
+      "scenario_id": "EXT-001",
+      "layer": "1.conv",
+      "weight_index": [
+        8,
+        12,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "delta_dequant": -0.4857700765132904
+    },
+    {
+      "scenario_id": "EXT-002",
+      "layer": "1.conv",
+      "weight_index": [
+        52,
+        1,
+        1,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0607212595641613,
+      "delta_dequant": 0.1214425191283226
+    },
+    {
+      "scenario_id": "EXT-003",
+      "layer": "1.conv",
+      "weight_index": [
+        42,
+        23,
+        1,
+        2
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "delta_dequant": -0.4857700765132904
+    },
+    {
+      "scenario_id": "EXT-004",
+      "layer": "1.conv",
+      "weight_index": [
+        3,
+        7,
+        0,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "delta_dequant": 0.2428850382566452
+    },
+    {
+      "scenario_id": "EXT-005",
+      "layer": "1.conv",
+      "weight_index": [
+        51,
+        0,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "delta_dequant": -0.4857700765132904
+    },
+    {
+      "scenario_id": "EXT-006",
+      "layer": "1.conv",
+      "weight_index": [
+        18,
+        7,
+        1,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "delta_dequant": 0.2428850382566452
+    },
+    {
+      "scenario_id": "EXT-007",
+      "layer": "1.conv",
+      "weight_index": [
+        62,
+        8,
+        1,
+        2
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0607212595641613,
+      "delta_dequant": 0.1214425191283226
+    },
+    {
+      "scenario_id": "EXT-008",
+      "layer": "1.conv",
+      "weight_index": [
+        53,
+        19,
+        1,
+        2
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0607212595641613,
+      "delta_dequant": 0.2428850382566452
+    },
+    {
+      "scenario_id": "EXT-009",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        61,
+        33,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "delta_dequant": -0.3459821343421936
+    },
+    {
+      "scenario_id": "EXT-010",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        29,
+        67,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "delta_dequant": -0.3459821343421936
+    },
+    {
+      "scenario_id": "EXT-011",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        73,
+        19,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -2,
+      "q_faulty": 6,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.3459821343421936
+    },
+    {
+      "scenario_id": "EXT-012",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        74,
+        68,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.1729910671710968
+    },
+    {
+      "scenario_id": "EXT-013",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        54,
+        59,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.0432477667927742
+    },
+    {
+      "scenario_id": "EXT-014",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        28,
+        56,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.1729910671710968
+    },
+    {
+      "scenario_id": "EXT-015",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        81,
+        103,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.1729910671710968
+    },
+    {
+      "scenario_id": "EXT-016",
+      "layer": "4.cv1.conv",
+      "weight_index": [
+        127,
+        61,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0432477667927742,
+      "delta_dequant": 0.0432477667927742
+    },
+    {
+      "scenario_id": "EXT-017",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        59,
+        53,
+        0,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.0900530144572258
+    },
+    {
+      "scenario_id": "EXT-018",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        56,
+        8,
+        2,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.0900530144572258
+    },
+    {
+      "scenario_id": "EXT-019",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        43,
+        55,
+        2,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.02251325361430645
+    },
+    {
+      "scenario_id": "EXT-020",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        60,
+        32,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.02251325361430645,
+      "delta_dequant": -0.1801060289144516
+    },
+    {
+      "scenario_id": "EXT-021",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        51,
+        26,
+        1,
+        1
+      ],
+      "bit": 0,
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.02251325361430645
+    },
+    {
+      "scenario_id": "EXT-022",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        35,
+        39,
+        1,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02251325361430645,
+      "delta_dequant": -0.1801060289144516
+    },
+    {
+      "scenario_id": "EXT-023",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        20,
+        41,
+        0,
+        2
+      ],
+      "bit": 1,
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.0450265072286129
+    },
+    {
+      "scenario_id": "EXT-024",
+      "layer": "4.m.1.cv2.conv",
+      "weight_index": [
+        47,
+        22,
+        1,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02251325361430645,
+      "delta_dequant": 0.02251325361430645
+    },
+    {
+      "scenario_id": "EXT-025",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        48,
+        3,
+        2,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01970563642680645,
+      "delta_dequant": 0.0394112728536129
+    },
+    {
+      "scenario_id": "EXT-026",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        34,
+        114,
+        1,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01970563642680645,
+      "delta_dequant": -0.1576450914144516
+    },
+    {
+      "scenario_id": "EXT-027",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        50,
+        18,
+        0,
+        1
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01970563642680645,
+      "delta_dequant": 0.01970563642680645
+    },
+    {
+      "scenario_id": "EXT-028",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        8,
+        32,
+        0,
+        2
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.01970563642680645,
+      "delta_dequant": 0.1576450914144516
+    },
+    {
+      "scenario_id": "EXT-029",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        121,
+        25,
+        0,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01970563642680645,
+      "delta_dequant": 0.01970563642680645
+    },
+    {
+      "scenario_id": "EXT-030",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        71,
+        103,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01970563642680645,
+      "delta_dequant": -0.1576450914144516
+    },
+    {
+      "scenario_id": "EXT-031",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        112,
+        1,
+        0,
+        2
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01970563642680645,
+      "delta_dequant": 0.0394112728536129
+    },
+    {
+      "scenario_id": "EXT-032",
+      "layer": "6.m.1.cv1.conv",
+      "weight_index": [
+        117,
+        91,
+        1,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01970563642680645,
+      "delta_dequant": -0.1576450914144516
+    },
+    {
+      "scenario_id": "EXT-033",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        6,
+        55,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0301339291036129,
+      "delta_dequant": 0.2410714328289032
+    },
+    {
+      "scenario_id": "EXT-034",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        179,
+        489,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0301339291036129,
+      "delta_dequant": -0.2410714328289032
+    },
+    {
+      "scenario_id": "EXT-035",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        252,
+        443,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0301339291036129,
+      "delta_dequant": -0.2410714328289032
+    },
+    {
+      "scenario_id": "EXT-036",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        195,
+        24,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "delta_dequant": 0.0301339291036129
+    },
+    {
+      "scenario_id": "EXT-037",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        223,
+        487,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0301339291036129,
+      "delta_dequant": -0.2410714328289032
+    },
+    {
+      "scenario_id": "EXT-038",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        99,
+        140,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0301339291036129,
+      "delta_dequant": 0.1205357164144516
+    },
+    {
+      "scenario_id": "EXT-039",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        126,
+        248,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0301339291036129,
+      "delta_dequant": -0.0301339291036129
+    },
+    {
+      "scenario_id": "EXT-040",
+      "layer": "9.cv1.conv",
+      "weight_index": [
+        6,
+        179,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0301339291036129,
+      "delta_dequant": 0.0602678582072258
+    },
+    {
+      "scenario_id": "EXT-041",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        470,
+        913,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "delta_dequant": -0.2080078125
+    },
+    {
+      "scenario_id": "EXT-042",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        227,
+        941,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.052001953125
+    },
+    {
+      "scenario_id": "EXT-043",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        317,
+        403,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.10400390625
+    },
+    {
+      "scenario_id": "EXT-044",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        447,
+        963,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.0260009765625
+    },
+    {
+      "scenario_id": "EXT-045",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        40,
+        938,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "delta_dequant": -0.2080078125
+    },
+    {
+      "scenario_id": "EXT-046",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        107,
+        228,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.052001953125
+    },
+    {
+      "scenario_id": "EXT-047",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        110,
+        259,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.0260009765625
+    },
+    {
+      "scenario_id": "EXT-048",
+      "layer": "9.cv2.conv",
+      "weight_index": [
+        351,
+        398,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "delta_dequant": 0.0260009765625
+    },
+    {
+      "scenario_id": "EXT-049",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        74,
+        14,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0273263119161129,
+      "delta_dequant": -0.0546526238322258
+    },
+    {
+      "scenario_id": "EXT-050",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        23,
+        176,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "delta_dequant": -0.2186104953289032
+    },
+    {
+      "scenario_id": "EXT-051",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        126,
+        155,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "delta_dequant": -0.2186104953289032
+    },
+    {
+      "scenario_id": "EXT-052",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        122,
+        174,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0273263119161129,
+      "delta_dequant": 0.1093052476644516
+    },
+    {
+      "scenario_id": "EXT-053",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        91,
+        112,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "delta_dequant": -0.2186104953289032
+    },
+    {
+      "scenario_id": "EXT-054",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        0,
+        160,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0273263119161129,
+      "delta_dequant": -0.0546526238322258
+    },
+    {
+      "scenario_id": "EXT-055",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        44,
+        1,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0273263119161129,
+      "delta_dequant": 0.0273263119161129
+    },
+    {
+      "scenario_id": "EXT-056",
+      "layer": "15.cv2.conv",
+      "weight_index": [
+        104,
+        114,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0273263119161129,
+      "delta_dequant": 0.1093052476644516
+    },
+    {
+      "scenario_id": "EXT-057",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        84,
+        63,
+        2,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.02190290205180645
+    },
+    {
+      "scenario_id": "EXT-058",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        14,
+        56,
+        1,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.02190290205180645
+    },
+    {
+      "scenario_id": "EXT-059",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        37,
+        101,
+        1,
+        2
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.0438058041036129
+    },
+    {
+      "scenario_id": "EXT-060",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        18,
+        9,
+        1,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.02190290205180645
+    },
+    {
+      "scenario_id": "EXT-061",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        83,
+        79,
+        2,
+        1
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.02190290205180645
+    },
+    {
+      "scenario_id": "EXT-062",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        70,
+        108,
+        1,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.0438058041036129
+    },
+    {
+      "scenario_id": "EXT-063",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        94,
+        15,
+        2,
+        1
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.0438058041036129
+    },
+    {
+      "scenario_id": "EXT-064",
+      "layer": "18.m.0.cv2.conv",
+      "weight_index": [
+        54,
+        95,
+        1,
+        1
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "delta_dequant": 0.0876116082072258
+    },
+    {
+      "scenario_id": "EXT-065",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        304,
+        290,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "delta_dequant": -0.1456473171710968
+    },
+    {
+      "scenario_id": "EXT-066",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        152,
+        55,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0182059146463871,
+      "delta_dequant": -0.0364118292927742
+    },
+    {
+      "scenario_id": "EXT-067",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        112,
+        744,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0182059146463871,
+      "delta_dequant": -0.0182059146463871
+    },
+    {
+      "scenario_id": "EXT-068",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        69,
+        469,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0182059146463871,
+      "delta_dequant": -0.0182059146463871
+    },
+    {
+      "scenario_id": "EXT-069",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        199,
+        522,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "delta_dequant": 0.0364118292927742
+    },
+    {
+      "scenario_id": "EXT-070",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        466,
+        521,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0182059146463871,
+      "delta_dequant": 0.0728236585855484
+    },
+    {
+      "scenario_id": "EXT-071",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        150,
+        596,
+        0,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "delta_dequant": 0.0364118292927742
+    },
+    {
+      "scenario_id": "EXT-072",
+      "layer": "21.cv2.conv",
+      "weight_index": [
+        430,
+        592,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "delta_dequant": 0.0182059146463871
+    },
+    {
+      "scenario_id": "EXT-073",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        43,
+        163,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "delta_dequant": -0.1165597066283226
+    },
+    {
+      "scenario_id": "EXT-074",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        10,
+        183,
+        0,
+        1
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.014569963328540325
+    },
+    {
+      "scenario_id": "EXT-075",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        60,
+        100,
+        2,
+        0
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.02913992665708065
+    },
+    {
+      "scenario_id": "EXT-076",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        14,
+        91,
+        1,
+        1
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.1165597066283226
+    },
+    {
+      "scenario_id": "EXT-077",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        61,
+        228,
+        2,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.0582798533141613
+    },
+    {
+      "scenario_id": "EXT-078",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        43,
+        474,
+        2,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.0582798533141613
+    },
+    {
+      "scenario_id": "EXT-079",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        10,
+        356,
+        0,
+        2
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.014569963328540325,
+      "delta_dequant": 0.014569963328540325
+    },
+    {
+      "scenario_id": "EXT-080",
+      "layer": "22.cv2.2.0.conv",
+      "weight_index": [
+        63,
+        204,
+        0,
+        1
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "delta_dequant": -0.1165597066283226
+    },
+    {
+      "scenario_id": "EXT-081",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        79,
+        0,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0325927734375,
+      "delta_dequant": -0.0325927734375
+    },
+    {
+      "scenario_id": "EXT-082",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        74,
+        1,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -3,
+      "q_faulty": 5,
+      "scale": 0.0325927734375,
+      "delta_dequant": 0.2607421875
+    },
+    {
+      "scenario_id": "EXT-083",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        32,
+        60,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0325927734375,
+      "delta_dequant": 0.0325927734375
+    },
+    {
+      "scenario_id": "EXT-084",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        13,
+        93,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0325927734375,
+      "delta_dequant": 0.0325927734375
+    },
+    {
+      "scenario_id": "EXT-085",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        52,
+        28,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0325927734375,
+      "delta_dequant": 0.0325927734375
+    },
+    {
+      "scenario_id": "EXT-086",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        25,
+        100,
+        0,
+        0
+      ],
+      "bit": 0,
+      "q_clean": -3,
+      "q_faulty": -4,
+      "scale": 0.0325927734375,
+      "delta_dequant": -0.0325927734375
+    },
+    {
+      "scenario_id": "EXT-087",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        76,
+        46,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0325927734375,
+      "delta_dequant": 0.2607421875
+    },
+    {
+      "scenario_id": "EXT-088",
+      "layer": "22.cv3.0.2",
+      "weight_index": [
+        39,
+        114,
+        0,
+        0
+      ],
+      "bit": 3,
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0325927734375,
+      "delta_dequant": -0.2607421875
+    },
+    {
+      "scenario_id": "EXT-089",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        53,
+        96,
+        2,
+        1
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.01749093271791935
+    },
+    {
+      "scenario_id": "EXT-090",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        68,
+        114,
+        1,
+        0
+      ],
+      "bit": 0,
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.01749093271791935
+    },
+    {
+      "scenario_id": "EXT-091",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        123,
+        36,
+        2,
+        1
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "delta_dequant": -0.1399274617433548
+    },
+    {
+      "scenario_id": "EXT-092",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        46,
+        47,
+        0,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.0699637308716774
+    },
+    {
+      "scenario_id": "EXT-093",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        71,
+        86,
+        2,
+        0
+      ],
+      "bit": 2,
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.0699637308716774
+    },
+    {
+      "scenario_id": "EXT-094",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        106,
+        46,
+        1,
+        1
+      ],
+      "bit": 1,
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.0349818654358387
+    },
+    {
+      "scenario_id": "EXT-095",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        126,
+        81,
+        2,
+        2
+      ],
+      "bit": 3,
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "delta_dequant": -0.1399274617433548
+    },
+    {
+      "scenario_id": "EXT-096",
+      "layer": "22.cv3.2.1.conv",
+      "weight_index": [
+        118,
+        50,
+        0,
+        1
+      ],
+      "bit": 3,
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.01749093271791935,
+      "delta_dequant": 0.1399274617433548
+    }
+  ],
+  "limitations": [
+    "Exploratory sample, not a statistically powered study.",
+    "Equal layer weighting is not proportional to weight count.",
+    "One image is insufficient for general detection accuracy.",
+    "No inference or fault injection is performed by this plan.",
+    "INT4 is logical quantization, not packed hardware execution."
+  ]
+}

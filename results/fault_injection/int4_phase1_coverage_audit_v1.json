@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Phase 1 exploratory sensitivity coverage audit",
+  "completed_scenarios": 36,
+  "layers": [
+    "0.conv",
+    "15.cv1.conv",
+    "22.cv3.2.2"
+  ],
+  "bits": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "weight_categories": [
+    "negative",
+    "positive",
+    "zero"
+  ],
+  "complete_selected_grid": true,
+  "scenario_results_present": 36,
+  "sampling_scope": "Three selected convolution layers, one selected weight per category, four bit positions",
+  "not_yet_established": [
+    "Representative whole-network layer sensitivity",
+    "Activation fault sensitivity",
+    "Broad INT8 sensitivity",
+    "COCO mAP under injected faults",
+    "NMS-specific fault mitigation effectiveness"
+  ],
+  "limitations": [
+    "The selected grid is exploratory, not random sampling.",
+    "Each category uses one selected weight per layer.",
+    "Only one real image was evaluated.",
+    "Raw prediction MAE and detection matching are not mAP."
+  ],
+  "plan_sha256": "e031f1fed76acfc4faa70c6256fa5635cc7fdeef502d89f7dc9b0a7320695d0a"
+}

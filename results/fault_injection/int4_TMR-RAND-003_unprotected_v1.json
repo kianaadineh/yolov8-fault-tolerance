@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "experiment": "independent_unprotected_int4_fault",
+  "scenario": {
+    "scenario_id": "TMR-RAND-003",
+    "layer": "0.conv",
+    "weight_index": [
+      6,
+      0,
+      1,
+      1
+    ],
+    "bit": 0,
+    "q_clean": 0,
+    "q_faulty": 1,
+    "scale": 0.0695452019572258,
+    "fault_model": "single_bit_flip_in_one_TMR_replica"
+  },
+  "baseline": "target_layer_only_logical_INT4",
+  "clean_detection_count": 5,
+  "faulty_detection_count": 5,
+  "raw_mean_absolute_difference": 0.02137865126132965,
+  "raw_max_absolute_difference": 63.44598388671875,
+  "matches": [
+    {
+      "clean_index": 2,
+      "faulty_index": 2,
+      "class_id": 0,
+      "iou": 0.9994633825135276,
+      "confidence_change": 0.0006437301635742188,
+      "max_coordinate_change_px": 0.0618896484375
+    },
+    {
+      "clean_index": 0,
+      "faulty_index": 0,
+      "class_id": 5,
+      "iou": 0.9991655472002337,
+      "confidence_change": -0.00013965368270874023,
+      "max_coordinate_change_px": 0.2041168212890625
+    },
+    {
+      "clean_index": 1,
+      "faulty_index": 1,
+      "class_id": 0,
+      "iou": 0.9984805262236729,
+      "confidence_change": -0.0005477666854858398,
+      "max_coordinate_change_px": 0.07470703125
+    },
+    {
+      "clean_index": 4,
+      "faulty_index": 4,
+      "class_id": 0,
+      "iou": 0.9972576890916415,
+      "confidence_change": 0.0024456381797790527,
+      "max_coordinate_change_px": 0.1093597412109375
+    },
+    {
+      "clean_index": 3,
+      "faulty_index": 3,
+      "class_id": 0,
+      "iou": 0.9942129976464731,
+      "confidence_change": -0.000747382640838623,
+      "max_coordinate_change_px": 0.41302490234375
+    }
+  ],
+  "matched_count": 5,
+  "unmatched_clean": 0,
+  "unmatched_faulty": 0,
+  "mean_matched_iou": 0.9977160285351097,
+  "max_abs_confidence_change": 0.0024456381797790527,
+  "max_coordinate_change_px": 0.41302490234375,
+  "limitations": [
+    "One real image, no ground-truth mAP.",
+    "Single fault per inference.",
+    "No runtime or hardware overhead measurement."
+  ]
+}

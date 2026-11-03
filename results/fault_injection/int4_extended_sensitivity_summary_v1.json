@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "source_plan": "int4_extended_layer_sensitivity_plan_v2.json",
+  "source_plan_sha256": "308b8940a4da3a867983cd0a28eee9cf0da6b72d6771b28a2363b4205cd0e1c3",
+  "scenario_count": 96,
+  "layer_count": 12,
+  "layer_summary": [
+    {
+      "layer": "1.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.014869822982291225,
+      "median_raw_mae": 0.012636194471269846,
+      "max_raw_mae": 0.03917546197772026,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 1,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "4.cv1.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.01194778895296622,
+      "median_raw_mae": 0.009239735081791878,
+      "max_raw_mae": 0.02774396352469921,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "4.m.1.cv2.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.006395405580406077,
+      "median_raw_mae": 0.005449171410873532,
+      "max_raw_mae": 0.014798004180192947,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "6.m.1.cv1.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.0042197861075692344,
+      "median_raw_mae": 0.0025034869322553277,
+      "max_raw_mae": 0.018067730590701103,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "9.cv1.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.0021881917455175426,
+      "median_raw_mae": 0.001611482584849,
+      "max_raw_mae": 0.005033631809055805,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "9.cv2.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.003988606476923451,
+      "median_raw_mae": 0.0034031450049951673,
+      "max_raw_mae": 0.010737626813352108,
+      "clean_nms_count": 1,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "15.cv2.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.016917794273467734,
+      "median_raw_mae": 0.01216069096699357,
+      "max_raw_mae": 0.06318719685077667,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "18.m.0.cv2.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.0018601986303110607,
+      "median_raw_mae": 0.0008985618769656867,
+      "max_raw_mae": 0.004395477008074522,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "21.cv2.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.00021055000797787216,
+      "median_raw_mae": 0.0001434770383639261,
+      "max_raw_mae": 0.00048595687258057296,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "22.cv2.2.0.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 0.0002685017709609383,
+      "median_raw_mae": 0.00019859775784425437,
+      "max_raw_mae": 0.0008885644492693245,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "22.cv3.0.2",
+      "scenarios": 8,
+      "mean_raw_mae": 1.1002273455143485e-08,
+      "median_raw_mae": 1.2825651096726176e-09,
+      "max_raw_mae": 5.166448602267337e-08,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    },
+    {
+      "layer": "22.cv3.2.1.conv",
+      "scenarios": 8,
+      "mean_raw_mae": 3.079043914278046e-08,
+      "median_raw_mae": 1.1914076836205822e-08,
+      "max_raw_mae": 1.167722132322524e-07,
+      "clean_nms_count": 5,
+      "scenarios_with_unmatched_detections": 0,
+      "exact_zero_mae_scenarios": 0
+    }
+  ],
+  "exact_zero_raw_mae_scenario_ids": [],
+  "unmatched_detection_scenarios": [
+    {
+      "scenario_id": "EXT2-005",
+      "layer": "1.conv",
+      "bit": 2,
+      "weight_category": "positive",
+      "raw_mae": 0.03917546197772026,
+      "raw_max_abs_difference": 78.53591918945312,
+      "clean_count": 5,
+      "faulty_count": 6,
+      "matched_count": 5,
+      "unmatched_clean": 0,
+      "unmatched_faulty": 1,
+      "mean_matched_iou": 0.9975936532020568
+    }
+  ],
+  "interpretation_limits": [
+    "Exploratory selected layers and controlled weight categories",
+    "Only one image; no ground-truth mAP",
+    "Different layers have different clean quantized baselines",
+    "Unmatched detections are not necessarily false positives",
+    "Zero raw MAE requires interpretation in model context"
+  ]
+}

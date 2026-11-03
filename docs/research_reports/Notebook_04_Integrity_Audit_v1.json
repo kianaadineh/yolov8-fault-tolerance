@@ -1,0 +1,76 @@
+{
+  "report_version": "1.0",
+  "report_type": "Notebook 04 artifact integrity and provenance audit",
+  "created_utc": "2026-11-03T14:16:33.206687+00:00",
+  "repository_commit": "76279fdcdda2a9e3abc660f4cebc8cade32aff1c",
+  "scope": {
+    "manifest_references_checked_in_prior_audit": 193,
+    "direct_matches": 185,
+    "line_ending_related_mismatched_references": 8,
+    "unique_csv_files_investigated": 5,
+    "unexplained_mismatches": 0
+  },
+  "interpretation": "All eight previously observed reference mismatches are explained by CRLF-to-LF conversion in five CSV files. Reconstructing CRLF reproduces the exact historical SHA256 hashes and file sizes. Original manifests and research artifacts remain unchanged.",
+  "limitations": [
+    "This report documents file integrity, not scientific correctness.",
+    "The prior reference audit did not independently validate every unreferenced artifact.",
+    "No model inference or dataset-wide evaluation was performed."
+  ],
+  "csv_findings": [
+    {
+      "file": "int4_stratified_sensitivity_summary_v1.csv",
+      "current_sha256": "e2acc077b6c7e965d0cc595b704fea8932f3cacc020756bd5b83df3d03eca6d0",
+      "current_size_bytes": 6572,
+      "historical_sha256": "a7451bf145dbc5e75e11974bac293a79ed3ca5ce042044397752ebd4f0e7fac6",
+      "historical_size_bytes": 6609,
+      "line_ending_change": "CRLF to LF",
+      "historical_bytes_reproduced": true,
+      "scientific_content_change_detected": false,
+      "verification_method": "Exact SHA256 and size match after in-memory CRLF reconstruction"
+    },
+    {
+      "file": "int4_extended_fp32_vs_int4_baselines_v1.csv",
+      "current_sha256": "1afd6009d317515572554fa79028f56158b5cd5ad5855711e2b692a4d17fa45d",
+      "current_size_bytes": 2118,
+      "historical_sha256": "1f272b604ceec122060f640b1469d1a52e0384e1056ee9d964646f865f09587d",
+      "historical_size_bytes": 2131,
+      "line_ending_change": "CRLF to LF",
+      "historical_bytes_reproduced": true,
+      "scientific_content_change_detected": false,
+      "verification_method": "Exact SHA256 and size match after in-memory CRLF reconstruction"
+    },
+    {
+      "file": "int4_extended_combined_layer_analysis_v1.csv",
+      "current_sha256": "f37223762cbb87327ea14407de5d73ff39fe60b8bc2c5cf36b6f0dde8cc7cdb1",
+      "current_size_bytes": 1826,
+      "historical_sha256": "5dbb9f4934240113451fd2d63b446e6807f725a217e07775ff9bab5d8b9375d5",
+      "historical_size_bytes": 1839,
+      "line_ending_change": "CRLF to LF",
+      "historical_bytes_reproduced": true,
+      "scientific_content_change_detected": false,
+      "verification_method": "Exact SHA256 and size match after in-memory CRLF reconstruction"
+    },
+    {
+      "file": "int4_selective_protection_priority_v1.csv",
+      "current_sha256": "43e88b70a7033c7e2101d0672cd2331d15e8acbf38e8e31df677641b10f87df4",
+      "current_size_bytes": 1963,
+      "historical_sha256": "1f0556b4d45c092c25a1153d6a40e03b2fb43d65e4c577de76a4a877c268b507",
+      "historical_size_bytes": 1976,
+      "line_ending_change": "CRLF to LF",
+      "historical_bytes_reproduced": true,
+      "scientific_content_change_detected": false,
+      "verification_method": "Exact SHA256 and size match after in-memory CRLF reconstruction"
+    },
+    {
+      "file": "int4_selective_protection_cost_analysis_v1.csv",
+      "current_sha256": "2a1bae208d8c623dcf2a077a15599f872e6bdc1536c0df22741eafe62032c01c",
+      "current_size_bytes": 1722,
+      "historical_sha256": "ecc73b2d40488b0fa4b09ed9dfc1b7a366ce0002a1520949f0b50a1ad657de01",
+      "historical_size_bytes": 1735,
+      "line_ending_change": "CRLF to LF",
+      "historical_bytes_reproduced": true,
+      "scientific_content_change_detected": false,
+      "verification_method": "Exact SHA256 and size match after in-memory CRLF reconstruction"
+    }
+  ]
+}

@@ -56,7 +56,7 @@ Git does not preserve empty directories in a fresh clone.
 ## Environment
 
 Research experiments use Python, PyTorch, and Ultralytics.
-The current requirements.txt is incomplete and not fully pinned.
+The requirements.txt lists the main project dependencies and pins the recorded Ultralytics version. It is not a fully validated environment lockfile; the recorded CUDA-enabled PyTorch build must be installed for the appropriate platform.
 Model weights and large datasets are excluded from Git.
 
 ## Limitations

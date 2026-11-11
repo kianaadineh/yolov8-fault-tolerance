@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-11-10T19:59:45.861432+00:00",
+  "fault_plan_sha256": "906af255a7b46654f4736e4a3f77c8c778570ed3d86e5e12077bf9dbcc6f0fbb",
+  "timing_disclosure": "Recorded after observing the historical pilot and N05-001, before evaluating the remaining 239 planned scenarios.",
+  "primary_effect": "faulty_AP50_95_minus_layer_specific_clean_AP50_95",
+  "inclusion": {
+    "retain_positive_negative_and_zero_effects": true,
+    "do_not_drop_failed_runs": true,
+    "failed_runs": "report_separately_with_reason_and_completion_status",
+    "do_not_change_sampling_based_on_observed_ranking": true
+  },
+  "layer_summary": {
+    "scenario_count": 20,
+    "scenarios_per_bit": 5,
+    "primary_estimate": "equal_weight_mean_of_four_bit_specific_mean_effects",
+    "additional_summaries": [
+      "all_individual_effects",
+      "per_bit_mean_and_range",
+      "layer_median_minimum_maximum",
+      "counts_of_positive_negative_and_exact_zero_effects",
+      "quantization_degradation_separately"
+    ]
+  },
+  "fault_sampling_uncertainty": {
+    "method": "stratified_percentile_bootstrap",
+    "resampling_unit": "sampled_weight_fault_scenario",
+    "strata": "bit_position_within_each_layer",
+    "resamples": 2000,
+    "seed": 20261110,
+    "interval_percentiles": [
+      2.5,
+      97.5
+    ],
+    "fixed": "development_images_and_layer_clean_baseline",
+    "limitations": [
+      "Only five sampled weights per bit; interval coverage may be poor.",
+      "Exploratory intervals are not proof of statistical significance.",
+      "Intervals exclude image-sampling and layer-selection uncertainty.",
+      "Pointwise intervals are not simultaneous comparisons across layers."
+    ]
+  },
+  "ranking": {
+    "descriptive_only": true,
+    "criterion": "ascending_mean_fault_effect_more_negative_first",
+    "scope": "12_selected_layers_under_the_defined_fault_distribution",
+    "no_network_wide_or_definitive_rank_claim": true
+  },
+  "extensions": "Any additional sampling requires a versioned amendment, a stated reason and disclosure of results already observed.",
+  "held_out_evaluation": false
+}

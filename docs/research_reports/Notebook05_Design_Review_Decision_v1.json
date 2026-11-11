@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "recorded_at_utc": "2026-11-11T10:49:00.639427+00:00",
+  "status": "INITIAL_CAMPAIGN_PAUSED_PENDING_REDESIGN",
+  "initial_plan": {
+    "selected_layers": 12,
+    "planned_fault_scenarios": 240,
+    "completed_summarized_scenarios": 60,
+    "remaining_planned_scenarios": 180,
+    "development_images_per_scenario": 1000
+  },
+  "observation_disclosure": "Decision made after observing the pilot and the first 60 scenarios from the first three layers in the frozen execution order.",
+  "reasons": [
+    "Selected layers do not cover all eligible architectural locations.",
+    "Five sampled weights per bit have no validated precision guarantee.",
+    "Mean signed AP change can conceal damaging individual scenarios.",
+    "Target-layer-only INT4 models differ across layer comparisons.",
+    "Final protection selection requires a justified broader design."
+  ],
+  "interpretation": [
+    "Preserve all observed positive, negative and zero effects.",
+    "Treat existing results as exploratory evidence for the studied layers.",
+    "Do not present the truncated campaign as the completed 240-scenario study.",
+    "Do not claim network-wide layer rankings or hardware reliability.",
+    "No guarantee of statistical precision follows from the planning calculation."
+  ],
+  "next_design_tasks": [
+    "Define the intended deployment representation and clean baseline.",
+    "Define screening coverage across 63 eligible Conv2d layers.",
+    "Specify primary estimands, sampling budget and precision criteria.",
+    "Define independent follow-up fault samples and ranking-stability checks.",
+    "Address image-sampling uncertainty and practical degradation thresholds.",
+    "Record a versioned protocol before new screening inference."
+  ],
+  "preservation": {
+    "overwrite_existing_plans_or_results": false,
+    "held_out_images_used_in_reported_runs": false,
+    "new_screening_protocol_finalized": false
+  },
+  "source_sha256": {
+    "L01_sensitivity_summary_v1.json": "c851bc9eae00f7bdfa2516c2cab8e5a56c477801fdaec2c0b0e3b8fb5926239b",
+    "L02_sensitivity_summary_v1.json": "28e81f185dbdaf53dbeb8f2355188ac0bd5a71d0c278014edefc06c28373969a",
+    "L03_sensitivity_summary_v1.json": "cc65fdabc9a7c8c9999ee12fdad526474f778a15e26de4a346f873fd23142136",
+    "Notebook05_Layer_Coverage_Audit_v1.json": "85c49108074be1d57df4f93618632a9a80876d2abb757bd50991b888094b2456"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "recorded_at_utc": "2026-11-11T11:01:14.351204+00:00",
+  "candidate_review_sha256": "7ae1bb8cce9107932722ddd80b591d661bf462d424e19f9b6d4f3bcb0e31b933",
+  "candidate": "63_eligible_Conv2d_weights_logical_INT8_per_output_channel",
+  "reference": "FP32_same_checkpoint_same_images_and_pipeline",
+  "images": "1000_frozen_development_images",
+  "criteria": {
+    "candidate_minus_FP32_AP50_95_minimum": -0.01,
+    "candidate_minus_FP32_AR100_minimum": -0.01,
+    "both_required": true,
+    "finite_predictions_and_complete_image_execution_required": true
+  },
+  "threshold_interpretation": "Provisional engineering loss budget of one percentage point per metric, not a literature-derived universal threshold.",
+  "timing_disclosure": "Defined after observing the 50-image candidate pilots and the existing FP32 development baseline, before the candidate's 1000-image evaluation. The pilot is included in development.",
+  "pass_means": "Eligible for further screening-method development, not proof of equivalence or final deployment suitability.",
+  "fail_action": "Record the result and revise the candidate or scope through an explicit amendment; do not silently relax the thresholds.",
+  "report_additionally": [
+    "AP50",
+    "AP75",
+    "AP_by_object_size",
+    "AR_by_object_size"
+  ],
+  "limitations": [
+    "Point-estimate gate does not establish statistical non-inferiority.",
+    "Development evaluation is not an independent final test.",
+    "Weight-only logical INT8 uses FP32 computation."
+  ],
+  "held_out_evaluation": false,
+  "fault_injection": false
+}

@@ -1,0 +1,4532 @@
+{
+  "schema_version": "1.0",
+  "status": "FAULT_SCENARIOS_FROZEN_EXECUTION_PROTOCOL_PENDING",
+  "checkpoint_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "split_manifest_sha256": "143c3273b2bf0cd6393cfe148a74e48fbafb74e770bd3fbdf3f14222355978ee",
+  "design": {
+    "status": "SCENARIOS_GENERATED",
+    "layers": [
+      "1.conv",
+      "4.cv1.conv",
+      "4.m.1.cv2.conv",
+      "6.m.1.cv1.conv",
+      "9.cv1.conv",
+      "9.cv2.conv",
+      "15.cv2.conv",
+      "18.m.0.cv2.conv",
+      "21.cv2.conv",
+      "22.cv2.2.0.conv",
+      "22.cv3.0.2",
+      "22.cv3.2.1.conv"
+    ],
+    "development_image_count": 1000,
+    "bits": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "weights_per_bit_per_layer": 5,
+    "scenario_count": 240,
+    "sampling": {
+      "seed": 20261109,
+      "weights": "uniform_without_replacement_within_each_layer_bit",
+      "between_bits": "independent_sampling_weight_reuse_allowed",
+      "sign_or_zero_balancing": false
+    },
+    "quantization": {
+      "scope": "target_layer_only",
+      "scale": "CPU_FP32_tensor_abs_max_divided_by_7",
+      "rounding": "torch.round",
+      "clean_range": [
+        -7,
+        7
+      ],
+      "fault_range": [
+        -8,
+        7
+      ],
+      "inference_dtype": "float32"
+    },
+    "fault": {
+      "operation": "one_logical_weight_bit_XOR",
+      "persistence": "fixed_across_all_development_images_per_scenario",
+      "reset": "exact_clean_state_restoration_and_verification"
+    },
+    "execution": {
+      "inference_device": "cuda:0",
+      "nms_device": "cpu",
+      "resume_unit": "one_completed_scenario",
+      "prediction_storage": "gzip_compressed_JSON"
+    },
+    "analysis": {
+      "primary": "faulty_AP50_95_minus_layer_specific_clean_AP50_95",
+      "report": [
+        "quantization_degradation_separately",
+        "per_scenario_and_per_bit_results",
+        "layer_mean_and_distribution_of_fault_effects",
+        "uncertainty_and_sampling_limitations"
+      ],
+      "scope": "selected_12_layers_not_the_entire_network",
+      "replicate_count_is_power_validated": false,
+      "additional_sampling": "Any extension requires a versioned plan and disclosure of the reason; do not stop based on a preferred ranking."
+    },
+    "held_out_evaluation": false
+  },
+  "layers": [
+    {
+      "layer": "1.conv",
+      "weight_shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "weight_count": 18432,
+      "scale": 0.0607212595641613
+    },
+    {
+      "layer": "4.cv1.conv",
+      "weight_shape": [
+        128,
+        128,
+        1,
+        1
+      ],
+      "weight_count": 16384,
+      "scale": 0.0432477667927742
+    },
+    {
+      "layer": "4.m.1.cv2.conv",
+      "weight_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "weight_count": 36864,
+      "scale": 0.02251325361430645
+    },
+    {
+      "layer": "6.m.1.cv1.conv",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "weight_count": 147456,
+      "scale": 0.01970563642680645
+    },
+    {
+      "layer": "9.cv1.conv",
+      "weight_shape": [
+        256,
+        512,
+        1,
+        1
+      ],
+      "weight_count": 131072,
+      "scale": 0.0301339291036129
+    },
+    {
+      "layer": "9.cv2.conv",
+      "weight_shape": [
+        512,
+        1024,
+        1,
+        1
+      ],
+      "weight_count": 524288,
+      "scale": 0.0260009765625
+    },
+    {
+      "layer": "15.cv2.conv",
+      "weight_shape": [
+        128,
+        192,
+        1,
+        1
+      ],
+      "weight_count": 24576,
+      "scale": 0.0273263119161129
+    },
+    {
+      "layer": "18.m.0.cv2.conv",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "weight_count": 147456,
+      "scale": 0.02190290205180645
+    },
+    {
+      "layer": "21.cv2.conv",
+      "weight_shape": [
+        512,
+        768,
+        1,
+        1
+      ],
+      "weight_count": 393216,
+      "scale": 0.0182059146463871
+    },
+    {
+      "layer": "22.cv2.2.0.conv",
+      "weight_shape": [
+        64,
+        512,
+        3,
+        3
+      ],
+      "weight_count": 294912,
+      "scale": 0.014569963328540325
+    },
+    {
+      "layer": "22.cv3.0.2",
+      "weight_shape": [
+        80,
+        128,
+        1,
+        1
+      ],
+      "weight_count": 10240,
+      "scale": 0.0325927734375
+    },
+    {
+      "layer": "22.cv3.2.1.conv",
+      "weight_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "weight_count": 147456,
+      "scale": 0.01749093271791935
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "N05-001",
+      "layer": "1.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 6018,
+      "weight_index": [
+        20,
+        28,
+        2,
+        0
+      ],
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": -0.1214425191283226,
+      "faulty_weight_fp32": -0.0607212595641613
+    },
+    {
+      "scenario_id": "N05-002",
+      "layer": "1.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 1559,
+      "weight_index": [
+        5,
+        13,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0607212595641613
+    },
+    {
+      "scenario_id": "N05-003",
+      "layer": "1.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 16050,
+      "weight_index": [
+        55,
+        23,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0607212595641613
+    },
+    {
+      "scenario_id": "N05-004",
+      "layer": "1.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 9507,
+      "weight_index": [
+        33,
+        0,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0607212595641613
+    },
+    {
+      "scenario_id": "N05-005",
+      "layer": "1.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 4523,
+      "weight_index": [
+        15,
+        22,
+        1,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0607212595641613,
+      "faulty_weight_fp32": 0.0
+    },
+    {
+      "scenario_id": "N05-006",
+      "layer": "1.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 13898,
+      "weight_index": [
+        48,
+        8,
+        0,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0607212595641613,
+      "faulty_weight_fp32": 0.1821637749671936
+    },
+    {
+      "scenario_id": "N05-007",
+      "layer": "1.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 12168,
+      "weight_index": [
+        42,
+        8,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1214425191283226
+    },
+    {
+      "scenario_id": "N05-008",
+      "layer": "1.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 5975,
+      "weight_index": [
+        20,
+        23,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1214425191283226
+    },
+    {
+      "scenario_id": "N05-009",
+      "layer": "1.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 267,
+      "weight_index": [
+        0,
+        29,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1214425191283226
+    },
+    {
+      "scenario_id": "N05-010",
+      "layer": "1.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 15261,
+      "weight_index": [
+        52,
+        31,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1214425191283226
+    },
+    {
+      "scenario_id": "N05-011",
+      "layer": "1.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 3125,
+      "weight_index": [
+        10,
+        27,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.2428850382566452
+    },
+    {
+      "scenario_id": "N05-012",
+      "layer": "1.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 6720,
+      "weight_index": [
+        23,
+        10,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.2428850382566452
+    },
+    {
+      "scenario_id": "N05-013",
+      "layer": "1.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 16158,
+      "weight_index": [
+        56,
+        3,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.2428850382566452
+    },
+    {
+      "scenario_id": "N05-014",
+      "layer": "1.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 7006,
+      "weight_index": [
+        24,
+        10,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.2428850382566452
+    },
+    {
+      "scenario_id": "N05-015",
+      "layer": "1.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 12214,
+      "weight_index": [
+        42,
+        13,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.2428850382566452
+    },
+    {
+      "scenario_id": "N05-016",
+      "layer": "1.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 5286,
+      "weight_index": [
+        18,
+        11,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.4857700765132904
+    },
+    {
+      "scenario_id": "N05-017",
+      "layer": "1.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 10435,
+      "weight_index": [
+        36,
+        7,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.4857700765132904
+    },
+    {
+      "scenario_id": "N05-018",
+      "layer": "1.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 9912,
+      "weight_index": [
+        34,
+        13,
+        1,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": -0.0607212595641613,
+      "faulty_weight_fp32": 0.425048828125
+    },
+    {
+      "scenario_id": "N05-019",
+      "layer": "1.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 5290,
+      "weight_index": [
+        18,
+        11,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.4857700765132904
+    },
+    {
+      "scenario_id": "N05-020",
+      "layer": "1.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 12142,
+      "weight_index": [
+        42,
+        5,
+        0,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0607212595641613,
+      "clean_weight_fp32": -0.0607212595641613,
+      "faulty_weight_fp32": 0.425048828125
+    },
+    {
+      "scenario_id": "N05-021",
+      "layer": "4.cv1.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 13885,
+      "weight_index": [
+        108,
+        61,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": -0.0864955335855484
+    },
+    {
+      "scenario_id": "N05-022",
+      "layer": "4.cv1.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 13106,
+      "weight_index": [
+        102,
+        50,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0432477667927742
+    },
+    {
+      "scenario_id": "N05-023",
+      "layer": "4.cv1.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 7128,
+      "weight_index": [
+        55,
+        88,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0432477667927742
+    },
+    {
+      "scenario_id": "N05-024",
+      "layer": "4.cv1.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 13736,
+      "weight_index": [
+        107,
+        40,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": -0.0864955335855484
+    },
+    {
+      "scenario_id": "N05-025",
+      "layer": "4.cv1.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 2844,
+      "weight_index": [
+        22,
+        28,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0432477667927742
+    },
+    {
+      "scenario_id": "N05-026",
+      "layer": "4.cv1.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 6148,
+      "weight_index": [
+        48,
+        4,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0864955335855484
+    },
+    {
+      "scenario_id": "N05-027",
+      "layer": "4.cv1.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 6055,
+      "weight_index": [
+        47,
+        39,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0864955335855484
+    },
+    {
+      "scenario_id": "N05-028",
+      "layer": "4.cv1.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 8298,
+      "weight_index": [
+        64,
+        106,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0864955335855484
+    },
+    {
+      "scenario_id": "N05-029",
+      "layer": "4.cv1.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 5208,
+      "weight_index": [
+        40,
+        88,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": -0.1297433078289032
+    },
+    {
+      "scenario_id": "N05-030",
+      "layer": "4.cv1.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 14881,
+      "weight_index": [
+        116,
+        33,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": -0.1297433078289032
+    },
+    {
+      "scenario_id": "N05-031",
+      "layer": "4.cv1.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 4359,
+      "weight_index": [
+        34,
+        7,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1729910671710968
+    },
+    {
+      "scenario_id": "N05-032",
+      "layer": "4.cv1.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 9728,
+      "weight_index": [
+        76,
+        0,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": -0.2162388265132904
+    },
+    {
+      "scenario_id": "N05-033",
+      "layer": "4.cv1.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 10370,
+      "weight_index": [
+        81,
+        2,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1729910671710968
+    },
+    {
+      "scenario_id": "N05-034",
+      "layer": "4.cv1.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 11685,
+      "weight_index": [
+        91,
+        37,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1729910671710968
+    },
+    {
+      "scenario_id": "N05-035",
+      "layer": "4.cv1.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 15664,
+      "weight_index": [
+        122,
+        48,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1729910671710968
+    },
+    {
+      "scenario_id": "N05-036",
+      "layer": "4.cv1.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 5842,
+      "weight_index": [
+        45,
+        82,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.3459821343421936
+    },
+    {
+      "scenario_id": "N05-037",
+      "layer": "4.cv1.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 15107,
+      "weight_index": [
+        118,
+        3,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.3459821343421936
+    },
+    {
+      "scenario_id": "N05-038",
+      "layer": "4.cv1.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 4588,
+      "weight_index": [
+        35,
+        108,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.3459821343421936
+    },
+    {
+      "scenario_id": "N05-039",
+      "layer": "4.cv1.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 6161,
+      "weight_index": [
+        48,
+        17,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": -0.0432477667927742,
+      "faulty_weight_fp32": 0.302734375
+    },
+    {
+      "scenario_id": "N05-040",
+      "layer": "4.cv1.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 10892,
+      "weight_index": [
+        85,
+        12,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0432477667927742,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.3459821343421936
+    },
+    {
+      "scenario_id": "N05-041",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 5235,
+      "weight_index": [
+        9,
+        5,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02251325361430645
+    },
+    {
+      "scenario_id": "N05-042",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 3760,
+      "weight_index": [
+        6,
+        33,
+        2,
+        1
+      ],
+      "q_clean": -2,
+      "q_faulty": -1,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.0450265072286129,
+      "faulty_weight_fp32": -0.02251325361430645
+    },
+    {
+      "scenario_id": "N05-043",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 9488,
+      "weight_index": [
+        16,
+        30,
+        0,
+        2
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": -0.0450265072286129
+    },
+    {
+      "scenario_id": "N05-044",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 15605,
+      "weight_index": [
+        27,
+        5,
+        2,
+        2
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": -0.0450265072286129
+    },
+    {
+      "scenario_id": "N05-045",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 3881,
+      "weight_index": [
+        6,
+        47,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02251325361430645
+    },
+    {
+      "scenario_id": "N05-046",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 25557,
+      "weight_index": [
+        44,
+        23,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0450265072286129
+    },
+    {
+      "scenario_id": "N05-047",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 16880,
+      "weight_index": [
+        29,
+        19,
+        1,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.02251325361430645,
+      "faulty_weight_fp32": 0.0675397589802742
+    },
+    {
+      "scenario_id": "N05-048",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 16062,
+      "weight_index": [
+        27,
+        56,
+        2,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": -0.0675397589802742
+    },
+    {
+      "scenario_id": "N05-049",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 19879,
+      "weight_index": [
+        34,
+        32,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0450265072286129
+    },
+    {
+      "scenario_id": "N05-050",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 35935,
+      "weight_index": [
+        62,
+        24,
+        2,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": -0.0675397589802742
+    },
+    {
+      "scenario_id": "N05-051",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 9921,
+      "weight_index": [
+        17,
+        14,
+        1,
+        0
+      ],
+      "q_clean": 2,
+      "q_faulty": 6,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0450265072286129,
+      "faulty_weight_fp32": 0.1350795179605484
+    },
+    {
+      "scenario_id": "N05-052",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 33608,
+      "weight_index": [
+        58,
+        22,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0900530144572258
+    },
+    {
+      "scenario_id": "N05-053",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 29459,
+      "weight_index": [
+        51,
+        9,
+        0,
+        2
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": -0.1125662699341774
+    },
+    {
+      "scenario_id": "N05-054",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 25744,
+      "weight_index": [
+        44,
+        44,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0900530144572258
+    },
+    {
+      "scenario_id": "N05-055",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 32220,
+      "weight_index": [
+        55,
+        60,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0900530144572258
+    },
+    {
+      "scenario_id": "N05-056",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 1706,
+      "weight_index": [
+        2,
+        61,
+        1,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1801060289144516
+    },
+    {
+      "scenario_id": "N05-057",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 29460,
+      "weight_index": [
+        51,
+        9,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1801060289144516
+    },
+    {
+      "scenario_id": "N05-058",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 33003,
+      "weight_index": [
+        57,
+        19,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.02251325361430645,
+      "faulty_weight_fp32": -0.1575927734375
+    },
+    {
+      "scenario_id": "N05-059",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 12074,
+      "weight_index": [
+        20,
+        61,
+        1,
+        2
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": -0.02251325361430645,
+      "faulty_weight_fp32": 0.1575927734375
+    },
+    {
+      "scenario_id": "N05-060",
+      "layer": "4.m.1.cv2.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 6803,
+      "weight_index": [
+        11,
+        51,
+        2,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.02251325361430645,
+      "clean_weight_fp32": 0.02251325361430645,
+      "faulty_weight_fp32": -0.1575927734375
+    },
+    {
+      "scenario_id": "N05-061",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 65028,
+      "weight_index": [
+        56,
+        57,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01970563642680645
+    },
+    {
+      "scenario_id": "N05-062",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 189,
+      "weight_index": [
+        0,
+        21,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01970563642680645
+    },
+    {
+      "scenario_id": "N05-063",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 11870,
+      "weight_index": [
+        10,
+        38,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01970563642680645
+    },
+    {
+      "scenario_id": "N05-064",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 51808,
+      "weight_index": [
+        44,
+        124,
+        1,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": -0.01970563642680645,
+      "faulty_weight_fp32": -0.0394112728536129
+    },
+    {
+      "scenario_id": "N05-065",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 18432,
+      "weight_index": [
+        16,
+        0,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": -0.01970563642680645,
+      "faulty_weight_fp32": -0.0394112728536129
+    },
+    {
+      "scenario_id": "N05-066",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 30656,
+      "weight_index": [
+        26,
+        78,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0394112728536129
+    },
+    {
+      "scenario_id": "N05-067",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 13036,
+      "weight_index": [
+        11,
+        40,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0394112728536129
+    },
+    {
+      "scenario_id": "N05-068",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 105629,
+      "weight_index": [
+        91,
+        88,
+        1,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.01970563642680645,
+      "faulty_weight_fp32": 0.0591169074177742
+    },
+    {
+      "scenario_id": "N05-069",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 34019,
+      "weight_index": [
+        29,
+        67,
+        2,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.01970563642680645,
+      "faulty_weight_fp32": 0.0591169074177742
+    },
+    {
+      "scenario_id": "N05-070",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 17803,
+      "weight_index": [
+        15,
+        58,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0394112728536129
+    },
+    {
+      "scenario_id": "N05-071",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 113329,
+      "weight_index": [
+        98,
+        48,
+        0,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": -0.01970563642680645,
+      "faulty_weight_fp32": -0.0985281839966774
+    },
+    {
+      "scenario_id": "N05-072",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 28924,
+      "weight_index": [
+        25,
+        13,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0788225457072258
+    },
+    {
+      "scenario_id": "N05-073",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 50965,
+      "weight_index": [
+        44,
+        30,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0788225457072258
+    },
+    {
+      "scenario_id": "N05-074",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 1691,
+      "weight_index": [
+        1,
+        59,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0788225457072258
+    },
+    {
+      "scenario_id": "N05-075",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 78040,
+      "weight_index": [
+        67,
+        95,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0788225457072258
+    },
+    {
+      "scenario_id": "N05-076",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 126316,
+      "weight_index": [
+        109,
+        83,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1576450914144516
+    },
+    {
+      "scenario_id": "N05-077",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 108778,
+      "weight_index": [
+        94,
+        54,
+        1,
+        1
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.01970563642680645,
+      "faulty_weight_fp32": -0.137939453125
+    },
+    {
+      "scenario_id": "N05-078",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 94265,
+      "weight_index": [
+        81,
+        105,
+        2,
+        2
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.01970563642680645,
+      "faulty_weight_fp32": -0.137939453125
+    },
+    {
+      "scenario_id": "N05-079",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 111717,
+      "weight_index": [
+        96,
+        125,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1576450914144516
+    },
+    {
+      "scenario_id": "N05-080",
+      "layer": "6.m.1.cv1.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 56238,
+      "weight_index": [
+        48,
+        104,
+        2,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.01970563642680645,
+      "clean_weight_fp32": 0.01970563642680645,
+      "faulty_weight_fp32": -0.137939453125
+    },
+    {
+      "scenario_id": "N05-081",
+      "layer": "9.cv1.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 66014,
+      "weight_index": [
+        128,
+        478,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0301339291036129
+    },
+    {
+      "scenario_id": "N05-082",
+      "layer": "9.cv1.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 70035,
+      "weight_index": [
+        136,
+        403,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0301339291036129
+    },
+    {
+      "scenario_id": "N05-083",
+      "layer": "9.cv1.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 54182,
+      "weight_index": [
+        105,
+        422,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0301339291036129
+    },
+    {
+      "scenario_id": "N05-084",
+      "layer": "9.cv1.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 77858,
+      "weight_index": [
+        152,
+        34,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0301339291036129
+    },
+    {
+      "scenario_id": "N05-085",
+      "layer": "9.cv1.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 114719,
+      "weight_index": [
+        224,
+        31,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0301339291036129
+    },
+    {
+      "scenario_id": "N05-086",
+      "layer": "9.cv1.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 42524,
+      "weight_index": [
+        83,
+        28,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0602678582072258
+    },
+    {
+      "scenario_id": "N05-087",
+      "layer": "9.cv1.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 87323,
+      "weight_index": [
+        170,
+        283,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": -0.0301339291036129,
+      "faulty_weight_fp32": -0.0904017835855484
+    },
+    {
+      "scenario_id": "N05-088",
+      "layer": "9.cv1.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 9919,
+      "weight_index": [
+        19,
+        191,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0602678582072258
+    },
+    {
+      "scenario_id": "N05-089",
+      "layer": "9.cv1.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 8871,
+      "weight_index": [
+        17,
+        167,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0602678582072258
+    },
+    {
+      "scenario_id": "N05-090",
+      "layer": "9.cv1.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 95815,
+      "weight_index": [
+        187,
+        71,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": -0.0301339291036129,
+      "faulty_weight_fp32": -0.0904017835855484
+    },
+    {
+      "scenario_id": "N05-091",
+      "layer": "9.cv1.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 75662,
+      "weight_index": [
+        147,
+        398,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1205357164144516
+    },
+    {
+      "scenario_id": "N05-092",
+      "layer": "9.cv1.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 74457,
+      "weight_index": [
+        145,
+        217,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": -0.0301339291036129,
+      "faulty_weight_fp32": -0.1506696492433548
+    },
+    {
+      "scenario_id": "N05-093",
+      "layer": "9.cv1.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 96776,
+      "weight_index": [
+        189,
+        8,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1205357164144516
+    },
+    {
+      "scenario_id": "N05-094",
+      "layer": "9.cv1.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 53401,
+      "weight_index": [
+        104,
+        153,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0301339291036129,
+      "faulty_weight_fp32": 0.1506696492433548
+    },
+    {
+      "scenario_id": "N05-095",
+      "layer": "9.cv1.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 97833,
+      "weight_index": [
+        191,
+        41,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0301339291036129,
+      "faulty_weight_fp32": 0.1506696492433548
+    },
+    {
+      "scenario_id": "N05-096",
+      "layer": "9.cv1.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 119894,
+      "weight_index": [
+        234,
+        86,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0301339291036129,
+      "faulty_weight_fp32": -0.2109375
+    },
+    {
+      "scenario_id": "N05-097",
+      "layer": "9.cv1.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 107961,
+      "weight_index": [
+        210,
+        441,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": -0.0301339291036129,
+      "faulty_weight_fp32": 0.2109375
+    },
+    {
+      "scenario_id": "N05-098",
+      "layer": "9.cv1.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 21841,
+      "weight_index": [
+        42,
+        337,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": -0.0301339291036129,
+      "faulty_weight_fp32": 0.2109375
+    },
+    {
+      "scenario_id": "N05-099",
+      "layer": "9.cv1.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 62538,
+      "weight_index": [
+        122,
+        74,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2410714328289032
+    },
+    {
+      "scenario_id": "N05-100",
+      "layer": "9.cv1.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 93219,
+      "weight_index": [
+        182,
+        35,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0301339291036129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2410714328289032
+    },
+    {
+      "scenario_id": "N05-101",
+      "layer": "9.cv2.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 445776,
+      "weight_index": [
+        435,
+        336,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0260009765625
+    },
+    {
+      "scenario_id": "N05-102",
+      "layer": "9.cv2.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 440411,
+      "weight_index": [
+        430,
+        91,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0260009765625
+    },
+    {
+      "scenario_id": "N05-103",
+      "layer": "9.cv2.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 214007,
+      "weight_index": [
+        208,
+        1015,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0260009765625
+    },
+    {
+      "scenario_id": "N05-104",
+      "layer": "9.cv2.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 520646,
+      "weight_index": [
+        508,
+        454,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0260009765625
+    },
+    {
+      "scenario_id": "N05-105",
+      "layer": "9.cv2.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 56571,
+      "weight_index": [
+        55,
+        251,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0260009765625
+    },
+    {
+      "scenario_id": "N05-106",
+      "layer": "9.cv2.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 425131,
+      "weight_index": [
+        415,
+        171,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.052001953125
+    },
+    {
+      "scenario_id": "N05-107",
+      "layer": "9.cv2.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 497142,
+      "weight_index": [
+        485,
+        502,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.052001953125
+    },
+    {
+      "scenario_id": "N05-108",
+      "layer": "9.cv2.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 309582,
+      "weight_index": [
+        302,
+        334,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.052001953125
+    },
+    {
+      "scenario_id": "N05-109",
+      "layer": "9.cv2.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 235231,
+      "weight_index": [
+        229,
+        735,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.052001953125
+    },
+    {
+      "scenario_id": "N05-110",
+      "layer": "9.cv2.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 19395,
+      "weight_index": [
+        18,
+        963,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.052001953125
+    },
+    {
+      "scenario_id": "N05-111",
+      "layer": "9.cv2.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 446048,
+      "weight_index": [
+        435,
+        608,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.10400390625
+    },
+    {
+      "scenario_id": "N05-112",
+      "layer": "9.cv2.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 197151,
+      "weight_index": [
+        192,
+        543,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.10400390625
+    },
+    {
+      "scenario_id": "N05-113",
+      "layer": "9.cv2.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 72692,
+      "weight_index": [
+        70,
+        1012,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.10400390625
+    },
+    {
+      "scenario_id": "N05-114",
+      "layer": "9.cv2.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 363304,
+      "weight_index": [
+        354,
+        808,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.10400390625
+    },
+    {
+      "scenario_id": "N05-115",
+      "layer": "9.cv2.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 409510,
+      "weight_index": [
+        399,
+        934,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.10400390625
+    },
+    {
+      "scenario_id": "N05-116",
+      "layer": "9.cv2.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 172468,
+      "weight_index": [
+        168,
+        436,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2080078125
+    },
+    {
+      "scenario_id": "N05-117",
+      "layer": "9.cv2.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 405865,
+      "weight_index": [
+        396,
+        361,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2080078125
+    },
+    {
+      "scenario_id": "N05-118",
+      "layer": "9.cv2.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 454229,
+      "weight_index": [
+        443,
+        597,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2080078125
+    },
+    {
+      "scenario_id": "N05-119",
+      "layer": "9.cv2.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 367240,
+      "weight_index": [
+        358,
+        648,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2080078125
+    },
+    {
+      "scenario_id": "N05-120",
+      "layer": "9.cv2.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 333453,
+      "weight_index": [
+        325,
+        653,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0260009765625,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2080078125
+    },
+    {
+      "scenario_id": "N05-121",
+      "layer": "15.cv2.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 12158,
+      "weight_index": [
+        63,
+        62,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0273263119161129,
+      "faulty_weight_fp32": 0.0
+    },
+    {
+      "scenario_id": "N05-122",
+      "layer": "15.cv2.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 22387,
+      "weight_index": [
+        116,
+        115,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0273263119161129
+    },
+    {
+      "scenario_id": "N05-123",
+      "layer": "15.cv2.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 16340,
+      "weight_index": [
+        85,
+        20,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0273263119161129
+    },
+    {
+      "scenario_id": "N05-124",
+      "layer": "15.cv2.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 7778,
+      "weight_index": [
+        40,
+        98,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": -0.0273263119161129,
+      "faulty_weight_fp32": -0.0546526238322258
+    },
+    {
+      "scenario_id": "N05-125",
+      "layer": "15.cv2.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 19040,
+      "weight_index": [
+        99,
+        32,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 0,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0273263119161129,
+      "faulty_weight_fp32": 0.0
+    },
+    {
+      "scenario_id": "N05-126",
+      "layer": "15.cv2.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 7333,
+      "weight_index": [
+        38,
+        37,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0273263119161129,
+      "faulty_weight_fp32": 0.0819789320230484
+    },
+    {
+      "scenario_id": "N05-127",
+      "layer": "15.cv2.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 16708,
+      "weight_index": [
+        87,
+        4,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": -0.0273263119161129,
+      "faulty_weight_fp32": -0.0819789320230484
+    },
+    {
+      "scenario_id": "N05-128",
+      "layer": "15.cv2.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 18032,
+      "weight_index": [
+        93,
+        176,
+        0,
+        0
+      ],
+      "q_clean": -5,
+      "q_faulty": -7,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": -0.1366315633058548,
+      "faulty_weight_fp32": -0.1912841796875
+    },
+    {
+      "scenario_id": "N05-129",
+      "layer": "15.cv2.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 7938,
+      "weight_index": [
+        41,
+        66,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0546526238322258
+    },
+    {
+      "scenario_id": "N05-130",
+      "layer": "15.cv2.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 20642,
+      "weight_index": [
+        107,
+        98,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0546526238322258
+    },
+    {
+      "scenario_id": "N05-131",
+      "layer": "15.cv2.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 24534,
+      "weight_index": [
+        127,
+        150,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1093052476644516
+    },
+    {
+      "scenario_id": "N05-132",
+      "layer": "15.cv2.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 8191,
+      "weight_index": [
+        42,
+        127,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0273263119161129,
+      "faulty_weight_fp32": 0.1366315633058548
+    },
+    {
+      "scenario_id": "N05-133",
+      "layer": "15.cv2.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 7399,
+      "weight_index": [
+        38,
+        103,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1093052476644516
+    },
+    {
+      "scenario_id": "N05-134",
+      "layer": "15.cv2.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 16144,
+      "weight_index": [
+        84,
+        16,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1093052476644516
+    },
+    {
+      "scenario_id": "N05-135",
+      "layer": "15.cv2.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 19159,
+      "weight_index": [
+        99,
+        151,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.1093052476644516
+    },
+    {
+      "scenario_id": "N05-136",
+      "layer": "15.cv2.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 16661,
+      "weight_index": [
+        86,
+        149,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2186104953289032
+    },
+    {
+      "scenario_id": "N05-137",
+      "layer": "15.cv2.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 12738,
+      "weight_index": [
+        66,
+        66,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": -7,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0273263119161129,
+      "faulty_weight_fp32": -0.1912841796875
+    },
+    {
+      "scenario_id": "N05-138",
+      "layer": "15.cv2.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 18086,
+      "weight_index": [
+        94,
+        38,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2186104953289032
+    },
+    {
+      "scenario_id": "N05-139",
+      "layer": "15.cv2.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 14630,
+      "weight_index": [
+        76,
+        38,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2186104953289032
+    },
+    {
+      "scenario_id": "N05-140",
+      "layer": "15.cv2.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 829,
+      "weight_index": [
+        4,
+        61,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.0273263119161129,
+      "clean_weight_fp32": -0.0273263119161129,
+      "faulty_weight_fp32": 0.1912841796875
+    },
+    {
+      "scenario_id": "N05-141",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 83817,
+      "weight_index": [
+        72,
+        97,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02190290205180645
+    },
+    {
+      "scenario_id": "N05-142",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 143632,
+      "weight_index": [
+        124,
+        87,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02190290205180645
+    },
+    {
+      "scenario_id": "N05-143",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 122007,
+      "weight_index": [
+        105,
+        116,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02190290205180645
+    },
+    {
+      "scenario_id": "N05-144",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 129930,
+      "weight_index": [
+        112,
+        100,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02190290205180645
+    },
+    {
+      "scenario_id": "N05-145",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 123487,
+      "weight_index": [
+        107,
+        24,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02190290205180645
+    },
+    {
+      "scenario_id": "N05-146",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 76033,
+      "weight_index": [
+        66,
+        0,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0438058041036129
+    },
+    {
+      "scenario_id": "N05-147",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 24615,
+      "weight_index": [
+        21,
+        47,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0438058041036129
+    },
+    {
+      "scenario_id": "N05-148",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 126256,
+      "weight_index": [
+        109,
+        76,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0438058041036129
+    },
+    {
+      "scenario_id": "N05-149",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 83457,
+      "weight_index": [
+        72,
+        57,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0438058041036129
+    },
+    {
+      "scenario_id": "N05-150",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 54978,
+      "weight_index": [
+        47,
+        92,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0438058041036129
+    },
+    {
+      "scenario_id": "N05-151",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 10279,
+      "weight_index": [
+        8,
+        118,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0876116082072258
+    },
+    {
+      "scenario_id": "N05-152",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 33334,
+      "weight_index": [
+        28,
+        119,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0876116082072258
+    },
+    {
+      "scenario_id": "N05-153",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 65070,
+      "weight_index": [
+        56,
+        62,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0876116082072258
+    },
+    {
+      "scenario_id": "N05-154",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 133712,
+      "weight_index": [
+        116,
+        8,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0876116082072258
+    },
+    {
+      "scenario_id": "N05-155",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 119286,
+      "weight_index": [
+        103,
+        70,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0876116082072258
+    },
+    {
+      "scenario_id": "N05-156",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 104602,
+      "weight_index": [
+        90,
+        102,
+        1,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": -0.02190290205180645,
+      "faulty_weight_fp32": 0.1533203125
+    },
+    {
+      "scenario_id": "N05-157",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 9677,
+      "weight_index": [
+        8,
+        51,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1752232164144516
+    },
+    {
+      "scenario_id": "N05-158",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 103854,
+      "weight_index": [
+        90,
+        19,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1752232164144516
+    },
+    {
+      "scenario_id": "N05-159",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 62810,
+      "weight_index": [
+        54,
+        66,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1752232164144516
+    },
+    {
+      "scenario_id": "N05-160",
+      "layer": "18.m.0.cv2.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 91719,
+      "weight_index": [
+        79,
+        79,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": 7,
+      "scale": 0.02190290205180645,
+      "clean_weight_fp32": -0.02190290205180645,
+      "faulty_weight_fp32": 0.1533203125
+    },
+    {
+      "scenario_id": "N05-161",
+      "layer": "21.cv2.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 17572,
+      "weight_index": [
+        22,
+        676,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0182059146463871
+    },
+    {
+      "scenario_id": "N05-162",
+      "layer": "21.cv2.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 154141,
+      "weight_index": [
+        200,
+        541,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0182059146463871
+    },
+    {
+      "scenario_id": "N05-163",
+      "layer": "21.cv2.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 790,
+      "weight_index": [
+        1,
+        22,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0182059146463871
+    },
+    {
+      "scenario_id": "N05-164",
+      "layer": "21.cv2.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 369059,
+      "weight_index": [
+        480,
+        419,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0182059146463871
+    },
+    {
+      "scenario_id": "N05-165",
+      "layer": "21.cv2.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 228890,
+      "weight_index": [
+        298,
+        26,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0182059146463871
+    },
+    {
+      "scenario_id": "N05-166",
+      "layer": "21.cv2.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 155034,
+      "weight_index": [
+        201,
+        666,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0364118292927742
+    },
+    {
+      "scenario_id": "N05-167",
+      "layer": "21.cv2.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 224501,
+      "weight_index": [
+        292,
+        245,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0364118292927742
+    },
+    {
+      "scenario_id": "N05-168",
+      "layer": "21.cv2.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 6015,
+      "weight_index": [
+        7,
+        639,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0364118292927742
+    },
+    {
+      "scenario_id": "N05-169",
+      "layer": "21.cv2.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 179725,
+      "weight_index": [
+        234,
+        13,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0364118292927742
+    },
+    {
+      "scenario_id": "N05-170",
+      "layer": "21.cv2.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 163833,
+      "weight_index": [
+        213,
+        249,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0364118292927742
+    },
+    {
+      "scenario_id": "N05-171",
+      "layer": "21.cv2.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 253661,
+      "weight_index": [
+        330,
+        221,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0728236585855484
+    },
+    {
+      "scenario_id": "N05-172",
+      "layer": "21.cv2.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 95443,
+      "weight_index": [
+        124,
+        211,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": -0.0182059146463871,
+      "faulty_weight_fp32": -0.0910295695066452
+    },
+    {
+      "scenario_id": "N05-173",
+      "layer": "21.cv2.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 77044,
+      "weight_index": [
+        100,
+        244,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0728236585855484
+    },
+    {
+      "scenario_id": "N05-174",
+      "layer": "21.cv2.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 334661,
+      "weight_index": [
+        435,
+        581,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0728236585855484
+    },
+    {
+      "scenario_id": "N05-175",
+      "layer": "21.cv2.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 80163,
+      "weight_index": [
+        104,
+        291,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0728236585855484
+    },
+    {
+      "scenario_id": "N05-176",
+      "layer": "21.cv2.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 192643,
+      "weight_index": [
+        250,
+        643,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1456473171710968
+    },
+    {
+      "scenario_id": "N05-177",
+      "layer": "21.cv2.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 388247,
+      "weight_index": [
+        505,
+        407,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1456473171710968
+    },
+    {
+      "scenario_id": "N05-178",
+      "layer": "21.cv2.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 256187,
+      "weight_index": [
+        333,
+        443,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1456473171710968
+    },
+    {
+      "scenario_id": "N05-179",
+      "layer": "21.cv2.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 43160,
+      "weight_index": [
+        56,
+        152,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1456473171710968
+    },
+    {
+      "scenario_id": "N05-180",
+      "layer": "21.cv2.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 278787,
+      "weight_index": [
+        363,
+        3,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0182059146463871,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1456473171710968
+    },
+    {
+      "scenario_id": "N05-181",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 12622,
+      "weight_index": [
+        2,
+        378,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.014569963328540325
+    },
+    {
+      "scenario_id": "N05-182",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 150891,
+      "weight_index": [
+        32,
+        381,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.014569963328540325
+    },
+    {
+      "scenario_id": "N05-183",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 181676,
+      "weight_index": [
+        39,
+        218,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.014569963328540325
+    },
+    {
+      "scenario_id": "N05-184",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 173422,
+      "weight_index": [
+        37,
+        325,
+        0,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": -0.014569963328540325,
+      "faulty_weight_fp32": -0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-185",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 16516,
+      "weight_index": [
+        3,
+        299,
+        0,
+        1
+      ],
+      "q_clean": 2,
+      "q_faulty": 3,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.02913992665708065,
+      "faulty_weight_fp32": 0.0437098890542984
+    },
+    {
+      "scenario_id": "N05-186",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 232908,
+      "weight_index": [
+        50,
+        278,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-187",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 274275,
+      "weight_index": [
+        59,
+        267,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-188",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 80927,
+      "weight_index": [
+        17,
+        287,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-189",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 7574,
+      "weight_index": [
+        1,
+        329,
+        1,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-190",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 62682,
+      "weight_index": [
+        13,
+        308,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.02913992665708065
+    },
+    {
+      "scenario_id": "N05-191",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 72132,
+      "weight_index": [
+        15,
+        334,
+        2,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.014569963328540325,
+      "faulty_weight_fp32": 0.0728498175740242
+    },
+    {
+      "scenario_id": "N05-192",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 76066,
+      "weight_index": [
+        16,
+        259,
+        2,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0582798533141613
+    },
+    {
+      "scenario_id": "N05-193",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 58241,
+      "weight_index": [
+        12,
+        327,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0582798533141613
+    },
+    {
+      "scenario_id": "N05-194",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 218515,
+      "weight_index": [
+        47,
+        215,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0582798533141613
+    },
+    {
+      "scenario_id": "N05-195",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 114003,
+      "weight_index": [
+        24,
+        379,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0582798533141613
+    },
+    {
+      "scenario_id": "N05-196",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 16376,
+      "weight_index": [
+        3,
+        283,
+        1,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1165597066283226
+    },
+    {
+      "scenario_id": "N05-197",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 43627,
+      "weight_index": [
+        9,
+        239,
+        1,
+        1
+      ],
+      "q_clean": -2,
+      "q_faulty": 6,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": -0.02913992665708065,
+      "faulty_weight_fp32": 0.0874197781085968
+    },
+    {
+      "scenario_id": "N05-198",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 253808,
+      "weight_index": [
+        55,
+        40,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1165597066283226
+    },
+    {
+      "scenario_id": "N05-199",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 99699,
+      "weight_index": [
+        21,
+        325,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1165597066283226
+    },
+    {
+      "scenario_id": "N05-200",
+      "layer": "22.cv2.2.0.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 71969,
+      "weight_index": [
+        15,
+        316,
+        1,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.014569963328540325,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1165597066283226
+    },
+    {
+      "scenario_id": "N05-201",
+      "layer": "22.cv3.0.2",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 2820,
+      "weight_index": [
+        22,
+        4,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.065185546875
+    },
+    {
+      "scenario_id": "N05-202",
+      "layer": "22.cv3.0.2",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 8572,
+      "weight_index": [
+        66,
+        124,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.065185546875
+    },
+    {
+      "scenario_id": "N05-203",
+      "layer": "22.cv3.0.2",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 10117,
+      "weight_index": [
+        79,
+        5,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -2,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.065185546875
+    },
+    {
+      "scenario_id": "N05-204",
+      "layer": "22.cv3.0.2",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 8045,
+      "weight_index": [
+        62,
+        109,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0325927734375
+    },
+    {
+      "scenario_id": "N05-205",
+      "layer": "22.cv3.0.2",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 89,
+      "weight_index": [
+        0,
+        89,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0325927734375
+    },
+    {
+      "scenario_id": "N05-206",
+      "layer": "22.cv3.0.2",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 8358,
+      "weight_index": [
+        65,
+        38,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0325927734375,
+      "faulty_weight_fp32": 0.0977783203125
+    },
+    {
+      "scenario_id": "N05-207",
+      "layer": "22.cv3.0.2",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 2416,
+      "weight_index": [
+        18,
+        112,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.065185546875
+    },
+    {
+      "scenario_id": "N05-208",
+      "layer": "22.cv3.0.2",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 7378,
+      "weight_index": [
+        57,
+        82,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0325927734375,
+      "faulty_weight_fp32": 0.0977783203125
+    },
+    {
+      "scenario_id": "N05-209",
+      "layer": "22.cv3.0.2",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 8851,
+      "weight_index": [
+        69,
+        19,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0325927734375,
+      "faulty_weight_fp32": 0.0977783203125
+    },
+    {
+      "scenario_id": "N05-210",
+      "layer": "22.cv3.0.2",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 4277,
+      "weight_index": [
+        33,
+        53,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 3,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0325927734375,
+      "faulty_weight_fp32": 0.0977783203125
+    },
+    {
+      "scenario_id": "N05-211",
+      "layer": "22.cv3.0.2",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 6410,
+      "weight_index": [
+        50,
+        10,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.13037109375
+    },
+    {
+      "scenario_id": "N05-212",
+      "layer": "22.cv3.0.2",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 7226,
+      "weight_index": [
+        56,
+        58,
+        0,
+        0
+      ],
+      "q_clean": 1,
+      "q_faulty": 5,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0325927734375,
+      "faulty_weight_fp32": 0.1629638671875
+    },
+    {
+      "scenario_id": "N05-213",
+      "layer": "22.cv3.0.2",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 7890,
+      "weight_index": [
+        61,
+        82,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.1629638671875
+    },
+    {
+      "scenario_id": "N05-214",
+      "layer": "22.cv3.0.2",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 3574,
+      "weight_index": [
+        27,
+        118,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.1629638671875
+    },
+    {
+      "scenario_id": "N05-215",
+      "layer": "22.cv3.0.2",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 479,
+      "weight_index": [
+        3,
+        95,
+        0,
+        0
+      ],
+      "q_clean": -1,
+      "q_faulty": -5,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.0325927734375,
+      "faulty_weight_fp32": -0.1629638671875
+    },
+    {
+      "scenario_id": "N05-216",
+      "layer": "22.cv3.0.2",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 4169,
+      "weight_index": [
+        32,
+        73,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2607421875
+    },
+    {
+      "scenario_id": "N05-217",
+      "layer": "22.cv3.0.2",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 546,
+      "weight_index": [
+        4,
+        34,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2607421875
+    },
+    {
+      "scenario_id": "N05-218",
+      "layer": "22.cv3.0.2",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 2942,
+      "weight_index": [
+        22,
+        126,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2607421875
+    },
+    {
+      "scenario_id": "N05-219",
+      "layer": "22.cv3.0.2",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 4295,
+      "weight_index": [
+        33,
+        71,
+        0,
+        0
+      ],
+      "q_clean": -2,
+      "q_faulty": 6,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": -0.065185546875,
+      "faulty_weight_fp32": 0.195556640625
+    },
+    {
+      "scenario_id": "N05-220",
+      "layer": "22.cv3.0.2",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 8228,
+      "weight_index": [
+        64,
+        36,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.0325927734375,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.2607421875
+    },
+    {
+      "scenario_id": "N05-221",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 0,
+      "replicate": 1,
+      "flat_weight_index": 93446,
+      "weight_index": [
+        81,
+        14,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01749093271791935
+    },
+    {
+      "scenario_id": "N05-222",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 0,
+      "replicate": 2,
+      "flat_weight_index": 56848,
+      "weight_index": [
+        49,
+        44,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01749093271791935
+    },
+    {
+      "scenario_id": "N05-223",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 0,
+      "replicate": 3,
+      "flat_weight_index": 27636,
+      "weight_index": [
+        23,
+        126,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01749093271791935
+    },
+    {
+      "scenario_id": "N05-224",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 0,
+      "replicate": 4,
+      "flat_weight_index": 44613,
+      "weight_index": [
+        38,
+        93,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01749093271791935
+    },
+    {
+      "scenario_id": "N05-225",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 0,
+      "replicate": 5,
+      "flat_weight_index": 128001,
+      "weight_index": [
+        111,
+        14,
+        1,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 1,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.01749093271791935
+    },
+    {
+      "scenario_id": "N05-226",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 1,
+      "replicate": 1,
+      "flat_weight_index": 145430,
+      "weight_index": [
+        126,
+        30,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0349818654358387
+    },
+    {
+      "scenario_id": "N05-227",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 1,
+      "replicate": 2,
+      "flat_weight_index": 5570,
+      "weight_index": [
+        4,
+        106,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0349818654358387
+    },
+    {
+      "scenario_id": "N05-228",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 1,
+      "replicate": 3,
+      "flat_weight_index": 104037,
+      "weight_index": [
+        90,
+        39,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0349818654358387
+    },
+    {
+      "scenario_id": "N05-229",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 1,
+      "replicate": 4,
+      "flat_weight_index": 105334,
+      "weight_index": [
+        91,
+        55,
+        2,
+        1
+      ],
+      "q_clean": -1,
+      "q_faulty": -3,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": -0.01749093271791935,
+      "faulty_weight_fp32": -0.0524728000164032
+    },
+    {
+      "scenario_id": "N05-230",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 1,
+      "replicate": 5,
+      "flat_weight_index": 101287,
+      "weight_index": [
+        87,
+        118,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 2,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0349818654358387
+    },
+    {
+      "scenario_id": "N05-231",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 2,
+      "replicate": 1,
+      "flat_weight_index": 58302,
+      "weight_index": [
+        50,
+        78,
+        0,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0699637308716774
+    },
+    {
+      "scenario_id": "N05-232",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 2,
+      "replicate": 2,
+      "flat_weight_index": 61309,
+      "weight_index": [
+        53,
+        28,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0699637308716774
+    },
+    {
+      "scenario_id": "N05-233",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 2,
+      "replicate": 3,
+      "flat_weight_index": 102075,
+      "weight_index": [
+        88,
+        77,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0699637308716774
+    },
+    {
+      "scenario_id": "N05-234",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 2,
+      "replicate": 4,
+      "flat_weight_index": 100786,
+      "weight_index": [
+        87,
+        62,
+        1,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0699637308716774
+    },
+    {
+      "scenario_id": "N05-235",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 2,
+      "replicate": 5,
+      "flat_weight_index": 23777,
+      "weight_index": [
+        20,
+        81,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": 4,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": 0.0699637308716774
+    },
+    {
+      "scenario_id": "N05-236",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 3,
+      "replicate": 1,
+      "flat_weight_index": 100113,
+      "weight_index": [
+        86,
+        115,
+        2,
+        0
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1399274617433548
+    },
+    {
+      "scenario_id": "N05-237",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 3,
+      "replicate": 2,
+      "flat_weight_index": 110117,
+      "weight_index": [
+        95,
+        75,
+        0,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1399274617433548
+    },
+    {
+      "scenario_id": "N05-238",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 3,
+      "replicate": 3,
+      "flat_weight_index": 139886,
+      "weight_index": [
+        121,
+        54,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1399274617433548
+    },
+    {
+      "scenario_id": "N05-239",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 3,
+      "replicate": 4,
+      "flat_weight_index": 109207,
+      "weight_index": [
+        94,
+        102,
+        0,
+        1
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1399274617433548
+    },
+    {
+      "scenario_id": "N05-240",
+      "layer": "22.cv3.2.1.conv",
+      "bit": 3,
+      "replicate": 5,
+      "flat_weight_index": 7487,
+      "weight_index": [
+        6,
+        63,
+        2,
+        2
+      ],
+      "q_clean": 0,
+      "q_faulty": -8,
+      "scale": 0.01749093271791935,
+      "clean_weight_fp32": 0.0,
+      "faulty_weight_fp32": -0.1399274617433548
+    }
+  ]
+}

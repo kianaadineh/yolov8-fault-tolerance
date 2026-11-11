@@ -1,0 +1,48 @@
+{
+  "scope": "clean_baseline_selection_using_50_development_images",
+  "source_sha256": {
+    "int4_per_tensor": "d435a9b2989b5f9d13a7d0fa1dc1c875541bc3dc069d1e276015e286f4c84b19",
+    "int4_per_channel": "a684a61b34b17f1c3cbc556e41f34cf86ff6b2e0ca3d57c7dd4473c8daf44235",
+    "int8_per_channel": "f61a979c0daa11c8d07ff113f1b2242aa4d44e1354644aeebf3776c65246b07a"
+  },
+  "metrics": {
+    "fp32": {
+      "AP50_95": 0.6069269272910565,
+      "AP50": 0.7512912757099651,
+      "AP75": 0.664882651655836,
+      "AR100": 0.7099578110061981
+    },
+    "int4_per_tensor": {
+      "AP50_95": 0.005479964579888446,
+      "AP50": 0.018382035645991404,
+      "AP75": 1.8122617630890605e-06,
+      "AR100": 0.0066387376064795415
+    },
+    "int4_per_channel": {
+      "AP50_95": 0.2453185782831067,
+      "AP50": 0.38120439563526637,
+      "AP75": 0.2747820275804685,
+      "AR100": 0.33143827140601334
+    },
+    "int8_per_channel": {
+      "AP50_95": 0.609048366736769,
+      "AP50": 0.7542844241466578,
+      "AP75": 0.6675147465998514,
+      "AR100": 0.7082618940199586
+    }
+  },
+  "decision": {
+    "int4_candidates": "not_selected_for_broad_fault_screening_at_present",
+    "int8_per_channel": "candidate_for_1000_image_clean_validation",
+    "final_baseline_selected": false,
+    "new_fault_campaign_authorized_by_this_record": false
+  },
+  "limitations": [
+    "Candidates were examined sequentially after observing earlier results.",
+    "No acceptance threshold was predefined for this pilot.",
+    "Small AP increase does not establish general improvement.",
+    "Logical weight quantization with FP32 inference; activations are not INT8.",
+    "No held-out final evaluation or native integer hardware validation.",
+    "INT4 results concern these specific methods without retraining."
+  ]
+}

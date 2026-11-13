@@ -1,0 +1,86 @@
+{
+  "status": "FROZEN_INITIAL_FEASIBILITY_PROTOCOL",
+  "source_commit": "710335d2f526899ab1b27c1f34c80660b2a3b199",
+  "seed": 20261116,
+  "representation": "05a_shared_logical_INT8_per_output_channel",
+  "scope": "63_eligible_Conv2d_weight_tensors",
+  "task": "predict_one_masked_clean_bit_at_a_known_weight_and_bit_position",
+  "bits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "split": {
+    "unit": "output_channel",
+    "within_each_layer": "seeded_60_20_20_train_calibration_test",
+    "channel_groups_disjoint": true,
+    "all_context_weights_must_remain_in_the_target_output_channel": true,
+    "maximum_target_weights_per_layer": {
+      "train": 512,
+      "calibration": 256,
+      "test": 256
+    },
+    "sampling": "uniform_without_replacement_within_each_partition"
+  },
+  "comparisons": {
+    "A": "smoothed_bit_frequency_by_layer_and_bit",
+    "B": "smoothed_conditional_frequency_given_other_7_bits_and_layer",
+    "C": "other_7_bits_and_layer_plus_local_weight_context"
+  },
+  "context": {
+    "definition": "up_to_8_previous_and_8_next_flattened_weights_in_same_output_channel",
+    "target_weight_excluded": true,
+    "boundary_handling": "available_neighbors_only_with_count_feature",
+    "features": [
+      "neighbor_integer_mean",
+      "neighbor_integer_standard_deviation",
+      "neighbor_mean_absolute_integer",
+      "neighbor_zero_fraction",
+      "neighbor_bit_frequencies_0_to_7",
+      "neighbor_count"
+    ],
+    "assumption": "context_is_clean_in_this_initial_completion_probe"
+  },
+  "predictor_C": {
+    "family": "HistGradientBoostingClassifier_one_model_per_bit",
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.1,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "hyperparameter_search": false
+  },
+  "leakage_controls": [
+    "Mask the target bit before constructing target-weight features.",
+    "Do not use the original target integer as a feature.",
+    "Do not use weight address, flat index or output-channel identity.",
+    "Do not use target-inclusive context statistics or FP32 target weights.",
+    "Do not use test labels for fitting, calibration or method selection."
+  ],
+  "evaluation": {
+    "primary": "paired_test_log_loss_C_minus_B",
+    "secondary": [
+      "Brier_score",
+      "accuracy_with_class_prevalence",
+      "per_layer_and_per_bit_results"
+    ],
+    "probability_clipping": 1e-06,
+    "frequency_smoothing": "Laplace_alpha_1",
+    "uncertainty_unit": "output_channel_not_individual_weight",
+    "constant_label_groups": "retain_and_report_metric_availability"
+  },
+  "limitations": [
+    "Bit completion is not fault detection or successful repair.",
+    "Known masked-bit position is not available from an unknown fault.",
+    "Clean context does not establish robustness to corrupted neighbors.",
+    "Predictive accuracy does not establish recovery of detection AP.",
+    "Predictor memory, trusted state and runtime costs remain to be measured.",
+    "No COCO images or held-out detection images are used in this probe."
+  ],
+  "current_INT8_screening_campaign_changed": false
+}

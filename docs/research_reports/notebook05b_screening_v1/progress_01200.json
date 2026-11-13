@@ -1,0 +1,413 @@
+{
+  "kind": "progress",
+  "session_fingerprint": "1ea79fcb88c19db2beae8a6feb9cfef2959076d3e4be0257ec04914bf26b0778",
+  "plan_sha256": "9981145a30329b326534faaae8fdffc7be911d1169b3869c081de612838caa6b",
+  "status": "PARTIAL_SCREENING_NO_RANKING",
+  "completed_scenarios": 1200,
+  "planned_scenarios": 5040,
+  "layers": [
+    {
+      "layer": "model.0.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.1.conv",
+      "completed": 23,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.2.cv1.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.2.cv2.conv",
+      "completed": 23,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.2.m.0.cv1.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.2.m.0.cv2.conv",
+      "completed": 22,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.3.conv",
+      "completed": 20,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.cv1.conv",
+      "completed": 22,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.cv2.conv",
+      "completed": 23,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.m.0.cv1.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.m.0.cv2.conv",
+      "completed": 14,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.m.1.cv1.conv",
+      "completed": 9,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.4.m.1.cv2.conv",
+      "completed": 17,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.5.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.cv1.conv",
+      "completed": 17,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.cv2.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.m.0.cv1.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.m.0.cv2.conv",
+      "completed": 14,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.m.1.cv1.conv",
+      "completed": 17,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.6.m.1.cv2.conv",
+      "completed": 26,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.7.conv",
+      "completed": 15,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.8.cv1.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.8.cv2.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.8.m.0.cv1.conv",
+      "completed": 15,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.8.m.0.cv2.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.9.cv1.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.9.cv2.conv",
+      "completed": 15,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.12.cv1.conv",
+      "completed": 15,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.12.cv2.conv",
+      "completed": 12,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.12.m.0.cv1.conv",
+      "completed": 22,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.12.m.0.cv2.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.15.cv1.conv",
+      "completed": 24,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.15.cv2.conv",
+      "completed": 17,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.15.m.0.cv1.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.15.m.0.cv2.conv",
+      "completed": 24,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.16.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.18.cv1.conv",
+      "completed": 14,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.18.cv2.conv",
+      "completed": 18,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.18.m.0.cv1.conv",
+      "completed": 32,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.18.m.0.cv2.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.19.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.21.cv1.conv",
+      "completed": 20,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.21.cv2.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.21.m.0.cv1.conv",
+      "completed": 20,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.21.m.0.cv2.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.0.0.conv",
+      "completed": 12,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.0.1.conv",
+      "completed": 14,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.0.2",
+      "completed": 17,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.1.0.conv",
+      "completed": 20,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.1.1.conv",
+      "completed": 22,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.1.2",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.2.0.conv",
+      "completed": 16,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.2.1.conv",
+      "completed": 19,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv2.2.2",
+      "completed": 12,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.0.0.conv",
+      "completed": 24,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.0.1.conv",
+      "completed": 26,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.0.2",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.1.0.conv",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.1.1.conv",
+      "completed": 20,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.1.2",
+      "completed": 21,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.2.0.conv",
+      "completed": 23,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.2.1.conv",
+      "completed": 24,
+      "planned": 80,
+      "complete": false
+    },
+    {
+      "layer": "model.22.cv3.2.2",
+      "completed": 18,
+      "planned": 80,
+      "complete": false
+    }
+  ],
+  "exploratory_ranking": [],
+  "clean_metrics": {
+    "AP50": 0.6235200687849605,
+    "AP50_95": 0.4842769592793853,
+    "AP75": 0.5334446793894683,
+    "AP_large": 0.7057658898369708,
+    "AP_medium": 0.4817085008041767,
+    "AP_small": 0.2747746377831853,
+    "AR1": 0.40087117736099587,
+    "AR10": 0.5929026768900507,
+    "AR100": 0.6255526562312993,
+    "AR_large": 0.8256609326346168,
+    "AR_medium": 0.6273432880883161,
+    "AR_small": 0.39721994235540353
+  },
+  "limitations": [
+    "No rare-fault discovery guarantee or validated ranking precision.",
+    "Fixed 200 images cover 76 classes; four classes lack valid non-crowd boxes.",
+    "Equal layer/bit sampling is not uniform whole-network weight sampling.",
+    "Not hardware fault probability, native INT8 execution or protection effectiveness.",
+    "Engineering sign-bit result and historical INT4 results observed before this protocol.",
+    "REQUIRED_SEPARATE_PROTOCOL_fresh_faults_more_development_images_and_low_risk_controls",
+    "Fault bootstrap intervals are exploratory, conditional on these images and unadjusted for 63 comparisons.",
+    "No image-sampling uncertainty, verified rank stability or rare-tail precision is established."
+  ]
+}

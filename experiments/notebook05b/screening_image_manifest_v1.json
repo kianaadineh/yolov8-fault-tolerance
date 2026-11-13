@@ -1,0 +1,725 @@
+{
+  "status": "IMAGE_SUBSET_FROZEN_CAMPAIGN_NOT_FINALIZED",
+  "purpose": "initial_screening_and_compute_validation",
+  "selection": {
+    "algorithm": "PCG64_permutation_of_sorted_development_image_ids",
+    "seed": 20261113,
+    "numpy_version": "2.4.6",
+    "image_count": 200,
+    "image_ids": [
+      5503,
+      5586,
+      8844,
+      9448,
+      9772,
+      11813,
+      15278,
+      15440,
+      17207,
+      17627,
+      28285,
+      37988,
+      38829,
+      39670,
+      46872,
+      47121,
+      52007,
+      52462,
+      60363,
+      60507,
+      62355,
+      64898,
+      66231,
+      71938,
+      75612,
+      79144,
+      79408,
+      81988,
+      86956,
+      88250,
+      99810,
+      100582,
+      104612,
+      117525,
+      128148,
+      129113,
+      137294,
+      144114,
+      144300,
+      146155,
+      146831,
+      156924,
+      157046,
+      160012,
+      165500,
+      166391,
+      168619,
+      172617,
+      172935,
+      173091,
+      173302,
+      175251,
+      176606,
+      176778,
+      184978,
+      186632,
+      189213,
+      189436,
+      189828,
+      190637,
+      196442,
+      197658,
+      201426,
+      205324,
+      209753,
+      213445,
+      213547,
+      213935,
+      215644,
+      220584,
+      222317,
+      222735,
+      223747,
+      224051,
+      226883,
+      227686,
+      228771,
+      232348,
+      236412,
+      239843,
+      241326,
+      241677,
+      245448,
+      246883,
+      248810,
+      252332,
+      253433,
+      255483,
+      256407,
+      258388,
+      261036,
+      266082,
+      270066,
+      270122,
+      277584,
+      285894,
+      286458,
+      295231,
+      297578,
+      300039,
+      302452,
+      303499,
+      307598,
+      311518,
+      320632,
+      323151,
+      323496,
+      334309,
+      338901,
+      339442,
+      343937,
+      350833,
+      353051,
+      355169,
+      356387,
+      357567,
+      367095,
+      368961,
+      369323,
+      369370,
+      376264,
+      377588,
+      378099,
+      378116,
+      378139,
+      379842,
+      383838,
+      391375,
+      392481,
+      394206,
+      394940,
+      398377,
+      402096,
+      406997,
+      414385,
+      414510,
+      417249,
+      419882,
+      423506,
+      426297,
+      426795,
+      435205,
+      435206,
+      446005,
+      449432,
+      455624,
+      458410,
+      459272,
+      460841,
+      461036,
+      464251,
+      464872,
+      468233,
+      470924,
+      471789,
+      472030,
+      472298,
+      474095,
+      475732,
+      476491,
+      479155,
+      480021,
+      486112,
+      486573,
+      491464,
+      496954,
+      497599,
+      497628,
+      502910,
+      504439,
+      505451,
+      506707,
+      507037,
+      511321,
+      516038,
+      519491,
+      520009,
+      520264,
+      521540,
+      523229,
+      527616,
+      529568,
+      530457,
+      542776,
+      545958,
+      551439,
+      551820,
+      556158,
+      560312,
+      561335,
+      562448,
+      562561,
+      563702,
+      565989,
+      569700,
+      570664,
+      574297,
+      575815,
+      578093,
+      578967
+    ],
+    "image_id_list_sha256": "88c187b86b039a9b3ff69909422c0fd2a30108aa550ce19667d6bb06c98a8293",
+    "source_split_sha256": "143c3273b2bf0cd6393cfe148a74e48fbafb74e770bd3fbdf3f14222355978ee",
+    "annotation_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+  },
+  "coverage": {
+    "categories_present": 76,
+    "missing_categories": [
+      "parking meter",
+      "carrot",
+      "hot dog",
+      "hair drier"
+    ],
+    "valid_non_crowd_boxes": 1311,
+    "images_without_valid_non_crowd_boxes": [
+      228771,
+      402096,
+      476491,
+      502910
+    ],
+    "per_category": [
+      {
+        "category_id": 1,
+        "name": "person",
+        "images": 110,
+        "valid_non_crowd_boxes": 395
+      },
+      {
+        "category_id": 2,
+        "name": "bicycle",
+        "images": 6,
+        "valid_non_crowd_boxes": 19
+      },
+      {
+        "category_id": 3,
+        "name": "car",
+        "images": 19,
+        "valid_non_crowd_boxes": 77
+      },
+      {
+        "category_id": 4,
+        "name": "motorcycle",
+        "images": 9,
+        "valid_non_crowd_boxes": 19
+      },
+      {
+        "category_id": 5,
+        "name": "airplane",
+        "images": 3,
+        "valid_non_crowd_boxes": 3
+      },
+      {
+        "category_id": 6,
+        "name": "bus",
+        "images": 8,
+        "valid_non_crowd_boxes": 11
+      },
+      {
+        "category_id": 7,
+        "name": "train",
+        "images": 5,
+        "valid_non_crowd_boxes": 11
+      },
+      {
+        "category_id": 8,
+        "name": "truck",
+        "images": 8,
+        "valid_non_crowd_boxes": 18
+      },
+      {
+        "category_id": 9,
+        "name": "boat",
+        "images": 8,
+        "valid_non_crowd_boxes": 15
+      },
+      {
+        "category_id": 10,
+        "name": "traffic light",
+        "images": 4,
+        "valid_non_crowd_boxes": 20
+      },
+      {
+        "category_id": 11,
+        "name": "fire hydrant",
+        "images": 1,
+        "valid_non_crowd_boxes": 1
+      },
+      {
+        "category_id": 13,
+        "name": "stop sign",
+        "images": 4,
+        "valid_non_crowd_boxes": 4
+      },
+      {
+        "category_id": 14,
+        "name": "parking meter",
+        "images": 0,
+        "valid_non_crowd_boxes": 0
+      },
+      {
+        "category_id": 15,
+        "name": "bench",
+        "images": 6,
+        "valid_non_crowd_boxes": 8
+      },
+      {
+        "category_id": 16,
+        "name": "bird",
+        "images": 4,
+        "valid_non_crowd_boxes": 15
+      },
+      {
+        "category_id": 17,
+        "name": "cat",
+        "images": 9,
+        "valid_non_crowd_boxes": 10
+      },
+      {
+        "category_id": 18,
+        "name": "dog",
+        "images": 7,
+        "valid_non_crowd_boxes": 8
+      },
+      {
+        "category_id": 19,
+        "name": "horse",
+        "images": 7,
+        "valid_non_crowd_boxes": 23
+      },
+      {
+        "category_id": 20,
+        "name": "sheep",
+        "images": 4,
+        "valid_non_crowd_boxes": 10
+      },
+      {
+        "category_id": 21,
+        "name": "cow",
+        "images": 2,
+        "valid_non_crowd_boxes": 10
+      },
+      {
+        "category_id": 22,
+        "name": "elephant",
+        "images": 5,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 23,
+        "name": "bear",
+        "images": 3,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 24,
+        "name": "zebra",
+        "images": 5,
+        "valid_non_crowd_boxes": 13
+      },
+      {
+        "category_id": 25,
+        "name": "giraffe",
+        "images": 3,
+        "valid_non_crowd_boxes": 4
+      },
+      {
+        "category_id": 27,
+        "name": "backpack",
+        "images": 6,
+        "valid_non_crowd_boxes": 8
+      },
+      {
+        "category_id": 28,
+        "name": "umbrella",
+        "images": 2,
+        "valid_non_crowd_boxes": 2
+      },
+      {
+        "category_id": 31,
+        "name": "handbag",
+        "images": 9,
+        "valid_non_crowd_boxes": 13
+      },
+      {
+        "category_id": 32,
+        "name": "tie",
+        "images": 6,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 33,
+        "name": "suitcase",
+        "images": 4,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 34,
+        "name": "frisbee",
+        "images": 3,
+        "valid_non_crowd_boxes": 5
+      },
+      {
+        "category_id": 35,
+        "name": "skis",
+        "images": 3,
+        "valid_non_crowd_boxes": 3
+      },
+      {
+        "category_id": 36,
+        "name": "snowboard",
+        "images": 2,
+        "valid_non_crowd_boxes": 2
+      },
+      {
+        "category_id": 37,
+        "name": "sports ball",
+        "images": 6,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 38,
+        "name": "kite",
+        "images": 1,
+        "valid_non_crowd_boxes": 1
+      },
+      {
+        "category_id": 39,
+        "name": "baseball bat",
+        "images": 6,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 40,
+        "name": "baseball glove",
+        "images": 6,
+        "valid_non_crowd_boxes": 11
+      },
+      {
+        "category_id": 41,
+        "name": "skateboard",
+        "images": 3,
+        "valid_non_crowd_boxes": 3
+      },
+      {
+        "category_id": 42,
+        "name": "surfboard",
+        "images": 7,
+        "valid_non_crowd_boxes": 12
+      },
+      {
+        "category_id": 43,
+        "name": "tennis racket",
+        "images": 5,
+        "valid_non_crowd_boxes": 12
+      },
+      {
+        "category_id": 44,
+        "name": "bottle",
+        "images": 14,
+        "valid_non_crowd_boxes": 57
+      },
+      {
+        "category_id": 46,
+        "name": "wine glass",
+        "images": 5,
+        "valid_non_crowd_boxes": 25
+      },
+      {
+        "category_id": 47,
+        "name": "cup",
+        "images": 9,
+        "valid_non_crowd_boxes": 35
+      },
+      {
+        "category_id": 48,
+        "name": "fork",
+        "images": 4,
+        "valid_non_crowd_boxes": 5
+      },
+      {
+        "category_id": 49,
+        "name": "knife",
+        "images": 6,
+        "valid_non_crowd_boxes": 12
+      },
+      {
+        "category_id": 50,
+        "name": "spoon",
+        "images": 4,
+        "valid_non_crowd_boxes": 4
+      },
+      {
+        "category_id": 51,
+        "name": "bowl",
+        "images": 8,
+        "valid_non_crowd_boxes": 25
+      },
+      {
+        "category_id": 52,
+        "name": "banana",
+        "images": 3,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 53,
+        "name": "apple",
+        "images": 5,
+        "valid_non_crowd_boxes": 13
+      },
+      {
+        "category_id": 54,
+        "name": "sandwich",
+        "images": 4,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 55,
+        "name": "orange",
+        "images": 5,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 56,
+        "name": "broccoli",
+        "images": 2,
+        "valid_non_crowd_boxes": 13
+      },
+      {
+        "category_id": 57,
+        "name": "carrot",
+        "images": 0,
+        "valid_non_crowd_boxes": 0
+      },
+      {
+        "category_id": 58,
+        "name": "hot dog",
+        "images": 0,
+        "valid_non_crowd_boxes": 0
+      },
+      {
+        "category_id": 59,
+        "name": "pizza",
+        "images": 10,
+        "valid_non_crowd_boxes": 20
+      },
+      {
+        "category_id": 60,
+        "name": "donut",
+        "images": 1,
+        "valid_non_crowd_boxes": 5
+      },
+      {
+        "category_id": 61,
+        "name": "cake",
+        "images": 4,
+        "valid_non_crowd_boxes": 5
+      },
+      {
+        "category_id": 62,
+        "name": "chair",
+        "images": 19,
+        "valid_non_crowd_boxes": 56
+      },
+      {
+        "category_id": 63,
+        "name": "couch",
+        "images": 13,
+        "valid_non_crowd_boxes": 14
+      },
+      {
+        "category_id": 64,
+        "name": "potted plant",
+        "images": 4,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 65,
+        "name": "bed",
+        "images": 6,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 67,
+        "name": "dining table",
+        "images": 20,
+        "valid_non_crowd_boxes": 26
+      },
+      {
+        "category_id": 70,
+        "name": "toilet",
+        "images": 7,
+        "valid_non_crowd_boxes": 7
+      },
+      {
+        "category_id": 72,
+        "name": "tv",
+        "images": 10,
+        "valid_non_crowd_boxes": 14
+      },
+      {
+        "category_id": 73,
+        "name": "laptop",
+        "images": 4,
+        "valid_non_crowd_boxes": 4
+      },
+      {
+        "category_id": 74,
+        "name": "mouse",
+        "images": 2,
+        "valid_non_crowd_boxes": 2
+      },
+      {
+        "category_id": 75,
+        "name": "remote",
+        "images": 9,
+        "valid_non_crowd_boxes": 16
+      },
+      {
+        "category_id": 76,
+        "name": "keyboard",
+        "images": 2,
+        "valid_non_crowd_boxes": 2
+      },
+      {
+        "category_id": 77,
+        "name": "cell phone",
+        "images": 11,
+        "valid_non_crowd_boxes": 14
+      },
+      {
+        "category_id": 78,
+        "name": "microwave",
+        "images": 3,
+        "valid_non_crowd_boxes": 3
+      },
+      {
+        "category_id": 79,
+        "name": "oven",
+        "images": 4,
+        "valid_non_crowd_boxes": 4
+      },
+      {
+        "category_id": 80,
+        "name": "toaster",
+        "images": 1,
+        "valid_non_crowd_boxes": 1
+      },
+      {
+        "category_id": 81,
+        "name": "sink",
+        "images": 9,
+        "valid_non_crowd_boxes": 10
+      },
+      {
+        "category_id": 82,
+        "name": "refrigerator",
+        "images": 3,
+        "valid_non_crowd_boxes": 3
+      },
+      {
+        "category_id": 84,
+        "name": "book",
+        "images": 12,
+        "valid_non_crowd_boxes": 54
+      },
+      {
+        "category_id": 85,
+        "name": "clock",
+        "images": 9,
+        "valid_non_crowd_boxes": 10
+      },
+      {
+        "category_id": 86,
+        "name": "vase",
+        "images": 5,
+        "valid_non_crowd_boxes": 6
+      },
+      {
+        "category_id": 87,
+        "name": "scissors",
+        "images": 2,
+        "valid_non_crowd_boxes": 2
+      },
+      {
+        "category_id": 88,
+        "name": "teddy bear",
+        "images": 4,
+        "valid_non_crowd_boxes": 5
+      },
+      {
+        "category_id": 89,
+        "name": "hair drier",
+        "images": 0,
+        "valid_non_crowd_boxes": 0
+      },
+      {
+        "category_id": 90,
+        "name": "toothbrush",
+        "images": 1,
+        "valid_non_crowd_boxes": 1
+      }
+    ]
+  },
+  "rules": [
+    "Retain all 200 images, including images without valid non-crowd boxes.",
+    "Use original COCO annotations and COCOeval crowd handling.",
+    "Compare clean and faulted predictions on identical image IDs.",
+    "Do not change the subset in response to performance results.",
+    "Do not use held-out images for screening decisions."
+  ],
+  "limitations": [
+    "Four categories have no valid non-crowd boxes in this subset.",
+    "Rare-category sensitivity cannot be established by this screening.",
+    "No sample-size or ranking-stability guarantee."
+  ]
+}

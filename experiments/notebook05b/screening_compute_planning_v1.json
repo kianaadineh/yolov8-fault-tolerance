@@ -1,0 +1,52 @@
+{
+  "status": "WORKING_CANDIDATE_NOT_FROZEN",
+  "baseline_commit": "30661e980b0854e92cb36fde105f5723cb14ef39",
+  "baseline": "shared_logical_INT8_per_channel_FP32_computation",
+  "timing_source": "results/notebook05b/shared_INT8_clean_gpu_timing_pilot50_v1.json",
+  "timing_source_sha256": "3cbd9a01c0e525bd2c4601b119aec7039377c5ceb18d7eb60eb1932e6480af02",
+  "observed_clean_median_seconds_per_image": 0.02166507941999953,
+  "working_candidate": {
+    "eligible_layers": 63,
+    "bits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "uniform_weights_per_layer_bit": 10,
+    "fault_scenarios": 5040,
+    "development_images_per_scenario": 200,
+    "image_forwards": 1008000,
+    "image_subset": "NOT_YET_SELECTED",
+    "reason": "budget-based candidate; not a power-validated sample size"
+  },
+  "estimated_measured_pipeline_hours": 6.0662222375998684,
+  "estimate_excludes": [
+    "fault injection and restoration",
+    "integrity checks",
+    "prediction storage",
+    "COCOeval",
+    "interruptions and resume overhead"
+  ],
+  "required_before_freeze": [
+    "Time and validate a complete faulted scenario.",
+    "Specify the fixed development image subset and audit coverage.",
+    "Define practical damage thresholds and uncertainty analysis.",
+    "Define independent follow-up faults and image expansion.",
+    "Include confirmation controls from apparently low-risk layers.",
+    "Specify failure handling, selection rules and stopping rules.",
+    "Freeze seeds, execution order and source identities."
+  ],
+  "limitations": [
+    "Clean timing does not guarantee faulted-scenario runtime.",
+    "Ten weights per bit have no established precision guarantee.",
+    "Screening does not guarantee discovery of rare damaging faults.",
+    "No physical hardware fault-rate claim."
+  ],
+  "new_fault_scenarios_generated": false,
+  "held_out_images_used": false
+}

@@ -1,0 +1,28 @@
+{
+  "source_relative_path": "results/notebook05b/int8_screening_v1/clean_evaluation.json.gz",
+  "source_archive_sha256": "25f7edbbe54da508b5a0adc13a89308e14b0524ba9d9d192002720a1abe7033b",
+  "record": {
+    "payload": {
+      "evaluation_seconds": 2.991446960000303,
+      "kind": "baseline",
+      "metrics": {
+        "AP50": 0.6235200687849605,
+        "AP50_95": 0.4842769592793853,
+        "AP75": 0.5334446793894683,
+        "AP_large": 0.7057658898369708,
+        "AP_medium": 0.4817085008041767,
+        "AP_small": 0.2747746377831853,
+        "AR1": 0.40087117736099587,
+        "AR10": 0.5929026768900507,
+        "AR100": 0.6255526562312993,
+        "AR_large": 0.8256609326346168,
+        "AR_medium": 0.6273432880883161,
+        "AR_small": 0.39721994235540353
+      },
+      "plan_sha256": "9981145a30329b326534faaae8fdffc7be911d1169b3869c081de612838caa6b",
+      "prediction_sha256": "ff06bd22399e72c7c54184b132be6d52948f751eb65cc7b7557043c77f376b6c",
+      "session_fingerprint": "1ea79fcb88c19db2beae8a6feb9cfef2959076d3e4be0257ec04914bf26b0778"
+    },
+    "payload_sha256": "d16c381f933a8ca0e6d3fb753c94271103537aec3bef7b0158e2ba4b419ba26c"
+  }
+}

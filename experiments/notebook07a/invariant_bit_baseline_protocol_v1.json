@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "status": "FROZEN_BASELINE_BEFORE_INVARIANT_MASK_EXTRACTION",
+  "reference_doi": "10.1007/s11227-024-06693-7",
+  "implementation_claim": "documented_adaptation_not_exact_paper_reproduction",
+  "representation": "05a_shared_logical_INT8_per_output_channel",
+  "checkpoint_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "clean_model_state_sha256": "436fb7e861fb8d4776a2b27461be941cfa9a8b5d24d84652623fb35c2d81d264",
+  "source_screening_plan_sha256": "9981145a30329b326534faaae8fdffc7be911d1169b3869c081de612838caa6b",
+  "scope": "63_eligible_Conv2d_weight_tensors",
+  "protected_candidate_bits": [
+    4,
+    5,
+    6
+  ],
+  "grouping": {
+    "3x3": "one_9_weight_kernel_per_output_input_channel_pair",
+    "1x1": "consecutive_groups_of_9_input_weights_within_each_output_channel",
+    "order": "contiguous_OIHW_tensor_order",
+    "tails": "leave_fewer_than_9_remaining_weights_unprotected",
+    "cross_output_channel_grouping": false
+  },
+  "mask_definition": {
+    "force_zero": "candidate_bit_is_zero_in_all_9_clean_weights",
+    "force_one": "candidate_bit_is_one_in_all_9_clean_weights",
+    "other_bits": "unprotected_and_unchanged",
+    "zero_one_masks_must_be_disjoint": true,
+    "storage": "one_uint8_per_group",
+    "packing": "bits_0_1_2_force_zero_for_weight_bits_4_5_6; bits_3_4_5_force_one_for_weight_bits_4_5_6; bits_6_7_reserved_zero"
+  },
+  "operation": {
+    "reference": "extract_once_from_verified_clean_integer_weights",
+    "runtime": "scan_all_weights_in_the_selected_protected_groups",
+    "correction": "set_only_protected_bits_to_the_stored_reference_value",
+    "fault_location_provided_to_method": false,
+    "clean_target_values_available_at_runtime": false
+  },
+  "trust_assumptions": [
+    "reference_masks_and_group_metadata_are_trusted",
+    "quantization_scales_are_trusted",
+    "checker_and_correction_computation_are_trusted"
+  ],
+  "initial_checks": [
+    "clean_weights_are_unchanged",
+    "every_protected_single_bit_flip_is_exactly_restored",
+    "unprotected_single_bit_flips_are_left_unchanged",
+    "tails_are_unchanged",
+    "mask_encoding_and_decoding_are_consistent",
+    "signed_INT8_boundaries_are_handled_correctly"
+  ],
+  "coverage_reporting": {
+    "grouped_weight_fraction": "not_fault_protection_coverage",
+    "candidate_bit_coverage": "protected_weight_bit_positions_over_all_weight_positions_in_bits_4_5_6",
+    "all_bit_coverage": "protected_weight_bit_positions_over_8_times_all_eligible_weights",
+    "report_per_layer": true,
+    "include_unprotected_tails_in_denominators": true
+  },
+  "cost_reporting": [
+    "actual_mask_array_bytes",
+    "actual_serialized_metadata_and_file_bytes",
+    "ideal_6_bit_packed_size_as_theoretical_reference_only",
+    "mask_construction_time",
+    "scan_and_correction_time"
+  ],
+  "limitations": [
+    "Not a new protection mechanism claim.",
+    "No hardware implementation or native_INT8_inference claim.",
+    "No AP improvement established by bit coverage alone.",
+    "Trusted metadata faults and activation faults are outside scope.",
+    "Protection allocation comparisons require a separate frozen protocol."
+  ],
+  "existing_05b_and_06b_protocols_changed": false
+}

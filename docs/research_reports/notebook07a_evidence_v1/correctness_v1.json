@@ -1,0 +1,337 @@
+{
+  "payload_sha256": "0c742a8e0d276e6c1511af49c137d1716e09b96444205482ac055e5ddd40adb0",
+  "payload": {
+    "status": "CORRECTION_FUNCTIONAL_CHECKS_PASS_NO_AP_EVALUATION",
+    "manifest_sha256": "bee8dc2d17c1612ba1eddaeab8960f5d265e73c75c907c5cb80c62b0bb10f08a",
+    "protocol_sha256": "74785069999784731bcc2917a5fd44fa8b698c102f76a9043b1f022b8303a799",
+    "module_sha256": "4c65b8147d2aa1ef4b850eb0e27e0e68a6b505c13d3e43123c9793d507c84a5e",
+    "clean_weights_checked_unchanged": 11146080,
+    "position_bit_cases_checked": 89168640,
+    "protected_cases_exactly_recovered": 1297125,
+    "unprotected_cases_left_unchanged": 87871515,
+    "check_seconds_excluding_model_preparation": 1.1109702830000288,
+    "method": "Vectorized position-wise checks; fixed masks make corrections separable.",
+    "limits": [
+      "Not COCO inference or an AP benefit measurement.",
+      "Trusted masks, scales, metadata and checker.",
+      "This does not validate hardware fault handling or scan performance."
+    ],
+    "layers": [
+      {
+        "layer": "model.0.conv",
+        "position_bit_cases": 6912,
+        "exactly_recovered_protected_cases": 27
+      },
+      {
+        "layer": "model.1.conv",
+        "position_bit_cases": 147456,
+        "exactly_recovered_protected_cases": 1440
+      },
+      {
+        "layer": "model.2.cv1.conv",
+        "position_bit_cases": 32768,
+        "exactly_recovered_protected_cases": 135
+      },
+      {
+        "layer": "model.2.cv2.conv",
+        "position_bit_cases": 49152,
+        "exactly_recovered_protected_cases": 54
+      },
+      {
+        "layer": "model.2.m.0.cv1.conv",
+        "position_bit_cases": 73728,
+        "exactly_recovered_protected_cases": 252
+      },
+      {
+        "layer": "model.2.m.0.cv2.conv",
+        "position_bit_cases": 73728,
+        "exactly_recovered_protected_cases": 90
+      },
+      {
+        "layer": "model.3.conv",
+        "position_bit_cases": 589824,
+        "exactly_recovered_protected_cases": 10764
+      },
+      {
+        "layer": "model.4.cv1.conv",
+        "position_bit_cases": 131072,
+        "exactly_recovered_protected_cases": 279
+      },
+      {
+        "layer": "model.4.cv2.conv",
+        "position_bit_cases": 262144,
+        "exactly_recovered_protected_cases": 387
+      },
+      {
+        "layer": "model.4.m.0.cv1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 756
+      },
+      {
+        "layer": "model.4.m.0.cv2.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 882
+      },
+      {
+        "layer": "model.4.m.1.cv1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 531
+      },
+      {
+        "layer": "model.4.m.1.cv2.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 909
+      },
+      {
+        "layer": "model.5.conv",
+        "position_bit_cases": 2359296,
+        "exactly_recovered_protected_cases": 70011
+      },
+      {
+        "layer": "model.6.cv1.conv",
+        "position_bit_cases": 524288,
+        "exactly_recovered_protected_cases": 837
+      },
+      {
+        "layer": "model.6.cv2.conv",
+        "position_bit_cases": 1048576,
+        "exactly_recovered_protected_cases": 1494
+      },
+      {
+        "layer": "model.6.m.0.cv1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 5049
+      },
+      {
+        "layer": "model.6.m.0.cv2.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 5994
+      },
+      {
+        "layer": "model.6.m.1.cv1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 4176
+      },
+      {
+        "layer": "model.6.m.1.cv2.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 6471
+      },
+      {
+        "layer": "model.7.conv",
+        "position_bit_cases": 9437184,
+        "exactly_recovered_protected_cases": 274752
+      },
+      {
+        "layer": "model.8.cv1.conv",
+        "position_bit_cases": 2097152,
+        "exactly_recovered_protected_cases": 3681
+      },
+      {
+        "layer": "model.8.cv2.conv",
+        "position_bit_cases": 3145728,
+        "exactly_recovered_protected_cases": 5535
+      },
+      {
+        "layer": "model.8.m.0.cv1.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 82143
+      },
+      {
+        "layer": "model.8.m.0.cv2.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 77292
+      },
+      {
+        "layer": "model.9.cv1.conv",
+        "position_bit_cases": 1048576,
+        "exactly_recovered_protected_cases": 1728
+      },
+      {
+        "layer": "model.9.cv2.conv",
+        "position_bit_cases": 4194304,
+        "exactly_recovered_protected_cases": 6174
+      },
+      {
+        "layer": "model.12.cv1.conv",
+        "position_bit_cases": 1572864,
+        "exactly_recovered_protected_cases": 2700
+      },
+      {
+        "layer": "model.12.cv2.conv",
+        "position_bit_cases": 786432,
+        "exactly_recovered_protected_cases": 1116
+      },
+      {
+        "layer": "model.12.m.0.cv1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 7056
+      },
+      {
+        "layer": "model.12.m.0.cv2.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 5805
+      },
+      {
+        "layer": "model.15.cv1.conv",
+        "position_bit_cases": 393216,
+        "exactly_recovered_protected_cases": 513
+      },
+      {
+        "layer": "model.15.cv2.conv",
+        "position_bit_cases": 196608,
+        "exactly_recovered_protected_cases": 315
+      },
+      {
+        "layer": "model.15.m.0.cv1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 927
+      },
+      {
+        "layer": "model.15.m.0.cv2.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 486
+      },
+      {
+        "layer": "model.16.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 15120
+      },
+      {
+        "layer": "model.18.cv1.conv",
+        "position_bit_cases": 786432,
+        "exactly_recovered_protected_cases": 1287
+      },
+      {
+        "layer": "model.18.cv2.conv",
+        "position_bit_cases": 786432,
+        "exactly_recovered_protected_cases": 1296
+      },
+      {
+        "layer": "model.18.m.0.cv1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 6156
+      },
+      {
+        "layer": "model.18.m.0.cv2.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 8208
+      },
+      {
+        "layer": "model.19.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 121671
+      },
+      {
+        "layer": "model.21.cv1.conv",
+        "position_bit_cases": 3145728,
+        "exactly_recovered_protected_cases": 5058
+      },
+      {
+        "layer": "model.21.cv2.conv",
+        "position_bit_cases": 3145728,
+        "exactly_recovered_protected_cases": 5229
+      },
+      {
+        "layer": "model.21.m.0.cv1.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 61668
+      },
+      {
+        "layer": "model.21.m.0.cv2.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 56556
+      },
+      {
+        "layer": "model.22.cv2.0.0.conv",
+        "position_bit_cases": 589824,
+        "exactly_recovered_protected_cases": 3231
+      },
+      {
+        "layer": "model.22.cv2.0.1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 2934
+      },
+      {
+        "layer": "model.22.cv2.0.2",
+        "position_bit_cases": 32768,
+        "exactly_recovered_protected_cases": 1251
+      },
+      {
+        "layer": "model.22.cv2.1.0.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 15525
+      },
+      {
+        "layer": "model.22.cv2.1.1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 3969
+      },
+      {
+        "layer": "model.22.cv2.1.2",
+        "position_bit_cases": 32768,
+        "exactly_recovered_protected_cases": 1647
+      },
+      {
+        "layer": "model.22.cv2.2.0.conv",
+        "position_bit_cases": 2359296,
+        "exactly_recovered_protected_cases": 36918
+      },
+      {
+        "layer": "model.22.cv2.2.1.conv",
+        "position_bit_cases": 294912,
+        "exactly_recovered_protected_cases": 5472
+      },
+      {
+        "layer": "model.22.cv2.2.2",
+        "position_bit_cases": 32768,
+        "exactly_recovered_protected_cases": 1728
+      },
+      {
+        "layer": "model.22.cv3.0.0.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 15246
+      },
+      {
+        "layer": "model.22.cv3.0.1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 37386
+      },
+      {
+        "layer": "model.22.cv3.0.2",
+        "position_bit_cases": 81920,
+        "exactly_recovered_protected_cases": 225
+      },
+      {
+        "layer": "model.22.cv3.1.0.conv",
+        "position_bit_cases": 2359296,
+        "exactly_recovered_protected_cases": 42606
+      },
+      {
+        "layer": "model.22.cv3.1.1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 54180
+      },
+      {
+        "layer": "model.22.cv3.1.2",
+        "position_bit_cases": 81920,
+        "exactly_recovered_protected_cases": 315
+      },
+      {
+        "layer": "model.22.cv3.2.0.conv",
+        "position_bit_cases": 4718592,
+        "exactly_recovered_protected_cases": 145323
+      },
+      {
+        "layer": "model.22.cv3.2.1.conv",
+        "position_bit_cases": 1179648,
+        "exactly_recovered_protected_cases": 65934
+      },
+      {
+        "layer": "model.22.cv3.2.2",
+        "position_bit_cases": 81920,
+        "exactly_recovered_protected_cases": 225
+      }
+    ]
+  }
+}

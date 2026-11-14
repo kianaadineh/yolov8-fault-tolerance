@@ -1,0 +1,702 @@
+{
+  "payload_sha256": "abd12127fa46e5201ec57a9ddf63e974c3eb9674602fb1ff1048eeba7cbf4968",
+  "payload": {
+    "status": "FROZEN_DECISIONS_MATERIALIZED_NO_IMAGE_INFERENCE",
+    "protocol_sha256": "89aa9b56a93fd72c19bceb2e5deff64f06f43e82e47ff1e764ac4e318e3413a8",
+    "calibration_sha256": "87bfe4072cc4f8b1eb90fe961d4c348552f674223d6d49a85f5e7e0c7e1931e0",
+    "evaluation_summary_payload_sha256": "0b503b6642131de4ac285f672b4325dd77ea75b1ca69373ce0afde103967a396",
+    "outcomes_sha256": "d6739923adbd38e76e41183678f9780bb6b1bfba044525bf4937c155c5a2fae2",
+    "module_sha256": "bedaa80b962c844f456623b2d68d657803c6245b73c6edeb2aa46d856d18b6f4",
+    "unique_weight_states_including_clean": 17,
+    "rows": [
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-001",
+          "dataset_test_row": 3581,
+          "layer_id": 14,
+          "layer": "model.6.cv1.conv",
+          "channel": 50,
+          "flat_index": 12850,
+          "injected_bit": 0,
+          "q_clean": 7,
+          "q_faulty": 6
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 7
+          },
+          "faulty_no_intervention": {
+            "q_final": 6
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 6,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 7
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 6,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 7
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-002",
+          "dataset_test_row": 13926,
+          "layer_id": 54,
+          "layer": "model.22.cv3.0.0.conv",
+          "channel": 43,
+          "flat_index": 50404,
+          "injected_bit": 0,
+          "q_clean": -19,
+          "q_faulty": -20
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -19
+          },
+          "faulty_no_intervention": {
+            "q_final": -20
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -20,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -19
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -20,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -19
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-003",
+          "dataset_test_row": 13453,
+          "layer_id": 52,
+          "layer": "model.22.cv2.2.1.conv",
+          "channel": 25,
+          "flat_index": 14735,
+          "injected_bit": 1,
+          "q_clean": -1,
+          "q_faulty": -3
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -1
+          },
+          "faulty_no_intervention": {
+            "q_final": -3
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -3,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 0,
+            "q_final": -1
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -3,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 0,
+            "q_final": -1
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-004",
+          "dataset_test_row": 8325,
+          "layer_id": 32,
+          "layer": "model.15.cv2.conv",
+          "channel": 67,
+          "flat_index": 12891,
+          "injected_bit": 1,
+          "q_clean": 29,
+          "q_faulty": 31
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 29
+          },
+          "faulty_no_intervention": {
+            "q_final": 31
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 31,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 29
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 31,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 29
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-005",
+          "dataset_test_row": 12650,
+          "layer_id": 49,
+          "layer": "model.22.cv2.1.1.conv",
+          "channel": 12,
+          "flat_index": 7427,
+          "injected_bit": 2,
+          "q_clean": 3,
+          "q_faulty": 7
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 3
+          },
+          "faulty_no_intervention": {
+            "q_final": 7
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 7,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 3
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 7,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 3
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-006",
+          "dataset_test_row": 609,
+          "layer_id": 2,
+          "layer": "model.2.cv1.conv",
+          "channel": 59,
+          "flat_index": 3781,
+          "injected_bit": 2,
+          "q_clean": 6,
+          "q_faulty": 2
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 6
+          },
+          "faulty_no_intervention": {
+            "q_final": 2
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 2,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 6
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 2,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 6
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-007",
+          "dataset_test_row": 2383,
+          "layer_id": 9,
+          "layer": "model.4.m.0.cv1.conv",
+          "channel": 27,
+          "flat_index": 16066,
+          "injected_bit": 3,
+          "q_clean": 12,
+          "q_faulty": 4
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 12
+          },
+          "faulty_no_intervention": {
+            "q_final": 4
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 4,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 12
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 2,
+            "q_final": 4,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 3,
+            "q_final": 12
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-008",
+          "dataset_test_row": 5359,
+          "layer_id": 21,
+          "layer": "model.8.cv1.conv",
+          "channel": 469,
+          "flat_index": 240455,
+          "injected_bit": 3,
+          "q_clean": -28,
+          "q_faulty": -20
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -28
+          },
+          "faulty_no_intervention": {
+            "q_final": -20
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -20,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -28
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -20,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -28
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-009",
+          "dataset_test_row": 4800,
+          "layer_id": 19,
+          "layer": "model.6.m.1.cv2.conv",
+          "channel": 7,
+          "flat_index": 8865,
+          "injected_bit": 4,
+          "q_clean": -19,
+          "q_faulty": -3
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -19
+          },
+          "faulty_no_intervention": {
+            "q_final": -3
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -3,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -19
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -3,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -19
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-010",
+          "dataset_test_row": 13329,
+          "layer_id": 52,
+          "layer": "model.22.cv2.2.1.conv",
+          "channel": 28,
+          "flat_index": 16339,
+          "injected_bit": 4,
+          "q_clean": -27,
+          "q_faulty": -11
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -27
+          },
+          "faulty_no_intervention": {
+            "q_final": -11
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -11,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -27
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 3,
+            "q_final": -11,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": -27
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-011",
+          "dataset_test_row": 1029,
+          "layer_id": 4,
+          "layer": "model.2.m.0.cv1.conv",
+          "channel": 1,
+          "flat_index": 464,
+          "injected_bit": 5,
+          "q_clean": 12,
+          "q_faulty": 44
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 12
+          },
+          "faulty_no_intervention": {
+            "q_final": 44
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 5,
+            "q_final": 44,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 3,
+            "q_final": 12
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 5,
+            "q_final": 44,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 3,
+            "q_final": 12
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-012",
+          "dataset_test_row": 9420,
+          "layer_id": 37,
+          "layer": "model.18.cv2.conv",
+          "channel": 202,
+          "flat_index": 77671,
+          "injected_bit": 5,
+          "q_clean": 3,
+          "q_faulty": 35
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 3
+          },
+          "faulty_no_intervention": {
+            "q_final": 35
+          },
+          "faulty_after_C": {
+            "acted": true,
+            "candidate_bit": 5,
+            "q_final": 3,
+            "exact_recovery": true
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 3
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 5,
+            "q_final": 35,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 0,
+            "q_final": 3
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-013",
+          "dataset_test_row": 6330,
+          "layer_id": 24,
+          "layer": "model.8.m.0.cv2.conv",
+          "channel": 216,
+          "flat_index": 498551,
+          "injected_bit": 6,
+          "q_clean": 16,
+          "q_faulty": 80
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 16
+          },
+          "faulty_no_intervention": {
+            "q_final": 80
+          },
+          "faulty_after_C": {
+            "acted": true,
+            "candidate_bit": 6,
+            "q_final": 16,
+            "exact_recovery": true
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 16
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 6,
+            "q_final": 80,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 4,
+            "q_final": 16
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-014",
+          "dataset_test_row": 1571,
+          "layer_id": 6,
+          "layer": "model.3.conv",
+          "channel": 87,
+          "flat_index": 50500,
+          "injected_bit": 6,
+          "q_clean": 2,
+          "q_faulty": 66
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 2
+          },
+          "faulty_no_intervention": {
+            "q_final": 66
+          },
+          "faulty_after_C": {
+            "acted": true,
+            "candidate_bit": 6,
+            "q_final": 2,
+            "exact_recovery": true
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 2
+          },
+          "faulty_after_D": {
+            "acted": true,
+            "candidate_bit": 6,
+            "q_final": 2,
+            "exact_recovery": true
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": 2
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-015",
+          "dataset_test_row": 11670,
+          "layer_id": 45,
+          "layer": "model.22.cv2.0.0.conv",
+          "channel": 0,
+          "flat_index": 910,
+          "injected_bit": 7,
+          "q_clean": -4,
+          "q_faulty": 124
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": -4
+          },
+          "faulty_no_intervention": {
+            "q_final": 124
+          },
+          "faulty_after_C": {
+            "acted": true,
+            "candidate_bit": 7,
+            "q_final": -4,
+            "exact_recovery": true
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -4
+          },
+          "faulty_after_D": {
+            "acted": true,
+            "candidate_bit": 7,
+            "q_final": -4,
+            "exact_recovery": true
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 1,
+            "q_final": -4
+          }
+        }
+      },
+      {
+        "scenario": {
+          "scenario_id": "S06B-E2E-016",
+          "dataset_test_row": 3943,
+          "layer_id": 15,
+          "layer": "model.6.cv2.conv",
+          "channel": 205,
+          "flat_index": 105469,
+          "injected_bit": 7,
+          "q_clean": 48,
+          "q_faulty": -80
+        },
+        "conditions": {
+          "shared_INT8_clean": {
+            "q_final": 48
+          },
+          "faulty_no_intervention": {
+            "q_final": -80
+          },
+          "faulty_after_C": {
+            "acted": false,
+            "candidate_bit": 6,
+            "q_final": -80,
+            "exact_recovery": false
+          },
+          "clean_target_after_C": {
+            "acted": false,
+            "candidate_bit": 5,
+            "q_final": 48
+          },
+          "faulty_after_D": {
+            "acted": false,
+            "candidate_bit": 6,
+            "q_final": -80,
+            "exact_recovery": false
+          },
+          "clean_target_after_D": {
+            "acted": false,
+            "candidate_bit": 5,
+            "q_final": 48
+          }
+        }
+      }
+    ]
+  }
+}

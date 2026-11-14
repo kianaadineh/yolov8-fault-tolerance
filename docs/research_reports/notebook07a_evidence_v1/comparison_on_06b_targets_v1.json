@@ -1,0 +1,64 @@
+{
+  "payload_sha256": "096ac38a0a408d423edb47b8306e47752026ec811101ca20c2aed6b51cda71a4",
+  "payload": {
+    "status": "RETROSPECTIVE_COMMON_TARGET_COMPARISON_NOT_EQUAL_BUDGET",
+    "targets": 16061,
+    "single_bit_cases_per_method": 128488,
+    "dataset_sha256": "6e2a4c366321b392f59a330b2cc2810a965897feb9d72e34e98b492666a1df0e",
+    "outcomes_sha256": "d6739923adbd38e76e41183678f9780bb6b1bfba044525bf4937c155c5a2fae2",
+    "mask_archive_sha256": "b3e9a79f2841d8f9753d490760e86a97e27abcbc1008c8158015938f86bfa376",
+    "module_sha256": "c840468946d28eea90a67412d8e97903a97ea80ed67143cd79934bf950a8af90",
+    "methods": {
+      "invariant_group_baseline": {
+        "exact_recovery_fraction": 0.01180655002801818,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013510989353091338,
+          0.027769130191146255,
+          0.053172280679907855,
+          0.0
+        ],
+        "clean_false_intervention_fraction": 0.0,
+        "clean_control_basis": "Full clean-weight functional check and invariant agreement."
+      },
+      "C": {
+        "exact_recovery_fraction": 0.1742419525558807,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0021169292073968,
+          0.044953614345308514,
+          0.15490940788244817,
+          0.4860220409688064,
+          0.7059336280430857
+        ],
+        "clean_false_intervention_fraction": 0.009588444057032562
+      },
+      "D": {
+        "exact_recovery_fraction": 0.12257954050183675,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013510989353091338,
+          0.23852811157462175,
+          0.7285972230869809
+        ],
+        "clean_false_intervention_fraction": 0.0076583027208766575
+      }
+    },
+    "limitations": [
+      "Existing inspected 06b test targets; exploratory comparison.",
+      "Recovery of the invariant baseline derived from verified bit coverage.",
+      "Predictor and mask memory budgets are not matched.",
+      "Uniformity over sampled targets and bits is not whole-network uniform sampling.",
+      "No new COCO inference or AP benefit established."
+    ]
+  }
+}

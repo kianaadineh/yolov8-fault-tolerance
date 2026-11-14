@@ -1,0 +1,78 @@
+{
+  "payload_sha256": "0b503b6642131de4ac285f672b4325dd77ea75b1ca69373ce0afde103967a396",
+  "payload": {
+    "status": "EXPLORATORY_WEIGHT_LEVEL_TEST_COMPLETE",
+    "protocol_sha256": "c996c54c5d8c14a0c57267617f4967ce48b2343a7c43e03669aff48d52ba1361",
+    "calibration_sha256": "87bfe4072cc4f8b1eb90fe961d4c348552f674223d6d49a85f5e7e0c7e1931e0",
+    "source_session_fingerprint": "ee750532ee8024d303cfcceeb5df7206c74eda208a82e94958c3da7b20dfc836",
+    "module_sha256": "aaa3410c9d55218d264d3b1edc46a6e8e76ded899b7afe7bb1a481a4d5174e33",
+    "clean_targets": 16061,
+    "fault_scenarios_per_method": 128488,
+    "methods": {
+      "C": {
+        "threshold": 0.9764253660024884,
+        "clean_false_intervention_fraction": 0.009588444057032562,
+        "fault_intervention_fraction": 0.19468744162879023,
+        "exact_recovery_fraction": 0.1742419525558807,
+        "wrong_bit_intervention_fraction": 0.020445489072909533,
+        "abstention_fraction": 0.8053125583712097,
+        "correct_bit_fraction_among_interventions": 0.8949830101938837,
+        "exact_recovery_by_injected_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0021169292073968,
+          0.044953614345308514,
+          0.15490940788244817,
+          0.4860220409688064,
+          0.7059336280430857
+        ]
+      },
+      "D": {
+        "threshold": 0.9757962345778055,
+        "clean_false_intervention_fraction": 0.0076583027208766575,
+        "fault_intervention_fraction": 0.142410186165245,
+        "exact_recovery_fraction": 0.12257954050183675,
+        "wrong_bit_intervention_fraction": 0.019830645663408256,
+        "abstention_fraction": 0.857589813834755,
+        "correct_bit_fraction_among_interventions": 0.8607498087222647,
+        "exact_recovery_by_injected_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013510989353091338,
+          0.23852811157462175,
+          0.7285972230869809
+        ]
+      },
+      "no_intervention": {
+        "clean_false_intervention_fraction": 0.0,
+        "fault_intervention_fraction": 0.0,
+        "exact_recovery_fraction": 0.0,
+        "wrong_bit_intervention_fraction": 0.0,
+        "abstention_fraction": 1.0
+      }
+    },
+    "outcomes_sha256": "d6739923adbd38e76e41183678f9780bb6b1bfba044525bf4937c155c5a2fae2",
+    "python": "3.13.16",
+    "packages": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.6.1",
+      "scipy": "1.16.3",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.7.0"
+    },
+    "wall_seconds": 23.399306936999892,
+    "limitations": [
+      "06a test results were previously inspected; this is exploratory.",
+      "Target under inspection is given; no network-wide localization claim.",
+      "Clean neighbors; no multiple-fault robustness claim.",
+      "No detection_AP_recovery claim from this weight-level pilot.",
+      "One checkpoint; no cross-model generalization claim.",
+      "Calibration false-intervention budget is not a test guarantee."
+    ],
+    "uncertainty": "Pending analysis of saved outcomes; no repeated model evaluation needed."
+  }
+}

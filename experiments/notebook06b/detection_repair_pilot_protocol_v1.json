@@ -1,0 +1,94 @@
+{
+  "version": "1.0",
+  "status": "FROZEN_EXPLORATORY_PILOT_BEFORE_06B_CALIBRATION",
+  "source_commit": "97aca930e3c9fdb47e714e9d49decf4778d894c0",
+  "source_session_file_sha256": "72479c6cb79376e68972495b3497aca24d20529aca4db14431bc1c67928c9b68",
+  "dataset_sha256": "6e2a4c366321b392f59a330b2cc2810a965897feb9d72e34e98b492666a1df0e",
+  "representation": "05a_shared_logical_INT8_per_output_channel",
+  "scope": "sampled_target_weights_in_63_Conv2d_layers",
+  "methods": [
+    "C",
+    "D",
+    "no_intervention"
+  ],
+  "training": "reuse_verified_06a_models_without_refitting",
+  "fault_model": {
+    "type": "one_bit_flip_in_one_target_weight",
+    "bits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "each_scenario_starts_from_clean_state": true,
+    "neighbors": "clean",
+    "target_weight_under_inspection": "given",
+    "injected_bit_position": "hidden_from_method"
+  },
+  "features": {
+    "reuse": "06a_feature_definitions",
+    "each_bit_predictor": "exclude_its_own_bit_from_observed_target",
+    "other_bits": "observed_bits_including_fault_if_present",
+    "context": "unchanged_target_excluded_same_output_channel",
+    "forbidden": [
+      "clean_target_value",
+      "injected_bit",
+      "address_as_feature"
+    ]
+  },
+  "decision": {
+    "score": "p_if_observed_bit_is_0_else_1_minus_p",
+    "candidate": "maximum_score_over_all_8_bits",
+    "tie_break": "smallest_bit_index",
+    "action": "flip_candidate_only_if_max_score_strictly_exceeds_threshold",
+    "maximum_changes_per_target": 1
+  },
+  "calibration": {
+    "partition": "calibration",
+    "input": "clean_targets_only",
+    "thresholds": "one_global_threshold_per_method_C_and_D",
+    "engineering_false_intervention_budget": 0.01,
+    "rule": "For n clean targets, k=floor(0.01*n); threshold=sorted_max_scores[n-k-1] using zero_based_indexing; intervene_only_for_score>threshold.",
+    "ties": "conservative_no_randomization",
+    "test_used_for_threshold_selection": false,
+    "guarantee": "empirical_calibration_budget_only"
+  },
+  "evaluation": {
+    "partition": "test",
+    "clean_control": "one_clean_observation_per_target",
+    "fault_cases": "8_separate_single_flip_scenarios_per_target",
+    "primary": "exact_weight_recovery_fraction_over_all_fault_cases",
+    "secondary": [
+      "clean_false_intervention_fraction",
+      "fault_intervention_fraction",
+      "wrong_bit_intervention_fraction_over_all_fault_cases",
+      "abstention_fraction_over_all_fault_cases",
+      "correct_bit_fraction_among_fault_interventions",
+      "per_bit_and_per_layer_results",
+      "paired_C_minus_D_exact_recovery"
+    ],
+    "aggregation": "target_weighted_within_bit_then_equal_mean_over_8_bits",
+    "uncertainty": {
+      "unit": "output_channel",
+      "stratify_by": "layer",
+      "paired_methods_and_bits": true,
+      "bootstrap_draws": 2000,
+      "seed": 20261114,
+      "interpretation": "exploratory_fixed_models_and_thresholds"
+    },
+    "test_evaluations": "one_after_thresholds_are_saved"
+  },
+  "limitations": [
+    "06a test results were previously inspected; this is exploratory.",
+    "Target under inspection is given; no network-wide localization claim.",
+    "Clean neighbors; no multiple-fault robustness claim.",
+    "No detection_AP_recovery claim from this weight-level pilot.",
+    "One checkpoint; no cross-model generalization claim.",
+    "Calibration false-intervention budget is not a test guarantee."
+  ],
+  "current_05b_campaign_changed": false
+}

@@ -1,0 +1,97 @@
+{
+  "payload_sha256": "0e576d5a06d64b8a6c88ab5f828df37881a8cd3bdd5661de3c96a56a1625a260",
+  "payload": {
+    "status": "EXPLORATORY_PAIRED_CHANNEL_BOOTSTRAP",
+    "evaluation_summary_payload_sha256": "0b503b6642131de4ac285f672b4325dd77ea75b1ca69373ce0afde103967a396",
+    "outcomes_sha256": "d6739923adbd38e76e41183678f9780bb6b1bfba044525bf4937c155c5a2fae2",
+    "bootstrap_source_sha256": "e63912dd649a0fda19e0170759b23a060b6966f22753f52fad84a4d27c0caeaf",
+    "C_minus_D_exact_recovery": {
+      "point_difference_by_bit": [
+        0.0,
+        0.0,
+        0.0,
+        0.0021169292073968,
+        0.044953614345308514,
+        0.14139841852935683,
+        0.24749392939418466,
+        -0.02266359504389515
+      ],
+      "exploratory_percentile_95_interval_by_bit": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0014966351252212492,
+          0.0027502463648239593
+        ],
+        [
+          0.039809535441627825,
+          0.05020086284494025
+        ],
+        [
+          0.13245191643488477,
+          0.15044424078258697
+        ],
+        [
+          0.23514460644472168,
+          0.26012071182022617
+        ],
+        [
+          -0.029577612990899223,
+          -0.015492661927295592
+        ]
+      ],
+      "mean_over_bits": 0.051662412054043955,
+      "exploratory_percentile_95_interval_mean_over_bits": [
+        0.04877572434218306,
+        0.05453157722650575
+      ],
+      "test_output_channel_clusters": 2106,
+      "draws": 2000,
+      "seed": 20261114,
+      "limitations": [
+        "Fixed predictors and checkpoint; not training uncertainty.",
+        "Approximate cluster bootstrap; unadjusted multiple comparisons.",
+        "No fault detection, repair or detection-AP guarantee."
+      ]
+    },
+    "C_minus_D_clean_false_intervention": {
+      "point_difference_by_bit": [
+        0.0019301413361559056
+      ],
+      "exploratory_percentile_95_interval_by_bit": [
+        [
+          0.00030743483852850866,
+          0.003552890824818075
+        ]
+      ],
+      "mean_over_bits": 0.0019301413361559056,
+      "exploratory_percentile_95_interval_mean_over_bits": [
+        0.00030743483852850866,
+        0.003552890824818075
+      ],
+      "test_output_channel_clusters": 2106,
+      "draws": 2000,
+      "seed": 20261114,
+      "limitations": [
+        "Fixed predictors and checkpoint; not training uncertainty.",
+        "Approximate cluster bootstrap; unadjusted multiple comparisons.",
+        "No fault detection, repair or detection-AP guarantee."
+      ]
+    },
+    "interpretation": {
+      "recovery": "Positive difference favors C.",
+      "clean_false_intervention": "Positive difference means more harm to clean weights with C.",
+      "scope": "Exploratory; fixed models and thresholds; no AP recovery claim."
+    }
+  }
+}

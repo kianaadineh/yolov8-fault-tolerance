@@ -1,0 +1,96 @@
+{
+  "payload_sha256": "d82c101de1bcafb61373f383f44b47069af820a0061474ca626abd5b482625ff",
+  "payload": {
+    "status": "CPU_NUMPY_SCAN_TIMING_COMPLETE_NOT_INFERENCE_OVERHEAD",
+    "manifest_sha256": "bee8dc2d17c1612ba1eddaeab8960f5d265e73c75c907c5cb80c62b0bb10f08a",
+    "correctness_file_sha256": "b0ec6384fdf6a5123710a4806f5848cf8cc93d72bf2f35c5ea0aab2f5aa7c206",
+    "module_sha256": "dc6844ae96829a62b1515f06dbbfd51bd3a4d550c15a35202d5e7f4ff96f08a1",
+    "warmups": 3,
+    "repeats": 20,
+    "order": [
+      "clean_scan",
+      "one_protected_fault_scan"
+    ],
+    "weights_scanned_per_repeat": 11146080,
+    "input_array_bytes": 11146080,
+    "mask_array_bytes": 1235584,
+    "output_array_bytes_per_scan": 11146080,
+    "selected_fault": {
+      "layer": "model.0.conv",
+      "flat_index": 36,
+      "bit": 6,
+      "selection": "first_protected_position_to_exercise_correction_only"
+    },
+    "environment": {
+      "python": "3.13.18",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "numpy": "2.4.6",
+      "torch": "2.14.1+cpu",
+      "threadpool_limit": 1
+    },
+    "results": {
+      "clean_scan": {
+        "seconds": [
+          0.028599078000297595,
+          0.028777211000033276,
+          0.02895327099986389,
+          0.030579217999729735,
+          0.029348259000016697,
+          0.028783670000393613,
+          0.028626708000047074,
+          0.028794486000151664,
+          0.029556638000030944,
+          0.04797349000000395,
+          0.04394367199984117,
+          0.04551077800033454,
+          0.057581117000154336,
+          0.046308198000133416,
+          0.04604469000014433,
+          0.04611332400008905,
+          0.05560241400007726,
+          0.05451040899970394,
+          0.04526722199989308,
+          0.045062136000069586
+        ],
+        "median_seconds": 0.04450290399995538,
+        "min_seconds": 0.028599078000297595,
+        "empirical_p95_seconds": 0.05570134915008112
+      },
+      "one_protected_fault_scan": {
+        "seconds": [
+          0.043395080999744096,
+          0.04547073699995963,
+          0.04612512500034427,
+          0.0460103010000239,
+          0.045080847999997786,
+          0.04479723600024954,
+          0.04450204400018265,
+          0.04605240599994431,
+          0.046115421000195056,
+          0.05038943499994275,
+          0.0478731590001189,
+          0.04669663499998933,
+          0.04428432300028362,
+          0.04554469499998959,
+          0.046798875000149565,
+          0.060548121000010724,
+          0.046545050000077026,
+          0.047769004000201676,
+          0.043687338000381715,
+          0.048476407999714866
+        ],
+        "median_seconds": 0.046083913500069684,
+        "min_seconds": 0.043395080999744096,
+        "empirical_p95_seconds": 0.050897369299946156
+      }
+    },
+    "limitations": [
+      "In-memory CPU NumPy implementation; outputs allocate new arrays.",
+      "Model preparation, file reads, validation and output deletion excluded.",
+      "Temporary allocation peaks and live RAM not measured.",
+      "Warm-cache repeated measurements; not deployment latency guarantees.",
+      "Selected protected fault is a functional timing workload, not an efficacy sample.",
+      "No measured impact on complete YOLO inference latency."
+    ]
+  }
+}

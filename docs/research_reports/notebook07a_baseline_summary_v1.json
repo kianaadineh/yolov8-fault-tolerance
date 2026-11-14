@@ -1,0 +1,104 @@
+{
+  "payload_sha256": "91f022bd2f865bee124da42253c52f693363eaea2704d4311cd41797bfb9e494",
+  "payload": {
+    "status": "07A_FUNCTIONAL_BASELINE_COMPLETE_COST_AND_AP_STUDIES_PENDING",
+    "source_file_sha256": {
+      "manifest.json": "bee8dc2d17c1612ba1eddaeab8960f5d265e73c75c907c5cb80c62b0bb10f08a",
+      "correctness_v1.json": "b0ec6384fdf6a5123710a4806f5848cf8cc93d72bf2f35c5ea0aab2f5aa7c206",
+      "comparison_on_06b_targets_v1.json": "3410026a67e06483f4fff3e6823c9a7dcf47ee6c9c6d658693937983214e9254"
+    },
+    "protocol_sha256": "74785069999784731bcc2917a5fd44fa8b698c102f76a9043b1f022b8303a799",
+    "invariant_baseline_totals": {
+      "weights": 11146080,
+      "groups": 1235584,
+      "tail_weights": 25824,
+      "mask_array_bytes": 1235584,
+      "ideal_six_bit_storage_bytes": 926688,
+      "compressed_mask_archive_bytes": 147693,
+      "protected_weight_bit_positions": 1297125,
+      "candidate_bit_coverage": 0.03879166487231386,
+      "all_bit_coverage": 0.014546874327117695,
+      "extraction_seconds_excluding_model_preparation": 0.28175375000000713
+    },
+    "functional_checks": {
+      "status": "CORRECTION_FUNCTIONAL_CHECKS_PASS_NO_AP_EVALUATION",
+      "clean_weights_checked_unchanged": 11146080,
+      "position_bit_cases_checked": 89168640,
+      "protected_cases_exactly_recovered": 1297125,
+      "unprotected_cases_left_unchanged": 87871515
+    },
+    "common_test_targets": 16061,
+    "common_target_methods": {
+      "invariant_group_baseline": {
+        "exact_recovery_fraction": 0.01180655002801818,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013510989353091338,
+          0.027769130191146255,
+          0.053172280679907855,
+          0.0
+        ],
+        "clean_false_intervention_fraction": 0.0,
+        "clean_control_basis": "Full clean-weight functional check and invariant agreement."
+      },
+      "C": {
+        "exact_recovery_fraction": 0.1742419525558807,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0021169292073968,
+          0.044953614345308514,
+          0.15490940788244817,
+          0.4860220409688064,
+          0.7059336280430857
+        ],
+        "clean_false_intervention_fraction": 0.009588444057032562
+      },
+      "D": {
+        "exact_recovery_fraction": 0.12257954050183675,
+        "exact_recovery_by_bit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013510989353091338,
+          0.23852811157462175,
+          0.7285972230869809
+        ],
+        "clean_false_intervention_fraction": 0.0076583027208766575
+      }
+    },
+    "predictor_serialization_bytes": {
+      "C": {
+        "compressed_bytes": 582653,
+        "uncompressed_bytes": 1618336
+      },
+      "D": {
+        "compressed_bytes": 490424,
+        "uncompressed_bytes": 1521824
+      }
+    },
+    "interpretation": [
+      "C has higher exact recovery on the common inspected targets.",
+      "The invariant baseline leaves clean weights unchanged under trusted masks.",
+      "The baseline targets bits 4-6; C and D inspect all eight bits.",
+      "Masks use clean reference weights, including test-channel weights.",
+      "Predictor training uses the separate training-channel partition.",
+      "Storage budgets and information assumptions differ.",
+      "Compressed storage, uncompressed serialization and live RAM are distinct.",
+      "No overall winner, independent confirmation or AP benefit is established."
+    ],
+    "pending": [
+      "Full scan and correction timing.",
+      "Live memory and feature-construction costs.",
+      "A separate frozen protocol for equal-budget comparison.",
+      "End-to-end evaluation of the invariant baseline.",
+      "Git review and publication of new session files."
+    ]
+  }
+}

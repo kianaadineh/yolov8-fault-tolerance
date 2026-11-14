@@ -1,0 +1,40 @@
+{
+  "payload_sha256": "7c4fe7e1c0bf8b028db9ac5ad1af4f698f1cac77537888b072f0b9624029dee5",
+  "payload": {
+    "status": "CALIBRATION_COMPLETE_NO_TEST_EVALUATION",
+    "protocol_sha256": "c996c54c5d8c14a0c57267617f4967ce48b2343a7c43e03669aff48d52ba1361",
+    "source_session_fingerprint": "ee750532ee8024d303cfcceeb5df7206c74eda208a82e94958c3da7b20dfc836",
+    "dataset_sha256": "6e2a4c366321b392f59a330b2cc2810a965897feb9d72e34e98b492666a1df0e",
+    "prediction_sha256_by_bit": {
+      "0": "5b96d42e2f7800bf55a9f2c02c9f6f04a932cf167c5a7fcccbb0f1f3ceb584ce",
+      "1": "2505eea87658a105ca04248b0bfba49873f08a6b815228c5f338a120fba8f9c1",
+      "2": "0b1da54a79ba3b515c6a03abe50dc2c2ebffd93fd79f8b52505d06805cf3bd95",
+      "3": "bdaba2b85cc0da5a676317ea5e1d470d9203c805ca2618a35a3706b92e747a4a",
+      "4": "76432fea702e35c058fba7a1cfd31099265a8f3566ab4c0a0c619c4a9b7d47b2",
+      "5": "8b9e1cf46fb76efd5a7aa7f8ef5d270bc688a2ad64c29e25548070cb66b4da8a",
+      "6": "a97fa6a2d2c23102975fd4ae75c32f225af34a03b8f50479c1fe46d69fc874f1",
+      "7": "de422e2d34af7d899ed75f342e36e1f97bb34f01f30df5430e155e2bc72097ce"
+    },
+    "module_sha256": "c7ea582bbadc2c3badb85aa6c544efe282822e6ff346964fd1034ab6d39f5279",
+    "numpy_version": "2.4.6",
+    "methods": {
+      "C": {
+        "threshold": 0.9764253660024884,
+        "comparison": "strictly_greater",
+        "clean_targets": 16034,
+        "allowed_interventions": 160,
+        "observed_interventions": 160,
+        "observed_fraction": 0.009978795060496445
+      },
+      "D": {
+        "threshold": 0.9757962345778055,
+        "comparison": "strictly_greater",
+        "clean_targets": 16034,
+        "allowed_interventions": 160,
+        "observed_interventions": 160,
+        "observed_fraction": 0.009978795060496445
+      }
+    },
+    "limitation": "Empirical clean calibration budget; no test-rate guarantee."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "payload_sha256": "e1aac289dd92cb29cebc7f1553cf8438dde0155c32a7856af846b424dc374cfe",
+  "payload": {
+    "status": "NOMINEE_FUNCTIONAL_CHECKS_PASS_NO_AP_EVALUATION",
+    "candidate": {
+      "name": "g9_b4567",
+      "group_size": 9,
+      "bits": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "comparison_summary_sha256": "c7fb36fadf4083b0abe816fedbc3d1d4c73fb12649490eda5341400ccfa00423",
+    "descriptor_sha256": "22a669ad92fede091827051aafcfa7a82be95eb0ac96f37d35a486738ec45c47",
+    "mask_archive_sha256": "895be126741b293b5c667993aba6821aa30eb0ce67bf5b03804b394d13eb04a9",
+    "module_sha256": "723777c831121a64a38fe843c970300244495fcdd7e765bbd1b102cab86fd8eb",
+    "clean_weights_unchanged": 11146080,
+    "position_bit_cases_checked": 89168640,
+    "protected_cases_exactly_recovered": 2370780,
+    "unprotected_cases_left_unchanged": 86797860,
+    "limitations": [
+      "Vectorized position-wise checks, not repeated network executions.",
+      "Trusted reference masks, metadata, scales and checker.",
+      "No AP benefit or deployment overhead established."
+    ]
+  }
+}

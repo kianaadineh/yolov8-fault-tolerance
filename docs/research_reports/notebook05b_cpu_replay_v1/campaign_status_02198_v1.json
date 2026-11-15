@@ -1,0 +1,29 @@
+{
+  "payload_sha256": "8ca03986cd61434a44044ce83f0613cb02e72692c395a073576525ea78d28f5c",
+  "payload": {
+    "status": "RESOURCE_INTERRUPTION_PARTIAL_SCREENING_NO_FINAL_RANKING",
+    "completed_campaign_evaluation_records": 2198,
+    "planned_scenarios": 5040,
+    "remaining_campaign_evaluations": 2842,
+    "consecutive_completed_prefix": 2198,
+    "prediction_only_scenarios": [
+      "S05B-02199"
+    ],
+    "separate_cpu_replay": {
+      "scenario_id": "S05B-02199",
+      "report_sha256": "d15bc5d6e7050246e6f6a24b9934d31339cd3662ced75e663e039dc8c4c3f985",
+      "counts_as_official_campaign_completion": false
+    },
+    "partial_files": 0,
+    "failure_records": 0,
+    "evaluation_payload_audit": "passed_in_this_runtime_before_snapshot",
+    "current_file_inventory_matches_audit": true,
+    "prediction_archive_hashes_all_rechecked": false,
+    "limitations": [
+      "Evaluation payload checks are distinct from full prediction archive verification.",
+      "No complete or balanced layer-bit coverage claim.",
+      "No final sensitivity ranking or protection efficacy claim.",
+      "Original campaign records remain unchanged."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "status": "FROZEN_CPU_DESIGN_COMPARISON_BEFORE_EXTRACTION",
+  "reference_protocol_sha256": "74785069999784731bcc2917a5fd44fa8b698c102f76a9043b1f022b8303a799",
+  "checkpoint_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+  "clean_model_state_sha256": "436fb7e861fb8d4776a2b27461be941cfa9a8b5d24d84652623fb35c2d81d264",
+  "source_screening_plan_sha256": "9981145a30329b326534faaae8fdffc7be911d1169b3869c081de612838caa6b",
+  "candidates": [
+    {
+      "name": "reference_g9_b456",
+      "group_size": 9,
+      "bits": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "g3_b4567",
+      "group_size": 3,
+      "bits": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "name": "g9_b4567",
+      "group_size": 9,
+      "bits": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "name": "g27_b4567",
+      "group_size": 27,
+      "bits": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "grouping": {
+    "order": "contiguous_flattened_weights_within_each_output_channel",
+    "cross_output_channel_groups": false,
+    "tails": "leave_incomplete_groups_unprotected",
+    "reference_g9_must_match_existing_07a_masks": true
+  },
+  "storage": {
+    "mask_bytes_per_group": 1,
+    "encoding": "low_n_bits_force_zero_next_n_bits_force_one",
+    "include_zero_masks": true,
+    "count_serialized_descriptors_and_metadata": true,
+    "compression_not_used_as_runtime_memory_estimate": true
+  },
+  "metrics": [
+    "protected_positions_by_bit_and_layer",
+    "all_8_bit_coverage_including_tails",
+    "raw_mask_bytes",
+    "descriptor_bytes",
+    "protected_positions_per_mask_plus_descriptor_byte"
+  ],
+  "selection": {
+    "maximum_nominees_for_next_AP_pilot": 1,
+    "engineering_storage_budget_fraction": 0.12,
+    "budget_denominator": "all_eligible_logical_INT8_weight_bytes",
+    "budget_numerator": "raw_mask_bytes_plus_serialized_descriptor_bytes",
+    "rule": "Among candidates within budget, choose maximum protected weight_bit_positions per budget byte; ties favor smaller storage, then smaller group size.",
+    "if_none_qualifies": "report_no_candidate_without_relaxing_budget",
+    "meaning": "coverage_cost_nomination_only_not_AP_optimality",
+    "uses_06b_recovery_or_AP_for_selection": false
+  },
+  "limitations": [
+    "Engineering screening, not novelty or protection efficacy confirmation.",
+    "Uniform weight-bit coverage is not the measured 05b layer-bit risk.",
+    "Trusted masks, metadata, scales and checker.",
+    "Runtime RAM and scan latency require separate measurements.",
+    "No AP inference or threshold tuning in this comparison."
+  ],
+  "existing_protocols_changed": false
+}

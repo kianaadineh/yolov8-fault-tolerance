@@ -73,6 +73,7 @@ must not be treated as identical measurements.
 | Notebook 06b repair | Known target weight, C/D detection-and-repair candidates | Functional recovery/false-intervention statistics under restricted assumptions; no generalizable localization |
 | Notebook 06b end-to-end | 16 selected fault cases; 17 unique clean/faulty model states, with paired C/D post-NMS COCOeval | Actual faulty-model COCOeval *pilot* exists; does not prove population mitigation efficacy |
 | Notebook 07a | Invariant-bit functional baseline and a defined storage-budget design comparison | Correctness and cost/coverage proxies; no independent paired AP, live RAM or deployment energy gain |
+| Notebook 07b sign-bit | [Single-image sign-bit smoke record](../docs/research_reports/notebook07b_sign_protection_v1/single_image_smoke_v1.json) | One previously inspected logical INT8 sign-bit fault, one development image, manual recovery yielding equality of raw and NMS outputs; no AP, automatic intervention or equal-budget result |
 | Notebook 08 | Deterministic 500 calibration + 500 development + 4,000 nominated held-out image split | Historical use of images must be audited before independence claim |
 
 The 16-case 06b pilot reports mean **signed AP percentage-point** changes relative to faulty inference:

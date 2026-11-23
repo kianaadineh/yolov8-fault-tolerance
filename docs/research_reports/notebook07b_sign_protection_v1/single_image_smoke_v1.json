@@ -1,0 +1,41 @@
+{
+  "payload_sha256": "be39e4a94939245b432576276f60aa726f61537476cd3ac6396504bc5b1e33b0",
+  "payload": {
+    "status": "SINGLE_IMAGE_ENGINEERING_SMOKE_PASS_NOT_AP_EVALUATION",
+    "checkpoint_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+    "screening_plan_sha256": "9981145a30329b326534faaae8fdffc7be911d1169b3869c081de612838caa6b",
+    "clean_model_state_sha256": "436fb7e861fb8d4776a2b27461be941cfa9a8b5d24d84652623fb35c2d81d264",
+    "faulty_model_state_sha256": "fe59802e7bafa6bbc9caea70a12788688c3f4169c7a1c0785992719a4831ee3a",
+    "image_id": 5503,
+    "image_sha256": "ff95bf5ddb4bdbd7f4f0f96d963cd941a0a2b38cfcf7832f25113e8441a443c6",
+    "environment": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.4.6",
+      "ultralytics": "8.4.189",
+      "device": "cpu"
+    },
+    "fault": {
+      "layer": "model.0.conv",
+      "flat_index": 704,
+      "bit": 7,
+      "q_clean": -67,
+      "q_faulty": 61,
+      "representation": "logical_INT8_weights_FP32_inference"
+    },
+    "checks": {
+      "fault_changed_raw": true,
+      "fault_changed_nms": true,
+      "exact_quantized_weight_recovery": true,
+      "repaired_raw_equals_clean": true,
+      "repaired_nms_equals_clean": true,
+      "final_model_state_equals_clean": true
+    },
+    "limitations": [
+      "One previously inspected fault and one development image.",
+      "Manual correction between forwards; no automatic inference integration.",
+      "Trusted sign reference, scales, metadata and checker.",
+      "No AP efficacy, equal-budget comparison or runtime-overhead evaluation.",
+      "Image hash recorded; historical image identity not cross-checked here."
+    ]
+  }
+}

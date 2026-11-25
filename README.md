@@ -84,7 +84,7 @@ Background records: [Reproducibility Guide v1 (historical)](docs/research_report
 - [ ] Freeze the method before independent testing; report clean accuracy and measured memory and latency. Energy requires actual instrumentation.
 - [ ] Write thesis chapters and citation checks **in parallel** with experiments.
 
-[Current Research Sprint / Checklist — Issue #1](https://github.com/kianaadineh/yolov8-fault-tolerance/issues/1) · [Research execution protocol](docs/research_reports/2026-11-23_research_direction_and_execution_protocol_v1.md).
+[Current Research Sprint / Checklist — Issue #1](https://github.com/kianaadineh/yolov8-fault-tolerance/issues/1) · [PDF-integrated evidence-based roadmap (2026-11-25)](docs/research_reports/2026-11-25_pdf_guidance_evidence_integrated_roadmap_v1.md) · [Research execution protocol](docs/research_reports/2026-11-23_research_direction_and_execution_protocol_v1.md).
 
 ### Known limits and non-claims
 
